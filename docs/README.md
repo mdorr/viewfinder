@@ -3,7 +3,7 @@
 * [Heroku Link][heroku]
 * [Trello Link][trello]
 
-[heroku]: https://vfinder.herokuapp.com/
+[heroku]: https://viewfinder.tech
 [trello]: https://trello.com/b/f8Ti26Pu/viewfinder
 
 ## Minimum Viable Product
