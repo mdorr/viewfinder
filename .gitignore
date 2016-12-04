@@ -16,8 +16,14 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Ignore NPM and webpack files
 node_modules/
 bundle.js
 bundle.js.map
-.DS_Store
 npm-debug.log
+
+# Ignore linter config
+.eslintrc.js
+
+# Ignore Mac OS system files
+.DS_Store
