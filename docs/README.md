@@ -55,7 +55,7 @@ This App will include the following features, fully functional, styled and seede
 * [Home feed, Mode: Activity][home-feed-activity]
 * [Home feed, Mode: Notifications][home-feed-notifications]
 * [Home feed, Notifications overlay][home-feed-notifications-overlay]
-* [Upload pictures][upload-pictures]
+* [Upload photos (modal)][upload-photos]
 * [Profile page][profile-page]
 * [Picture details][picture-details]
 * [Discover][discover]
@@ -70,6 +70,8 @@ This App will include the following features, fully functional, styled and seede
 [home-feed-activity]: ./wireframes/home_feed_activity.png
 [home-feed-notifications]: ./wireframes/home_feed_notifications.png
 [home-feed-notifications-overlay]: ./wireframes/home_feed_notifications_overlay.png
+[upload-photos]: ./wireframes/upload_photos_modal.png
+
 ## React Components
 
 [Component hierarchy][comp-hierarchy]
