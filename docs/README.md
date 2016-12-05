@@ -112,12 +112,16 @@ Objectives:
 * Front-end sign up and log in page, with error handling and notifications
 * Initial home page with static example picture in background
 
+** Est. date of completion: Dec 6th **
+
 #### Phase 2: User profile pages
 Objectives:
 * User profile page can be viewed by any user
 * User profile page can be updated by owner
 * User profile page shows description
 * Users can follow other users
+
+** Est. date of completion: Dec 7th **
 
 #### Phase 3: Photos
 Objectives:
@@ -126,10 +130,14 @@ Objectives:
 * User profile page is updated and shows all pictures uploaded by this user
 * User profile page is updated to show profile and cover picture selected by owner
 
+** Est. date of completion: Dec 9th **
+
 #### Phase 4: Photo feed
 Objectives:
 * Users can see a photo feed based on their follows
 * Photos can be opened in a detail view
+
+** Est. date of completion: Dec 10th **
 
 ### Bonus features
 
