@@ -1,0 +1,7 @@
+# Files/Folders that are not pushed to Heroku
+# https://devcenter.heroku.com/articles/slug-compiler#slugignore
+
+*.pdf
+/test
+/spec
+/docs
