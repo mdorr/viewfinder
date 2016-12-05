@@ -13,9 +13,9 @@ Viewfinder is a photography discovery and sharing network inspired by [500px](ww
 This App will include the following features, fully functional, styled and seeded:
 
 ### Hosting and production
-* ~~Heroku hosting~~ *([vfinder.herokuapp.com](vfinder.herokuapp.com))*
+* ~~Heroku hosting~~ *([vfinder.herokuapp.com](http://vfinder.herokuapp.com))*
 * ~~24/7 availability~~ *(Heroku account upgraded to run 24/7)*
-* ~~Custom domain~~ *([www.viewfinder.tech](www.viewfinder.tech))*
+* ~~Custom domain~~ *([www.viewfinder.tech](http://www.viewfinder.tech))*
 * Production README
 
 ### User accounts
