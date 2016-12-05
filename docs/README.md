@@ -51,21 +51,20 @@ This App will include the following features, fully functional, styled and seede
 * [Sign up][sign-up]
 * [Log in][log-in]
 * [Error display on sign up/log in pages][errors-sign-up-log-in]
-* [Profile page][profile-page]
+* [User profile page][user-profile]
 * [Home feed, Mode: Following][home-feed-following]
 * [Home feed, Mode: Activity][home-feed-activity]
 * [Home feed, Mode: Notifications][home-feed-notifications]
 * [Home feed, Notifications overlay][home-feed-notifications-overlay]
 * [Upload photo (modal)][upload-photo]
 * [Photo details (overlay)][photo-details]
-* [Discover][discover]
-* [Galleries][galleries]
 
 [wireframes]: ./wireframes
 [home-not-logged-in]: ./wireframes/home_page_not_signed_in.png
 [sign-up]: ./wireframes/sign-up.png
 [log-in]: ./wireframes/log-in.png
 [errors-sign-up-log-in]: ./wireframes/errors-log-in-and-sign-up.png
+[user-profile]: ./wireframe/user_profile.png
 [home-feed-following]: ./wireframes/home_feed_following.png
 [home-feed-activity]: ./wireframes/home_feed_activity.png
 [home-feed-notifications]: ./wireframes/home_feed_notifications.png
