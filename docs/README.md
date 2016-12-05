@@ -119,8 +119,9 @@ Objectives:
 * User profile page is updated to show profile and cover picture selected by owner
 
 #### Phase 4: Photo feed
-Objective:
-* Users can see a photo feed based on their follows.
+Objectives:
+* Users can see a photo feed based on their follows
+* Photos can be opened in a detail view
 
 ### Bonus features
 
