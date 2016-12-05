@@ -100,9 +100,10 @@ This App will include the following features, fully functional, styled and seede
 ### MVP features
 
 #### Phase 1: Backend setup, login
-Objective:
+Objectives:
 * Functional rails project with user creation and front-end authentication
 * Front-end sign up and log in page, with error handling and notifications
+* Initial home page with static example picture in background
 
 #### Phase 2: User profile pages
 Objectives:
@@ -126,17 +127,19 @@ Objectives:
 ### Bonus features
 
 #### Phase 5: Likes and comments
-Objective:
+Objectives:
 * Users can like photos
 * Users can post comments on photos
+* Update home page (when not signed in), show slideshow of popular pictures
 
 #### Phase 6: Keywords (Tags)
 Objective:
 * Users can create keywords for photos
 
 #### Phase 7: Search
-Objective:
+Objectives:
 * Users can search for other users, photo descriptions, and keywords
+* Add search to home page (when not signed in), show sample results and ask user to sign up
 
 #### Phase 8: Notifications
 Objectives:
@@ -151,6 +154,7 @@ Objectives:
 * Users can add photos (owned by any user) to own galleries
 * Update user profile page: Show 'Galleries' sub-navigation
 * Users can browse other galleries on other user's profile pages
+* Update home page (when not signed in), show curated selection of galleries that provide preview when clicked, with sign up link
 
 #### Phase 10: Activity
 Objectives:
