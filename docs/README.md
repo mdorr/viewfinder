@@ -12,21 +12,46 @@ Viewfinder is a photography discovery and sharing network inspired by [500px](ww
 
 This App will include the following features, fully functional, styled and seeded:
 
+### Hosting and production
 * Heroku hosting
-* User creation, signup and login
-* Guest/Demo login
+* 24/7 availability
+* Custom domain
 * Production README
+
+### User accounts
+* User creation/signup
+* User login
+* Guest/Demo login
+
+### Basic features
 * Post pictures
-* Follow other users
 * Home feed
-* Profile page
-* (Bonus) Tags
-* (Bonus) Discover
-* (Bonus) Notifications
+* Profile page (own profile, other user's profile)
+* Follow other users
+
+### Social (Bonus)
+* Likes
+* Keywords (Tags)
+* Comments
+* Notifications
+
+### Organizing photos (Bonus)
+* Discover
+* Galleries
 
 ## Wireframes
 
 [Wireframe folder][wireframes]
+
+* [Home page (not logged in)][home-not-logged-in]
+* [Sign up][sign-up]
+* [Log in][log-in]
+* [Home feed][home-feed]
+* [Upload pictures][upload-pictures]
+* [Profile page][profile-page]
+* [Picture details][picture-details]
+* [Discover][discover]
+* [Galleries][galleries]
 
 [wireframes]: ./wireframes
 
