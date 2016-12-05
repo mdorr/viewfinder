@@ -63,7 +63,7 @@ This App will include the following features, fully functional, styled and seede
 [sign-up]: ./wireframes/sign-up.png
 [log-in]: ./wireframes/log-in.png
 [errors-sign-up-log-in]: ./wireframes/errors-log-in-and-sign-up.png
-[home-feed]: ./wireframes/home-feed.png
+[home-feed]: ./wireframes/home_feed.png
 ## React Components
 
 [Component hierarchy][comp-hierarchy]
