@@ -1,5 +1,4 @@
 # Schema
-
 ## users
 
 column name     | data type | details
@@ -37,7 +36,6 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed
 following_id    | integer   | not null, indexed
 
-
 ## likes
 
 column name     | data type | details
@@ -46,7 +44,6 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed
 photo_id        | integer   | not null, indexed
 
-
 ## keywords
 
 column name     | data type | details
@@ -54,7 +51,6 @@ column name     | data type | details
 id              | integer   | not null, primary key
 keyword         | string    | not null
 photo_id        | integer   | not null, indexed
-
 
 ## comments
 
@@ -65,7 +61,6 @@ body            | string    | not null
 user_id         | integer   | not null, indexed
 photo_id        | integer   | not null, indexed
 
-
 ## notifications
 
 column name     | data type | details
@@ -74,7 +69,6 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed
 body            | text      |
 read            | boolean   |
-
 
 ## galleries
 
