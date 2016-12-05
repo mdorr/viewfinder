@@ -51,7 +51,10 @@ This App will include the following features, fully functional, styled and seede
 * [Sign up][sign-up]
 * [Log in][log-in]
 * [Error display on sign up/log in pages][errors-sign-up-log-in]
-* [Home feed][home-feed]
+* [Home feed, Mode: Following][home-feed-following]
+* [Home feed, Mode: Activity][home-feed-activity]
+* [Home feed, Mode: Notifications][home-feed-notifications]
+* [Home feed, Notifications overlay][home-feed-notifications-overlay]
 * [Upload pictures][upload-pictures]
 * [Profile page][profile-page]
 * [Picture details][picture-details]
@@ -63,7 +66,10 @@ This App will include the following features, fully functional, styled and seede
 [sign-up]: ./wireframes/sign-up.png
 [log-in]: ./wireframes/log-in.png
 [errors-sign-up-log-in]: ./wireframes/errors-log-in-and-sign-up.png
-[home-feed]: ./wireframes/home_feed.png
+[home-feed-following]: ./wireframes/home_feed_following.png
+[home-feed-activity]: ./wireframes/home_feed_activity.png
+[home-feed-notifications]: ./wireframes/home_feed_notifications.png
+[home-feed-notifications-overlay]: ./wireframes/home_feed_notifications_overlay.png
 ## React Components
 
 [Component hierarchy][comp-hierarchy]
