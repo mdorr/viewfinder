@@ -97,38 +97,72 @@ This App will include the following features, fully functional, styled and seede
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup, login
-Objective: Functional rails project with user creation and front-end authentication.
+### MVP features
 
-### Phase 2: User profile pages
-Objective: User profile pages can be updated by owner and viewed by other users.
+#### Phase 1: Backend setup, login
+Objective:
+* Functional rails project with user creation and front-end authentication
+* Front-end sign up and log in page, with error handling and notifications
 
-### Phase 3: Photos
-Objective: Photos can be uploaded, edited, and removed through API
+#### Phase 2: User profile pages
+Objectives:
+* User profile page can be viewed by any user
+* User profile page can be updated by owner
+* User profile page shows description
+* Users can follow other users
 
-### Phase 4: Photo feed
-Objective: Users can see a photo feed based on their follows
+#### Phase 3: Photos
+Objectives:
+* Rails backend handles image upload, storage, retreival, and some modification (resizing), implemented through suitable Gem/Library.
+* Photo upload page available on home feed. Multiple pictures can be uploaded at once
+* User profile page is updated and shows all pictures uploaded by this user
+* User profile page is updated to show profile and cover picture selected by owner
 
-### Phase 5: Likes and comments
-Objective: Users can like photos, and post comments on photos.
+#### Phase 4: Photo feed
+Objective:
+* Users can see a photo feed based on their follows.
 
-### Phase 6: Keywords (Tags)
-Objective: Users can create keywords for photos.
+### Bonus features
 
-### Phase 7: Search
-Objective: Users can search for other users, photo descriptions, and keywords
+#### Phase 5: Likes and comments
+Objective:
+* Users can like photos
+* Users can post comments on photos
 
-### Phase 8: Notifications
-Objective: Users are notified about actions related to their account (Other user has liked a picture, other user has commented on a picture)
+#### Phase 6: Keywords (Tags)
+Objective:
+* Users can create keywords for photos
 
-### Phase 9: Galleries
-Objective: Users can create galleries, and add photos (from any user) to galleries. Users can browse other user's galleries.
+#### Phase 7: Search
+Objective:
+* Users can search for other users, photo descriptions, and keywords
 
-### Phase 10: Activity
-Objective: Users can browse other users's activities (what they liked, pictures they posted, galleries they created)
+#### Phase 8: Notifications
+Objectives:
+* Users are notified about actions related to their account (Other user has liked a picture, other user has commented on a picture)
+* Home feed page shows 'Activity' sub-navigation
+* Home feed page shows 'Notifications' overlay
+* Notifications are marked as read once acknowledged by the user (i.e. once the overlay or sub-navigation has been opened)
 
-### Phase 11: Discovery
-Objective: Users are presented with photos, other users, and galleries to browse. These can be curated lists, or based on popularity.
+#### Phase 9: Galleries
+Objectives:
+* Users can create galleries
+* Users can add photos (owned by any user) to own galleries
+* Update user profile page: Show 'Galleries' sub-navigation
+* Users can browse other galleries on other user's profile pages
 
-### Phase 12: Guided user creation
-Objective: When signing up as a new user, initial categories can be chosen, which will then set up an initial set of followed users based on those categories.
+#### Phase 10: Activity
+Objectives:
+* Users can browse other users's activities (what they liked, pictures they posted, galleries they created)
+* Update home feed page: Add 'Activities' sub-navigation
+
+#### Phase 11: Discovery
+Objectives:
+* Users are presented with photos, other users, and galleries to browse. These can be curated lists, or based on popularity.
+* Update main navigation, add 'Discovery' tab
+
+#### Phase 12: Guided user creation
+Objectives:
+* When signing up as a new user, display initial categories based on keywords; ask new user to mark preferences (p.e. 'Architecture', 'Nature' and so forth)
+* Select users who post pictures in these categories
+* Create new user with these users as an initial set of followed users
