@@ -40,6 +40,9 @@ This App will include the following features, fully functional, styled and seede
 * Activity (by other users)
 * Discover
 
+### Guided user creation (Bonus)
+* Guided user creation with initial follows
+
 ## Wireframes
 
 [Wireframe folder][wireframes]
@@ -98,7 +101,7 @@ Objective: Users can see a photo feed based on their follows
 Objective: Users can like photos, and post comments on photos.
 
 ### Phase 6: Keywords (Tags)
-Objective: Users can create keywords for photos. 
+Objective: Users can create keywords for photos.
 
 ### Phase 7: Search
 Objective: Users can search for other users, photo descriptions, and keywords
@@ -114,3 +117,6 @@ Objective: Users can browse other users's activities (what they liked, pictures 
 
 ### Phase 11: Discovery
 Objective: Users are presented with photos, other users, and galleries to browse. These can be curated lists, or based on popularity.
+
+### Phase 12: Guided user creation
+Objective: When signing up as a new user, initial categories can be chosen, which will then set up an initial set of followed users based on those categories.
