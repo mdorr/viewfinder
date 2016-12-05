@@ -7,11 +7,18 @@ column name     | data type | details
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
-description     | text      |
-user_picture    | integer   | indexed
-cover_photo     | integer   | indexed
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+
+## user details
+
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, indexed
+description     | text      |
+profile_picture | attachment|
+cover_photo     | attachment|
 
 ## photos
 
@@ -84,4 +91,4 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 gallery_id      | integer   | not null, indexed
-user_id         | integer   | not null, indexed
+photo_id        | integer   | not null, indexed
