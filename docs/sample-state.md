@@ -1,5 +1,6 @@
 # Sample State
 
+```js
 {
   currentUser: {
     id: 1,
@@ -33,3 +34,4 @@
     keywords: [2, 5] // to filter by keyword id
   }
 }
+```
