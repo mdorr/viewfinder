@@ -49,6 +49,7 @@
 ### Notifications
 * GET /users/:user_id/notifications
 * POST /users/:user_id/notifications
+* PATCH /users/notifications/:notification_id -- mark notification as read
 
 ### Galleries
 
