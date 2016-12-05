@@ -47,17 +47,24 @@ This App will include the following features, fully functional, styled and seede
 
 [Wireframe folder][wireframes]
 
+#### Home page, sign up, log in
 * [Home page (not logged in)][home-not-logged-in]
 * [Sign up][sign-up]
 * [Log in][log-in]
 * [Error display on sign up/log in pages][errors-sign-up-log-in]
+
+#### User profile
 * [User profile page][user-profile]
+
+#### Photo upload, details
+* [Upload photo (modal)][upload-photo]
+* [Photo details (overlay)][photo-details]
+
+#### Home feed
 * [Home feed, Mode: Following][home-feed-following]
 * [Home feed, Mode: Activity][home-feed-activity]
 * [Home feed, Mode: Notifications][home-feed-notifications]
 * [Home feed, Notifications overlay][home-feed-notifications-overlay]
-* [Upload photo (modal)][upload-photo]
-* [Photo details (overlay)][photo-details]
 
 [wireframes]: ./wireframes
 [home-not-logged-in]: ./wireframes/home_page_not_signed_in.png
