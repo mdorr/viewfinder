@@ -50,6 +50,7 @@ This App will include the following features, fully functional, styled and seede
 * [Home page (not logged in)][home-not-logged-in]
 * [Sign up][sign-up]
 * [Log in][log-in]
+* [Error display on sign up/log in pages][errors-sign-up-log-in]
 * [Home feed][home-feed]
 * [Upload pictures][upload-pictures]
 * [Profile page][profile-page]
@@ -58,7 +59,11 @@ This App will include the following features, fully functional, styled and seede
 * [Galleries][galleries]
 
 [wireframes]: ./wireframes
-
+[home-not-logged-in]: ./wireframes/home_page_not_signed_in.png
+[sign-up]: ./wireframes/sign-up.png
+[log-in]: ./wireframes/log-in.png
+[errors-sign-up-log-in]: ./wireframes/errors-log-in-and-sign-up.png
+[home-feed]: ./wireframes/home-feed.png
 ## React Components
 
 [Component hierarchy][comp-hierarchy]
