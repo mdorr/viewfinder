@@ -1,0 +1,16 @@
+.helloWorld {
+  width: 100px;
+  margin: auto;
+  margin-top: 50px;
+
+}
+
+.helloWorld img {
+  width: 100px;
+}
+
+.helloWorld h1 {
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
