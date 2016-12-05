@@ -7,6 +7,9 @@ column name     | data type | details
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
+description     | text      |
+user_picture    | integer   | indexed
+cover_photo     | integer   | indexed
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
@@ -15,8 +18,9 @@ session_token   | string    | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+url             | string    | not null
 user_id         | integer   | not null, indexed
-description     | text      | 
+description     | text      |
 
 ## follows
 
