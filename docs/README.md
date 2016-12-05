@@ -36,8 +36,9 @@ This App will include the following features, fully functional, styled and seede
 * Notifications
 
 ### Organizing photos (Bonus)
-* Discover
 * Galleries
+* Activity (by other users)
+* Discover
 
 ## Wireframes
 
@@ -80,3 +81,36 @@ This App will include the following features, fully functional, styled and seede
 [api-endpoints]: api-endpoints.md
 
 ## Implementation Timeline
+
+### Phase 1: Backend setup, login
+Objective: Functional rails project with user creation and front-end authentication.
+
+### Phase 2: User profile pages
+Objective: User profile pages can be updated by owner and viewed by other users.
+
+### Phase 3: Photos
+Objective: Photos can be uploaded, edited, and removed through API
+
+### Phase 4: Photo feed
+Objective: Users can see a photo feed based on their follows
+
+### Phase 5: Likes and comments
+Objective: Users can like photos, and post comments on photos.
+
+### Phase 6: Keywords (Tags)
+Objective: Users can create keywords for photos. 
+
+### Phase 7: Search
+Objective: Users can search for other users, photo descriptions, and keywords
+
+### Phase 8: Notifications
+Objective: Users are notified about actions related to their account (Other user has liked a picture, other user has commented on a picture)
+
+### Phase 9: Galleries
+Objective: Users can create galleries, and add photos (from any user) to galleries. Users can browse other user's galleries.
+
+### Phase 10: Activity
+Objective: Users can browse other users's activities (what they liked, pictures they posted, galleries they created)
+
+### Phase 11: Discovery
+Objective: Users are presented with photos, other users, and galleries to browse. These can be curated lists, or based on popularity.
