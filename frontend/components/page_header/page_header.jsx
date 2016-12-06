@@ -6,7 +6,7 @@ class PageHeader extends React.Component {
     if (this.props.currentUser) {
       return (
         <header className="home-header group">
-          <h2 className="mainLogo">viewfinder</h2>
+          <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
           <ul>
             <li>{this.props.currentUser.username}</li>
             <li><Link to="/logout">Log out</Link></li>
@@ -16,7 +16,6 @@ class PageHeader extends React.Component {
     } else {
       return (
         <header className="home-header group">
-          <h2 className="mainLogo">viewfinder</h2>
           <ul>
             <li><Link to="/login">Log in</Link></li>
             <li><Link to="/signup">Sign up</Link></li>

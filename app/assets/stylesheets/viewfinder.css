@@ -2,19 +2,11 @@ body {
   font-family: sans-serif;
 }
 
-.mainLogo {
+.logoImg {
   float: left;
   width: 80px;
   height: 20px;
-  padding: 10px;
-}
-
-.mainLogo:hover {
-  color: rgb(50, 155, 255);
-}
-
-.home-header {
-
+  padding: 8px 10px;
 }
 
 .home-header ul {
