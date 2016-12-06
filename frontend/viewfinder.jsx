@@ -10,6 +10,7 @@ import { signup, login, logout } from './actions/session_actions.js';
 window.signup = signup;
 window.login = login;
 window.logout = logout;
+
 // END TODO
 
 document.addEventListener("DOMContentLoaded", () => {
