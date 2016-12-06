@@ -2,9 +2,9 @@
 
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "viewinder-user"
+  session: {
+    currentUser: { username: "viewinder-user" },
+    errors: [] 
   },
   forms: {
     signup: { errors: [] },
