@@ -34,19 +34,23 @@ class SessionForm extends React.Component {
       <form className="session-form" onSubmit={ this.handleSubmit }>
         <ul>
           <li>
-            <p>Please { this.props.formType } or { this.navLink() }</p>
+            <h2>{ this.props.formType === "login" ? "Log in" : "Sign up" } to viewfinder</h2>
           </li>
           <li>
             <label>
               Username:
-              <input value={ this.state.username } onChange={ this.update('username') } />
             </label>
+          </li>
+          <li>
+            <input value={ this.state.username } onChange={ this.update('username') } />
           </li>
           <li>
             <label>
               Password:
-              <input type="password" value={ this.state.password } onChange={ this.update('password') } />
             </label>
+          </li>
+          <li>
+            <input type="password" value={ this.state.password } onChange={ this.update('password') } />
           </li>
           <li>
             <button type="submit">{ this.props.formType }</button>
