@@ -9,6 +9,10 @@ body {
   padding: 10px;
 }
 
+.mainLogo:hover {
+  color: rgb(50, 155, 255);
+}
+
 .home-header {
 
 }
