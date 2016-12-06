@@ -1,6 +1,7 @@
 class Api::SessionsController < ApplicationController
 
   def create
+    debugger
     @user = User.find_with_credentials(params[:session][:username], params[:session][:password])
     if @user
       log_in!(@user)
