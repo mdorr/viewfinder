@@ -35,8 +35,8 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-      <section>
-        <form className="session-form" onSubmit={ this.handleSubmit }>
+      <section className="session">
+        <form onSubmit={ this.handleSubmit }>
           <ul>
             <li>
               <h2>{ this.readableFormTypeName() } to viewfinder</h2>

@@ -26,19 +26,28 @@ body {
   padding: 10px;
 }
 
-.session-form {
+.session {
   margin: 0 auto;
   width: 240px;
 }
 
-.session-form h2 {
+.session form {
+  margin: 0 auto;
+  width: 240px;
+}
+
+.session p,
+.session h2 {
   text-align: center;
+}
+
+.session h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.session-form button,
-.session-form input {
+.session button,
+.session input {
   width: 240px;
   margin-bottom: 10px;
 }
