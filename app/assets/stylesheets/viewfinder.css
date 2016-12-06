@@ -1,3 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
 .mainLogo {
   float: left;
   width: 80px;
@@ -20,10 +24,17 @@
 
 .session-form {
   margin: 0 auto;
-  width: 300px;
+  width: 240px;
 }
 
-.session-form li{
-  margin: 0 auto;
+.session-form h2 {
   text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.session-form button,
+.session-form input {
+  width: 240px;
+  margin-bottom: 10px;
 }
