@@ -2,10 +2,7 @@ import React from 'react';
 
 const App = ({ children }) => (
   <div>
-    <div className="helloWorld">
-      <h1>📷</h1>
-      <h1>viewfinder</h1>
-    </div>,
+    <img className="mainLogo" src = "assets/vf-logo.png" />
     { children }
   </div>
 );
