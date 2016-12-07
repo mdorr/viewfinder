@@ -16,7 +16,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed
 description     | text      |
-profile_picture | attachment|
+profile_picture | attachment| //TODO: Maybe utilize photos table?
 cover_photo     | attachment|
 
 ## photos
@@ -24,7 +24,7 @@ cover_photo     | attachment|
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-photo           | attachment| not null
+picture         | attachment| not null
 user_id         | integer   | not null, indexed
 description     | text      |
 
