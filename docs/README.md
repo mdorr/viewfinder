@@ -19,8 +19,8 @@ This App will include the following features, fully functional, styled and seede
 * Production README
 
 ### User accounts
-* User creation/signup
-* User login
+* ~~User creation/signup~~ *(Done and live)*
+* ~~User login~~ *(Done and live)*
 * Guest/Demo login
 
 ### Basic features
