@@ -28,19 +28,20 @@
 }
 
 .sessionForm button {
-  color: #f1fbf1;
+  color: #fff;
   background-color: #2fb738;
   border: 1px solid #2a9f32;
   border-radius: 3px;
-  padding: 10px;
+  padding: 8px;
   width: 320px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 30px;
 
-  transition: all 0.30s ease-in-out;
+  transition: all 0.20s ease-in-out;
+  text-shadow: 0px 1px 0px #2fab41;
 }
 
 .sessionForm button:hover {
@@ -60,7 +61,7 @@
   outline-style: none;
   outline-width: 0px;
 
-  transition: all 0.30s ease-in-out;
+  transition: all 0.20s ease-in-out;
 }
 
 .sessionForm input:focus {
