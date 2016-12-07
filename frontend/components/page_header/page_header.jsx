@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-
 class PageHeader extends React.Component {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  handleLogout() {
-    console.log("Handling the logout");
+    handleLogout() {
     this.props.logout();
-    this.props.router.push("/");
+    this.props.router.push("/"); // Ensure that we are returned to home page after logout
   }
 
   sessionLinks () {
@@ -47,7 +45,6 @@ class PageHeader extends React.Component {
       this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()
     );
   }
-
 }
 
 export default withRouter(PageHeader);
