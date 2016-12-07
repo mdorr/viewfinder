@@ -1,22 +1,51 @@
 body {
   font-family: sans-serif;
+  color: #414346;
+  font-size: 14px;
+  background-color: #f6f7f9;
 }
 
 .logoImg {
   float: left;
-  width: 80px;
-  height: 20px;
-  padding: 8px 10px;
+  width: 160px;
+  height: 40px;
+  padding: 5px 20px 5px 40px;
+}
+
+.home-header {
+  height: 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgb(238, 239, 242);
 }
 
 .home-header ul {
   float: right;
+  padding-right: 30px;
 }
 
 .home-header li {
   float: left;
-  padding: 10px;
 }
+
+.home-header li:hover {
+  color: #3185df;
+}
+
+.green {
+  color: #f1fbf1;
+  background-color: #2fb738;
+}
+
+.green :hover {
+  background-color: #39c544;
+}
+
+.home-header a {
+  padding: 18px 20px;
+  display: block;
+  color: inherit;
+}
+
 
 .session {
   margin: 0 auto;
@@ -42,4 +71,10 @@ body {
 .session input {
   width: 240px;
   margin-bottom: 10px;
+}
+
+.errorPopup {
+  position: absolute;
+  top: 0px;
+  background: rgb(251, 75, 82);
 }
