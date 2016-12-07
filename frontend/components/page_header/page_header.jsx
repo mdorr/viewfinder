@@ -18,8 +18,8 @@ const personalGreeting = (currentUser, logout) => (
     <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
     <nav className="login-signup">
       <ul>
-        <li>{ currentUser.username }</li>
-        <li><button className="header-button" onClick={logout}>Log Out</button></li>
+        <li><Link to="/user">{ currentUser.username }</Link></li>
+        <li><a onClick={logout}>Log Out</a></li>
       </ul>
     </nav>
   </header>
