@@ -39,6 +39,8 @@
   display: inline-block;
   font-size: 16px;
   margin-bottom: 30px;
+
+  transition: all 0.30s ease-in-out;
 }
 
 .sessionForm button:hover {
@@ -57,6 +59,8 @@
   margin: 10px 0px;
   outline-style: none;
   outline-width: 0px;
+
+  transition: all 0.30s ease-in-out;
 }
 
 .sessionForm input:focus {

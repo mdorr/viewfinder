@@ -30,6 +30,7 @@ a {
 
 .home-header li {
   float: left;
+  transition: all 0.30s ease-in-out;
 }
 
 .home-header li:hover {
@@ -50,7 +51,6 @@ a {
   display: block;
   color: inherit;
 }
-
 
 .error-wrapper {
 
