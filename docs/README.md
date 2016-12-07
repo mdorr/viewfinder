@@ -125,7 +125,7 @@ Objectives:
 
 #### Phase 3: Photos
 Objectives:
-* Rails backend handles image upload, storage, retreival, and some modification (resizing), implemented through suitable Gem/Library.
+* Rails backend handles image upload, storage, retrieval, and some modification (resizing), implemented through suitable Gem/Library.
 * Photo upload page available on home feed. Multiple pictures can be uploaded at once
 * User profile page is updated and shows all pictures uploaded by this user
 * User profile page is updated to show profile and cover picture selected by owner
