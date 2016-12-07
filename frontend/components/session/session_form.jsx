@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
 	}
 
 	otherLink() {
-    if (this.props.formType === "login") {
+		if (this.props.formType === "login") {
       return (<p>Don't have an account? <Link to="/signup">Sign up</Link></p>);
     } else {
       return (<p>Already have an account? <Link to="/login">Log in</Link></p>);
@@ -86,7 +86,6 @@ class SessionForm extends React.Component {
       </section>
 		);
 	}
-
 }
 
 export default withRouter(SessionForm);
