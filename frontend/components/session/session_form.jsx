@@ -83,7 +83,6 @@ class SessionForm extends React.Component {
 						{ this.otherLink() }
           </ul>
         </form>
-
       </section>
 		);
 	}

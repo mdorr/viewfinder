@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 
 class PageHeader extends React.Component {
   constructor(props){
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    console.log("Handling the logout");
+    this.props.logout();
+    this.props.router.push("/");
   }
 
   sessionLinks () {
@@ -28,7 +35,7 @@ class PageHeader extends React.Component {
         <nav className="login-signup">
           <ul>
             <li><Link to="/user">{ currentUser.username }</Link></li>
-            <li><a onClick={logout}>Log Out</a></li>
+            <li><a onClick={this.handleLogout}>Log Out</a></li>
           </ul>
         </nav>
       </header>
@@ -43,4 +50,4 @@ class PageHeader extends React.Component {
 
 }
 
-export default PageHeader;
+export default withRouter(PageHeader);
