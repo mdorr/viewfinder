@@ -1,0 +1,69 @@
+.sessionForm {
+  margin: 110px auto;
+  width: 320px;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #eaebef;
+  color: #797076;
+}
+
+.sessionForm li {
+  margin-bottom: 10px;
+}
+
+.sessionForm p,
+.sessionForm h2 {
+  text-align: center;
+
+}
+
+.sessionForm label {
+  color: #5d6267;
+}
+
+.sessionForm h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.sessionForm button {
+  color: #f1fbf1;
+  background-color: #2fb738;
+  border: 1px solid #2a9f32;
+  border-radius: 3px;
+  padding: 10px;
+  width: 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.sessionForm button:hover {
+  background-color: #39c544;
+}
+
+.sessionForm input {
+  width: 312px;
+  height: 26px;
+  padding: 5px 10px;
+  font-size:16px;
+  font-weight: lighter;
+  color: #797076;
+  border: 1px solid #eaebef;
+  border-radius: 3px;
+  margin: 10px 0px;
+  outline-style: none;
+  outline-width: 0px;
+}
+
+.sessionForm input:focus {
+  border: 1px solid #3185df;
+}
+
+.otherLink {
+  text-align: center;
+
+  font-size: 12px;
+}

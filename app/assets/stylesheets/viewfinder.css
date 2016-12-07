@@ -2,7 +2,12 @@ body {
   font-family: sans-serif;
   color: #414346;
   font-size: 14px;
+  font-weight: lighter;
   background-color: #f6f7f9;
+}
+
+a {
+  color: #3185df;
 }
 
 .logoImg {
@@ -15,7 +20,7 @@ body {
 .home-header {
   height: 50px;
   background-color: #ffffff;
-  border-bottom: 1px solid rgb(238, 239, 242);
+  border-bottom: 1px solid #eaebef;
 }
 
 .home-header ul {
@@ -46,32 +51,6 @@ body {
   color: inherit;
 }
 
-
-.session {
-  margin: 0 auto;
-  width: 240px;
-}
-
-.session form {
-  margin: 0 auto;
-  width: 240px;
-}
-
-.session p,
-.session h2 {
-  text-align: center;
-}
-
-.session h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.session button,
-.session input {
-  width: 240px;
-  margin-bottom: 10px;
-}
 
 .errorPopup {
   position: absolute;
