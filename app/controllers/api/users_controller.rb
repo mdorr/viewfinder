@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
       log_in!(@newUser)
       render json: @newUser, status: 201
     else
-      render json: {}, status: 422
+      render json: @newUser.errors.full_messages, status: 422
     end
   end
 

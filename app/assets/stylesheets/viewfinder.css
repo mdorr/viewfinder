@@ -52,8 +52,26 @@ a {
 }
 
 
+.error-wrapper {
+
+}
+
 .errorPopup {
   position: absolute;
   top: 0px;
+  left:0;
+  right:0;
+  width: 550px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left:auto;
+  margin-right:auto;
+
   background: rgb(251, 75, 82);
+}
+
+.errorPopup li {
+  color: #ffffff;
+  font-weight: normal;
+  padding: 13px 40px;
 }
