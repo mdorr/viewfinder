@@ -30,9 +30,9 @@ class SessionForm extends React.Component {
 
 	otherLink() {
 		if (this.props.formType === "login") {
-      return (<p>Don't have an account? <Link to="/signup">Sign up</Link></p>);
+      return (<li className="otherLink">Don't have an account? <Link to="/signup">Sign up</Link></li>);
     } else {
-      return (<p>Already have an account? <Link to="/login">Log in</Link></p>);
+      return (<li className="otherLink">Already have an account? <Link to="/login">Log in</Link></li>);
     }
   }
 
@@ -58,33 +58,30 @@ class SessionForm extends React.Component {
 		return (
 			<section className="session">
 				{this.renderErrors()}
-        <form onSubmit={ this.handleSubmit }>
+        <form className="sessionForm" onSubmit={ this.handleSubmit }>
           <ul>
             <li>
               <h2>{ this.readableFormTypeName() } to viewfinder</h2>
             </li>
             <li>
               <label>
-                Username:
+                Username
               </label>
-            </li>
-            <li>
               <input value={ this.state.username } onChange={ this.update('username') } />
             </li>
             <li>
               <label>
-                Password:
+                Password
               </label>
-            </li>
-            <li>
               <input type="password" value={ this.state.password } onChange={ this.update('password') } />
             </li>
             <li>
-              <button type="submit">{ this.readableFormTypeName() }</button>
+              <button type="submit" className="green">{ this.readableFormTypeName() }</button>
             </li>
+						{ this.otherLink() }
           </ul>
         </form>
-        { this.otherLink() }
+
       </section>
 		);
 	}
