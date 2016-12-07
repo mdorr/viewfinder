@@ -4,11 +4,15 @@
 {
   session: {
     currentUser: { username: "viewinder-user" },
-    errors: [] 
+    errors: []
   },
+
+  sessionForm: {
+    username: "Jane",
+    password: "******"
+  }
+
   forms: {
-    signup: { errors: [] },
-    login: { errors: [] },
     photoUpload: { errors: [] },
     galleryCreation: { errors: [] },
     search: { errors: [] },
