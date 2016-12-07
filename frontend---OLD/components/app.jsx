@@ -3,10 +3,8 @@ import PageHeaderContainer from './page_header/page_header_container';
 
 const App = ({ children }) => (
   <div>
-    <header>
-      <PageHeaderContainer />
-    </header>
-    {children}
+    <PageHeaderContainer />
+    { children }
   </div>
 );
 

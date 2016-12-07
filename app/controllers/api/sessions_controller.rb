@@ -1,12 +1,12 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    @user = User.find_with_credentials(params[:session][:username], params[:session][:password])
+    @user = User.find_with_credentials(params[:user][:username], params[:user][:password])
     if @user
       log_in!(@user)
       render json: @user
     else
-      render json: ["Invalid credentials"], status: 422
+      render json: ["Invalid credentials"], status: 401
     end
   end
 
@@ -14,9 +14,9 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       log_out!
-      render json: @user
+      render "api/users/show"
     else
-      render json: @user.errors.full_messages, status: 404
+      render json: ['No user signed in.'], status: 404
     end
 
   end
