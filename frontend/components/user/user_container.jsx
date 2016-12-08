@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { fetchUserDetails } from '../../actions/user_actions';
 import User from './user';
 
-const mapStateToProps = ({ userDetails }) => {
-  return { userDetails };
+const mapStateToProps = ({ userDetails, session }) => {
+  return { userDetails, loggedInUser: session.currentUser.id };
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -18,10 +18,11 @@ class User extends React.Component {
 	}
 
 	editOrFollowButton() {
-		// Should return
-		return (
-			<button onClick={this.handleFollow}  className="profileButton">Edit/Follow</button>
-		);
+		if (parseInt(this.props.params.userId) == this.props.loggedInUser) {
+			return (<button onClick={this.handleFollow}  className="profileButton">Edit profile</button>);
+		} else {
+			return (<button onClick={this.handleFollow}  className="profileButton">Follow/Unfollow</button>);
+		}
 	}
 
 	handleFollow () {
@@ -37,6 +38,7 @@ class User extends React.Component {
 		if (!userDetails.details) {
 			return (<div></div>);
 		}
+
 		return (
 			<section className="userProfile">
 				<div className="coverImage ">
