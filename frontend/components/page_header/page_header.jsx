@@ -15,11 +15,13 @@ class PageHeader extends React.Component {
   sessionLinks () {
     return (
       <header className="home-header group">
-        <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
+        <Link to="/">
+          <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
+        </Link>
         <nav className="login-signup">
           <ul>
-            <li><Link to="/login" activeClassName="current">Log in</Link></li>
-            <li className="green"><Link to="/signup" activeClassName="current">Sign up</Link></li>
+            <li><Link to="/login" className="home-header-links">Log in</Link></li>
+            <li className="green"><Link to="/signup"  className="home-header-links" activeClassName="current">Sign up</Link></li>
           </ul>
         </nav>
       </header>
@@ -31,11 +33,13 @@ class PageHeader extends React.Component {
 
     return (
       <header className="home-header group">
-        <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
+        <Link to="/">
+          <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
+        </Link>
         <nav className="login-signup">
           <ul>
-            <li><Link to={ userPath }>{ currentUser.username }</Link></li>
-            <li><a onClick={this.handleLogout}>Log Out</a></li>
+            <li><Link to={ userPath } className="home-header-links">{ currentUser.username }</Link></li>
+            <li><a onClick={this.handleLogout} className="home-header-links">Log Out</a></li>
           </ul>
         </nav>
       </header>
