@@ -8,7 +8,14 @@ class User extends React.Component {
 		this.editProfile = this.editProfile.bind(this);
 	}
 
-	// Remember to include componentWillReceiveProps(newProps) (if required)
+	componentDidMount() {
+		this.props.fetchUserDetails(this.props.params.userId);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (this.props.params.userId !== nextProps.params.userId)
+			this.props.fetchUserDetails(nextProps.params.userId);
+	}
 
 	editOrFollowButton() {
 		// Should return
@@ -26,6 +33,10 @@ class User extends React.Component {
 	}
 
 	render() {
+		const { userDetails, children } = this.props;
+		if (!userDetails.details) {
+			return (<div></div>);
+		}
 		return (
 			<section className="userProfile">
 				<div className="coverImage ">
@@ -37,9 +48,10 @@ class User extends React.Component {
 					{ this.editOrFollowButton() }
 				</div>
 				<div className="userInfo">
-					<h2>Username</h2>
-					<p>Statistics for user id { this.props.params.userId }</p>
+					<h2>{ userDetails.details.username }</h2>
+					<p>Statistics for user id { userDetails.details.id }</p>
 				</div>
+				{ children }
       </section>
 		);
 	}
