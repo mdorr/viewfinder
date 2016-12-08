@@ -27,3 +27,6 @@ npm-debug.log
 
 # Ignore Mac OS system files
 .DS_Store
+
+# Ignore application configuration
+/config/application.yml

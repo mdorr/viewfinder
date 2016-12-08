@@ -36,14 +36,22 @@ class User extends React.Component {
 
 	render() {
 		const { userDetails, children } = this.props;
+		console.log(userDetails);
+
+
 		if (!userDetails.details) {
 			return (<div></div>);
 		}
 
+		let profilePicture = {
+			backgroundImage: `url(${userDetails.details.profile_picture})`,
+			backgroundSize: '100px 100px'
+		};
+
 		return (
 			<section className="userProfile">
 				<div className="coverImage ">
-					<div className="profilePictureLarge">
+					<div className="profilePictureLarge" style={profilePicture}>
 
 					</div>
 				</div>

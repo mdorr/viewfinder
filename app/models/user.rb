@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   attr_reader :password
   validates :password, length: { minimum: 6, allow_nil: true }
 
+
+  has_attached_file :profile_picture, default_url: "default-profile-picture.jpg"
+  validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\z/
+
   after_initialize :ensure_session_token
 
   def self.find_with_credentials(username, password)

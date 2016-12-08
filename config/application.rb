@@ -12,9 +12,17 @@ module Viewfinder
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Enable iFrame support on Heroku, see http://www.seanbehan.com/how-to-enable-iframe-support-on-heroku-with-ruby-on-rails-and-sinatra
-    config.action_dispatch.default_headers = {
-        'X-Frame-Options' => 'ALLOWALL'
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV["s3_bucket"],
+        :access_key_id => ENV["s3_access_key_id"],
+        :secret_access_key => ENV["s3_secret_access_key"],
+        :s3_region => ENV["s3_region"]
+      }
     }
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
