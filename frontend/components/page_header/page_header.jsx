@@ -32,8 +32,8 @@ class PageHeader extends React.Component {
     let userPath = "/user/" + currentUser.id;
 
     let badgePicture = {
-      backgroundImage: `url(${currentUser.profile_picture})`,
-			backgroundSize: '28px 28px'
+			backgroundSize: '28px 28px',
+      backgroundImage: `url(${currentUser.profile_picture})`
 		};
 
     return (
