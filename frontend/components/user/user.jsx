@@ -6,10 +6,12 @@ class User extends React.Component {
 		super(props);
 	}
 
+	// Remember to include componentWillReceiveProps(newProps)
+
 	render() {
 		return (
 			<section className="userProfile">
-        <p>This is the user profile</p>
+        <p>This is the user profile for id { this.props.params.userId }</p>
       </section>
 		);
 	}
