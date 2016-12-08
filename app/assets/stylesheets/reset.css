@@ -48,3 +48,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Clear box shadow for activated buttons */
+button:focus, button:active, button:focus:active {
+	background-image: none;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

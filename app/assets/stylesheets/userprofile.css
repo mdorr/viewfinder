@@ -7,28 +7,57 @@
   width: 100%;
   height: 200px;
   background: #ccff99;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #eaebef;
 }
 
 .profilePictureLarge {
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
   background: #eeff99;
   border-radius: 50%;
 }
 
+.profileButtons {
+  float: right;
+  padding: 10px;
+}
+
+.profileButton {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  background-color: #0099e5;
+  border: 1px solid #0088cc;
+  border-radius: 3px;
+  padding: 0px 10px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+
+  transition: all 0.20s ease-in-out;
+  text-shadow: 0px 1px 0px #0088cc;
+}
+
+.profileButton:hover {
+  background-color: #00aaff;
+}
+
 .userInfo {
-  margin-top: 120px;
+  margin-top: 55px;
   text-align: center;
 }
 
 .userInfo h2 {
-  font-size: 24px;
-  padding: 10px;
+  font-size: 30px;
+  padding: 25px;
+  margin-
 }
