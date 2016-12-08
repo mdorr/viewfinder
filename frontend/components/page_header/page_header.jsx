@@ -26,13 +26,15 @@ class PageHeader extends React.Component {
     );
   }
 
-  personalGreeting (currentUser, logout) {
+  personalGreeting (currentUser) {
+    let userPath = "/user/" + currentUser.id;
+
     return (
       <header className="home-header group">
         <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
         <nav className="login-signup">
           <ul>
-            <li><Link to="/user">{ currentUser.username }</Link></li>
+            <li><Link to={ userPath }>{ currentUser.username }</Link></li>
             <li><a onClick={this.handleLogout}>Log Out</a></li>
           </ul>
         </nav>
@@ -42,7 +44,7 @@ class PageHeader extends React.Component {
 
   render () {
     return (
-      this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()
+      this.props.currentUser ? this.personalGreeting(this.props.currentUser) : this.sessionLinks()
     );
   }
 }
