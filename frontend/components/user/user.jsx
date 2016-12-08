@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Modal from 'react-modal';
 
 class User extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleFollow = this.handleFollow.bind(this);
 		this.editProfile = this.editProfile.bind(this);
+
+		Modal.setAppElement('#root');
+		this.state = {
+			modalIsOpen: false
+		};
+
+		this.openEditProfileModal = this.openEditProfileModal.bind(this);
+		this.closeEditProfileModal = this.closeEditProfileModal.bind(this);
+		this.afterOpenEditProfileModal = this.afterOpenEditProfileModal.bind(this);
 	}
 
 	componentDidMount() {
@@ -19,7 +29,7 @@ class User extends React.Component {
 
 	editOrFollowButton() {
 		if (parseInt(this.props.params.userId) == this.props.loggedInUser) {
-			return (<button onClick={this.handleFollow}  className="profileButton">Edit your profile</button>);
+			return (<button onClick={this.openEditProfileModal}  className="profileButton">Edit your profile</button>);
 		} else {
 			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
 			return (<button onClick={this.handleFollow}  className="profileButton">Follow/Unfollow</button>);
@@ -32,6 +42,22 @@ class User extends React.Component {
 
 	editProfile () {
 		console.log("edit profile button clicked");
+	}
+
+	openEditProfileModal () {
+		this.setState({modalIsOpen: true});
+	}
+
+	afterOpenEditProfileModal () {
+		// references are now sync'd and can be accessed.
+	}
+
+	update(property) {
+		return e => this.setState({ [property]: e.target.value });
+	}
+
+	closeEditProfileModal () {
+		this.setState({modalIsOpen: false});
 	}
 
 	render() {
@@ -48,7 +74,43 @@ class User extends React.Component {
 
 		return (
 			<section className="userProfile">
-				<div className="coverImage ">
+        <Modal
+					isOpen={this.state.modalIsOpen}
+					onAfterOpen={this.afterOpenEditProfileModal}
+					onRequestClose={this.closeEditProfileModal}
+					className="ModalClass"
+          overlayClassName="OverlayClass"
+					contentLabel="Example Modal">
+
+					<div className="modalCoverImage">
+						<div className="profilePictureLarge" style={profilePicture}>
+						</div>
+					</div>
+
+					<div className="modalForm">
+						<label>Name</label>
+						<div className="modalInputRow">
+							<input value={ this.state.username } onChange={ this.update('username') } />
+							<input value={ this.state.username } onChange={ this.update('username') } />
+						</div>
+
+						<label>Location</label>
+						<div className="modalInputRow">
+							<input value={ this.state.username } onChange={ this.update('username') } />
+							<input value={ this.state.username } onChange={ this.update('username') } />
+						</div>
+
+						<label>About (optional)</label>
+						<textarea onChange={ this.update('username') }>{ this.state.username }</textarea>
+
+						<div className="modalInputRowRight">
+							<button className="modalFormCancelButton" onClick={this.closeEditProfileModal}>Cancel</button>
+							<button className="modalFormGreenButton" onClick={this.closeEditProfileModal}>Save</button>
+						</div>
+					</div>
+        </Modal>
+
+				<div className="coverImage">
 					<div className="profilePictureLarge" style={profilePicture}>
 					</div>
 				</div>

@@ -46,6 +46,7 @@
 
 .sessionForm button:hover {
   background-color: #39c544;
+  cursor: pointer;
 }
 
 .sessionForm input {
