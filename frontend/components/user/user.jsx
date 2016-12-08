@@ -21,6 +21,7 @@ class User extends React.Component {
 		if (parseInt(this.props.params.userId) == this.props.loggedInUser) {
 			return (<button onClick={this.handleFollow}  className="profileButton">Edit profile</button>);
 		} else {
+			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
 			return (<button onClick={this.handleFollow}  className="profileButton">Follow/Unfollow</button>);
 		}
 	}
