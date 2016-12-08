@@ -79,3 +79,14 @@ a {
   font-weight: normal;
   padding: 13px 40px;
 }
+
+.profilePictureSmall {
+  float: left;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-top: -10px;
+  margin-right: 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}

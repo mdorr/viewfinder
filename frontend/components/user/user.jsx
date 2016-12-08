@@ -19,7 +19,7 @@ class User extends React.Component {
 
 	editOrFollowButton() {
 		if (parseInt(this.props.params.userId) == this.props.loggedInUser) {
-			return (<button onClick={this.handleFollow}  className="profileButton">Edit profile</button>);
+			return (<button onClick={this.handleFollow}  className="profileButton">Edit your profile</button>);
 		} else {
 			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
 			return (<button onClick={this.handleFollow}  className="profileButton">Follow/Unfollow</button>);
@@ -36,8 +36,6 @@ class User extends React.Component {
 
 	render() {
 		const { userDetails, children } = this.props;
-		console.log(userDetails);
-
 
 		if (!userDetails.details) {
 			return (<div></div>);
@@ -52,7 +50,6 @@ class User extends React.Component {
 			<section className="userProfile">
 				<div className="coverImage ">
 					<div className="profilePictureLarge" style={profilePicture}>
-
 					</div>
 				</div>
 				<div className="profileButtons">

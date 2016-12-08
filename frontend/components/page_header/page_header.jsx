@@ -31,6 +31,11 @@ class PageHeader extends React.Component {
   personalGreeting (currentUser) {
     let userPath = "/user/" + currentUser.id;
 
+    let badgePicture = {
+      backgroundImage: `url(${currentUser.profile_picture})`,
+			backgroundSize: '28px 28px'
+		};
+
     return (
       <header className="home-header group">
         <Link to="/">
@@ -38,7 +43,12 @@ class PageHeader extends React.Component {
         </Link>
         <nav className="login-signup">
           <ul>
-            <li><Link to={ userPath } className="home-header-links">{ currentUser.username }</Link></li>
+            <li><Link to={ userPath } className="home-header-links">
+              <div className="profilePictureSmall"
+                style={badgePicture}>
+              </div>
+              { currentUser.username }
+            </Link></li>
             <li><a onClick={this.handleLogout} className="home-header-links">Log Out</a></li>
           </ul>
         </nav>
