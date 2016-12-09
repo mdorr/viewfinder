@@ -3,11 +3,17 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
 
   has_attached_file :profile_picture,
-    default_url: ->(attachment) { ActionController::Base.helpers.asset_path('default-profile-picture.jpg') }
+    default_url: ->(attachment) {
+      ActionController::Base.helpers.asset_path('default-profile-picture.jpg')
+    }
 
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\z/
 
-  has_attached_file :cover_image
+  has_attached_file :cover_image,
+    default_url: ->(attachment) {
+      ActionController::Base.helpers.asset_path('missing.jpg')
+    }
+
   validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\z/
 
   attr_reader :password

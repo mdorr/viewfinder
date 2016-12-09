@@ -7,7 +7,6 @@ class User extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleFollow = this.handleFollow.bind(this);
-		this.editProfile = this.editProfile.bind(this);
 
 		Modal.setAppElement('#root');
 
@@ -15,9 +14,10 @@ class User extends React.Component {
 			modalIsOpen: false,
 		};
 
-		this.openEditProfileModal = this.openEditProfileModal.bind(this);
-		this.closeEditProfileModal = this.closeEditProfileModal.bind(this);
-		this.afterOpenEditProfileModal = this.afterOpenEditProfileModal.bind(this);
+		this.openModal = this.openModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
+		this.afterOpenModal = this.afterOpenModal.bind(this);
+		this.saveChanges = this.saveChanges.bind(this);
 	}
 
 	componentDidMount() {
@@ -32,7 +32,7 @@ class User extends React.Component {
 
 	editOrFollowButton() {
 		if (parseInt(this.props.params.userId) == this.props.loggedInUser) {
-			return (<button onClick={this.openEditProfileModal}  className="profileButton">Edit your profile</button>);
+			return (<button onClick={this.openModal}  className="profileButton">Edit your profile</button>);
 		} else {
 			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
 			return (<button onClick={this.handleFollow}  className="profileButton">Follow/Unfollow</button>);
@@ -43,11 +43,11 @@ class User extends React.Component {
 		console.log("Follow/unfollow button clicked");
 	}
 
-	openEditProfileModal () {
+	openModal () {
 		this.setState({modalIsOpen: true});
 	}
 
-	afterOpenEditProfileModal () {
+	afterOpenModal () {
 		this.setState (merge(this.state, this.props.userDetails.details));
 	}
 
@@ -55,10 +55,16 @@ class User extends React.Component {
 		return e => this.setState({ [property]: e.target.value });
 	}
 
-	closeEditProfileModal (saveChanges = false) {
-		if (saveChanges) {
-			console.log("Saving changes");
-		}
+	saveChanges () {
+		let updatedUser = {
+			user: this.state,
+			id: this.state.id
+		};
+		this.props.updateUser(updatedUser);
+		this.closeModal()
+	};
+
+	closeModal (saveChanges = false) {
 		this.setState({modalIsOpen: false});
 	}
 
@@ -84,8 +90,8 @@ class User extends React.Component {
 			<section className="userProfile">
         <Modal
 					isOpen={this.state.modalIsOpen}
-					onAfterOpen={this.afterOpenEditProfileModal}
-					onRequestClose={this.closeEditProfileModal}
+					onAfterOpen={this.afterOpenModal}
+					onRequestClose={this.closeModal}
 					className="ModalClass"
           overlayClassName="OverlayClass"
 					contentLabel="Example Modal">
@@ -112,8 +118,8 @@ class User extends React.Component {
 						<textarea onChange={ this.update('description') } value= { this.state.description }></textarea>
 
 						<div className="modalInputRowRight">
-							<button className="modalFormCancelButton" onClick={this.closeEditProfileModal}>Cancel</button>
-							<button className="modalFormGreenButton" onClick={this.closeEditProfileModal}>Save</button>
+							<button className="modalFormCancelButton" onClick={this.closeModal}>Cancel</button>
+							<button className="modalFormGreenButton" onClick={this.saveChanges}>Save</button>
 						</div>
 					</div>
         </Modal>

@@ -13,6 +13,12 @@ export function fetchUserDetails(id) {
 	};
 }
 
+export function updateUser(user) {
+	return (dispatch) => {
+		return APIUtil.updateUser(user).then(user => dispatch(receiveUserDetails(user)));
+	};
+}
+
 export const receiveUserDetails = userDetails => ({
   type: RECEIVE_USER_DETAILS,
   userDetails
