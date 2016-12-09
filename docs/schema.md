@@ -8,16 +8,13 @@ username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-
-## user details
-
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-user_id         | integer   | not null, indexed
+firstname       | string    |
+lastname        | string    |
+city            | string    |
+country         | string    |
 description     | text      |
-profile_picture | attachment| //TODO: Maybe utilize photos table?
-cover_photo     | attachment|
+profile_picture | attachment| not null, defaults, is_picture
+cover_image     | attachment| is_picture
 
 ## photos
 
