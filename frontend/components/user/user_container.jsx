@@ -3,7 +3,7 @@ import { fetchUserDetails, updateUser } from '../../actions/user_actions';
 import User from './user';
 
 const mapStateToProps = ({ userDetails, session }) => {
-  return { userDetails, loggedInUser: session.currentUser.id };
+  return { userDetails, currentUser: session.currentUser };
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -31,7 +31,7 @@ class User extends React.Component {
 	}
 
 	editOrFollowButton() {
-		if (parseInt(this.props.params.userId) == this.props.loggedInUser) {
+		if (this.props.currentUser && this.props.currentUser.id == parseInt(this.props.params.userId)) {
 			return (<button onClick={this.openModal}  className="profileButton">Edit your profile</button>);
 		} else {
 			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
