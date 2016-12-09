@@ -18,6 +18,8 @@ class User extends React.Component {
 		this.closeModal = this.closeModal.bind(this);
 		this.afterOpenModal = this.afterOpenModal.bind(this);
 		this.saveChanges = this.saveChanges.bind(this);
+
+		this.displayedUserName = this.displayedUserName.bind(this);
 	}
 
 	componentDidMount() {
@@ -37,6 +39,15 @@ class User extends React.Component {
 			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
 			return (<button onClick={this.handleFollow}  className="profileButton">Follow/Unfollow</button>);
 		}
+	}
+
+	// Users can optionally enter their first
+	displayedUserName (details) {
+		let userName = details.username;
+		if (details.firstname || details.lastname) {
+			userName = `${details.firstname} ${details.lastname}`;
+		}
+		return userName.trim();
 	}
 
 	handleFollow () {
@@ -68,7 +79,7 @@ class User extends React.Component {
 		this.setState({modalIsOpen: false});
 	}
 
-	render() { 
+	render() {
 		const { userDetails, children } = this.props;
 
 		if (!userDetails.details) {
@@ -132,7 +143,7 @@ class User extends React.Component {
 					{ this.editOrFollowButton() }
 				</div>
 				<div className="userInfo">
-					<h2>{ details.username }</h2>
+					<h2>{ this.displayedUserName (details) }</h2>
 					<p>Statistics for user id { details.id }</p>
 				</div>
 				{ children }
