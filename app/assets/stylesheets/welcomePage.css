@@ -6,6 +6,7 @@
 .welcomePageMainPhoto {
   background-size: cover;
   background-position: center center;
+  background: image-url("mainPageCover.jpg");
   height: 600px;
   border-bottom: 1px solid #eaebef;
 }

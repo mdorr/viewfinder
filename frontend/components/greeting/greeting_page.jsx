@@ -25,13 +25,11 @@ class GreetingPage extends React.Component {
   }
 
   render() {
-    let mainPhoto = {
-      backgroundImage: `url('/assets/example-photos/mainPageCover.jpg')`
-    };
+
 
     return (
       <div>
-        <section className="welcomePageMainPhoto" style={ mainPhoto }>
+        <section className="welcomePageMainPhoto">
           <div className="welcomePageGreeting">
             <h2>Home to everyone's best photos</h2>
             <h3>Showcase your work, discover amazing photos, and stay inspired.</h3>
