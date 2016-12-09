@@ -2,12 +2,14 @@ class User < ActiveRecord::Base
   validates :username, :session_token, :password_digest, presence: true
   validates :username, :session_token, uniqueness: true
 
-  attr_reader :password
-  validates :password, length: { minimum: 6, allow_nil: true }
-
-
   has_attached_file :profile_picture, default_url: "default-profile-picture.jpg"
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\z/
+
+  has_attached_file :cover_image
+  validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\z/
+
+  attr_reader :password
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
 

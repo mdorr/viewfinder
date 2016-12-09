@@ -1,2 +1,1 @@
-json.extract! user, :id, :username
-json.profile_picture  asset_path(user.profile_picture.url)
+json.extract! user, :id, :username, :profile_picture, :cover_image, :firstname, :lastname, :city, :country, :description
