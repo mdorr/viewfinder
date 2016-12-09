@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 
 class GreetingPage extends React.Component {
@@ -13,6 +13,16 @@ class GreetingPage extends React.Component {
 		const user = { username: 'guest', password: 'password'};
 		this.props.login({ user });
 	}
+
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
+  }
+
+  redirectIfLoggedIn() {
+    if (this.props.loggedIn) {
+      this.props.router.push("/feed");
+    }
+  }
 
   render() {
     let mainPhoto = {
@@ -40,4 +50,4 @@ class GreetingPage extends React.Component {
   }
 }
 
-export default GreetingPage;
+export default withRouter(GreetingPage);
