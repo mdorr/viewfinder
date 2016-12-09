@@ -65,4 +65,23 @@
 
 .welcomePageFooter {
   background: #f4f5f8;
+  display: flex;
+  padding: 30px;
+  line-height: 1.4em;
+}
+
+.welcomePageFooterContainer {
+  width: 300px;
+  padding: 10px;
+}
+
+.welcomePageFooterContainer h4,
+.welcomePageFooterContainer p,
+.welcomePageFooterContainer li {
+  margin-bottom: 10px;
+}
+
+.welcomePageFooterContainer h4 {
+  font-weight: bold;
+  text-transform: uppercase;
 }

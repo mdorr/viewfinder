@@ -43,7 +43,23 @@ class GreetingPage extends React.Component {
           </div>
         </section>
         <footer className="welcomePageFooter">
-
+          <div className="welcomePageFooterContainer">
+            <h4>About</h4>
+            <p>
+              Viewfinder is photo community for discovering and sharing the very best work by the most talented photographs worldwide.
+            </p>
+            <p>
+              Viewfinder has been created by Maurice Spiewack as the capstone project in the Full Stack Developer course at App Academy NYC.
+            </p>
+          </div>
+          <div className="welcomePageFooterContainer">
+            <h4>Links</h4>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/mspiew">LinkedIn</a></li>
+              <li><a href="http://dorr.in">dorr.in</a></li>
+              <li><a href="https://www.appacademy.io/">App Academy</a></li>
+            </ul>
+          </div>
         </footer>
       </div>
     );
