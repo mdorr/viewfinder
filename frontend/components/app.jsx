@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeaderContainer from './page_header/page_header_container';
+import GreetingPageContainer from './greeting/greeting_page_container';
 import { Link } from 'react-router';
 
 
@@ -22,30 +23,13 @@ class App extends React.Component {
         </div>
       );
     } else {
-      let mainPhoto = {
-        backgroundImage: `url('/assets/example-photos/mainPageCover.jpg')`
-      };
-
       return (
-        <div>
+        <page>
           <header>
             <PageHeaderContainer />
           </header>
-          <section className="welcomePageMainPhoto" style={ mainPhoto }>
-            <div className="welcomePageGreeting">
-              <h2>Home to everyone's best photos</h2>
-              <h3>Showcase your work, discover amazing photos, and stay inspired.</h3>
-            </div>
-            <div className="welcomePageButtons">
-              <button><Link to="/signup"  className="home-header-links" activeClassName="current">Sign up today</Link></button>
-
-              <button><Link to="/signup"  className="home-header-links" activeClassName="current">Explore as Guest</Link></button>
-            </div>
-          </section>
-          <footer className="welcomePageFooter">
-
-          </footer>
-        </div>
+          <GreetingPageContainer />
+        </page>
       );
     }
   }
