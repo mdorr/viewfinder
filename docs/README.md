@@ -21,7 +21,7 @@ This App will include the following features, fully functional, styled and seede
 ### User accounts
 * ~~User creation/signup~~ *(Done and live)*
 * ~~User login~~ *(Done and live)*
-* Guest/Demo login
+* ~~Guest/Demo login~~ *(Done and live)*
 
 ### Basic features
 * Post pictures
