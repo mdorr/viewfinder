@@ -10,7 +10,12 @@ class User extends React.Component {
 
 		Modal.setAppElement('#root');
 		this.state = {
-			modalIsOpen: false
+			modalIsOpen: false,
+			firstName: "",
+			lastName: "",
+			city: "",
+			country: "",
+			description: ""
 		};
 
 		this.openEditProfileModal = this.openEditProfileModal.bind(this);
@@ -23,8 +28,9 @@ class User extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.params.userId !== nextProps.params.userId)
+		if (this.props.params.userId !== nextProps.params.userId) {
 			this.props.fetchUserDetails(nextProps.params.userId);
+		}
 	}
 
 	editOrFollowButton() {
@@ -90,18 +96,18 @@ class User extends React.Component {
 					<div className="modalForm">
 						<label>Name</label>
 						<div className="modalInputRow">
-							<input value={ this.state.username } onChange={ this.update('username') } />
-							<input value={ this.state.username } onChange={ this.update('username') } />
+							<input value={ this.state.firstName } onChange={ this.update('firstName') } />
+							<input value={ this.state.lastName } onChange={ this.update('lastName') } />
 						</div>
 
 						<label>Location</label>
 						<div className="modalInputRow">
-							<input value={ this.state.username } onChange={ this.update('username') } />
-							<input value={ this.state.username } onChange={ this.update('username') } />
+							<input value={ this.state.city } onChange={ this.update('city') } />
+							<input value={ this.state.country } onChange={ this.update('country') } />
 						</div>
 
 						<label>About (optional)</label>
-						<textarea onChange={ this.update('username') }>{ this.state.username }</textarea>
+						<textarea onChange={ this.update('description') } value= { this.state.description }></textarea>
 
 						<div className="modalInputRowRight">
 							<button className="modalFormCancelButton" onClick={this.closeEditProfileModal}>Cancel</button>

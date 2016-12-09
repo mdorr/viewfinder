@@ -18,6 +18,13 @@ class SessionForm extends React.Component {
 		}
 	}
 
+	// We might have an error rendered from trying to sign in; if we then change to login, we don't want that error message to persist
+	componentWillReceiveProps(nextProps) {
+		if (this.props.route !== nextProps.route) {
+			this.props.clearErrors();
+		}
+	}
+
 	update(property) {
     return e => this.setState({ [property]: e.target.value });
   }
