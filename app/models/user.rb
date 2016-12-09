@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
   validates :username, :session_token, :password_digest, presence: true
   validates :username, :session_token, uniqueness: true
 
-  has_attached_file :profile_picture, default_url: "default-profile-picture.jpg"
+  has_attached_file :profile_picture,
+    default_url: ->(attachment) { ActionController::Base.helpers.asset_path('default-profile-picture.jpg') }
+
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\z/
 
   has_attached_file :cover_image

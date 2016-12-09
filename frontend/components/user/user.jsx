@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
+import merge from 'lodash/merge';
 
 class User extends React.Component {
 	constructor(props) {
@@ -9,13 +10,9 @@ class User extends React.Component {
 		this.editProfile = this.editProfile.bind(this);
 
 		Modal.setAppElement('#root');
+
 		this.state = {
 			modalIsOpen: false,
-			firstName: "",
-			lastName: "",
-			city: "",
-			country: "",
-			description: ""
 		};
 
 		this.openEditProfileModal = this.openEditProfileModal.bind(this);
@@ -46,23 +43,22 @@ class User extends React.Component {
 		console.log("Follow/unfollow button clicked");
 	}
 
-	editProfile () {
-		console.log("edit profile button clicked");
-	}
-
 	openEditProfileModal () {
 		this.setState({modalIsOpen: true});
 	}
 
 	afterOpenEditProfileModal () {
-		// references are now sync'd and can be accessed.
+		this.setState (merge(this.state, this.props.userDetails.details));
 	}
 
 	update(property) {
 		return e => this.setState({ [property]: e.target.value });
 	}
 
-	closeEditProfileModal () {
+	closeEditProfileModal (saveChanges = false) {
+		if (saveChanges) {
+			console.log("Saving changes");
+		}
 		this.setState({modalIsOpen: false});
 	}
 
@@ -73,9 +69,15 @@ class User extends React.Component {
 			return (<div></div>);
 		}
 
+		const details = userDetails.details;
+
 		let profilePicture = {
-			backgroundImage: `url(${userDetails.details.profile_picture})`,
+			backgroundImage: `url(${details.profile_picture})`,
 			backgroundSize: '100px 100px'
+		};
+
+		let coverImage = {
+			backgroundImage: `url(${details.cover_image})`
 		};
 
 		return (
@@ -88,7 +90,7 @@ class User extends React.Component {
           overlayClassName="OverlayClass"
 					contentLabel="Example Modal">
 
-					<div className="modalCoverImage">
+					<div className="modalCoverImage" style={coverImage}>
 						<div className="profilePictureLarge" style={profilePicture}>
 						</div>
 					</div>
@@ -96,8 +98,8 @@ class User extends React.Component {
 					<div className="modalForm">
 						<label>Name</label>
 						<div className="modalInputRow">
-							<input value={ this.state.firstName } onChange={ this.update('firstName') } />
-							<input value={ this.state.lastName } onChange={ this.update('lastName') } />
+							<input value={ this.state.firstname } onChange={ this.update('firstname') } />
+							<input value={ this.state.lastname } onChange={ this.update('lastname') } />
 						</div>
 
 						<label>Location</label>
@@ -124,8 +126,8 @@ class User extends React.Component {
 					{ this.editOrFollowButton() }
 				</div>
 				<div className="userInfo">
-					<h2>{ userDetails.details.username }</h2>
-					<p>Statistics for user id { userDetails.details.id }</p>
+					<h2>{ details.username }</h2>
+					<p>Statistics for user id { details.id }</p>
 				</div>
 				{ children }
       </section>
