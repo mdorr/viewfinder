@@ -11,18 +11,8 @@ class GreetingPage extends React.Component {
   handleGuestLogin(e) {
 		e.preventDefault();
 		const user = { username: 'guest', password: 'password'};
-		this.props.login({ user });
+		this.props.login({ user }).then(() => this.props.router.push("/feed")); // Redirect after guest login
 	}
-
-  componentDidUpdate() {
-    this.redirectIfLoggedIn();
-  }
-
-  redirectIfLoggedIn() {
-    if (this.props.loggedIn) {
-      this.props.router.push("/feed");
-    }
-  }
 
   render() {
     let mainPhoto = {

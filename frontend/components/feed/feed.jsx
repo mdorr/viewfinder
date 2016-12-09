@@ -7,12 +7,6 @@ class Feed extends React.Component {
     super(props);
   }
 
-  handleGuestLogin(e) {
-		e.preventDefault();
-		const user = { username: 'guest', password: 'password'};
-		this.props.login({ user });
-	}
-
   render() {
     return (
       <section>

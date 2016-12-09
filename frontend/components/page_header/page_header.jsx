@@ -8,8 +8,7 @@ class PageHeader extends React.Component {
   }
 
   handleLogout() {
-    this.props.logout().then(() => this.props.router.push("/"));
-
+    this.props.logout().then(() => this.props.router.push("/")); // Redirect after logout
   }
 
   sessionLinks () {

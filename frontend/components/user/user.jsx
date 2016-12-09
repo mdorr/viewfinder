@@ -61,14 +61,14 @@ class User extends React.Component {
 			id: this.state.id
 		};
 		this.props.updateUser(updatedUser);
-		this.closeModal()
-	};
+		this.closeModal();
+	}
 
-	closeModal (saveChanges = false) {
+	closeModal () {
 		this.setState({modalIsOpen: false});
 	}
 
-	render() {
+	render() { 
 		const { userDetails, children } = this.props;
 
 		if (!userDetails.details) {
