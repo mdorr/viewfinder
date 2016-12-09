@@ -34,7 +34,7 @@ class GreetingPage extends React.Component {
         </section>
         <footer className="welcomePageFooter">
           <div className="welcomePageFooterContainer">
-            <h4>About</h4>
+            <h4>About Viewfinder</h4>
             <p>
               Viewfinder is photo community for discovering and sharing the very best work by the most talented photographs worldwide.
             </p>
