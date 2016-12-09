@@ -48,6 +48,7 @@
 
 .profileButton:hover {
   background-color: #00aaff;
+  cursor: pointer;
 }
 
 .userInfo {
