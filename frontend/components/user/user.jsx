@@ -109,6 +109,7 @@ class User extends React.Component {
 
 					<div className="modalCoverImage" style={coverImage}>
 						<div className="profilePictureLarge" style={profilePicture}>
+							
 						</div>
 					</div>
 
