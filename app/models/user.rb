@@ -19,6 +19,24 @@ class User < ActiveRecord::Base
   attr_reader :password
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many(
+    :following_users,
+    :class_name => "Follows",
+    :foreign_key => :following_id,
+    :primary_key => :id
+  )
+
+  has_many :followers, :through => :following_users, :source => :followers
+
+  has_many(
+    :followed_users,
+    :class_name => "Follows",
+    :foreign_key => :following_id,
+    :primary_key => :id
+  )
+
+  has_many :followed, :through => :followed_users, :source => :followed
+
   after_initialize :ensure_session_token
 
   def self.find_with_credentials(username, password)
