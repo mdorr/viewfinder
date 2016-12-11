@@ -1,0 +1,44 @@
+.uploadModal {
+  margin: auto;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
+
+  background: #f6f7f9;
+  border-radius: 3px;
+
+  text-align: center;
+}
+
+.uploadButtonContainer {
+  margin-top: 150px;
+}
+
+.uploadButton {
+  color: #fff;
+  font-weight: bold;
+  background-color: #0099e5;
+  border: 1px solid #0088cc;
+  border-radius: 3px;
+  padding: 10px 20px;
+  height: 39px;
+  line-height: 37px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 179px;
+  margin: 10px 14px;
+  transition: all 0.20s ease-in-out;
+  text-shadow: 0px 1px 0px #0088cc;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.uploadButton:hover {
+  background-color: #00aaff;
+  cursor: pointer;
+}

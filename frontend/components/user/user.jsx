@@ -20,6 +20,7 @@ class User extends React.Component {
 		this.saveChanges = this.saveChanges.bind(this);
 
 		this.displayedUserName = this.displayedUserName.bind(this);
+
 	}
 
 	componentDidMount() {
@@ -105,11 +106,11 @@ class User extends React.Component {
 					onRequestClose={this.closeModal}
 					className="ModalClass"
           overlayClassName="OverlayClass"
-					contentLabel="Example Modal">
+					contentLabel="Edit User">
 
 					<div className="modalCoverImage" style={coverImage}>
 						<div className="profilePictureLarge" style={profilePicture}>
-							
+
 						</div>
 					</div>
 
