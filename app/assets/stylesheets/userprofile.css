@@ -62,3 +62,16 @@
   font-size: 30px;
   padding: 25px;
 }
+
+.userInfo ul {
+  margin: 0 auto;
+}
+.userInfo li {
+  color: #b9c1c7;
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.userInfo span {
+  font-weight: bold;
+}

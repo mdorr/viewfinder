@@ -84,6 +84,28 @@ class User extends React.Component {
 		this.setState({modalIsOpen: false});
 	}
 
+	userStats (userDetails) {
+		let stats = [];
+
+		stats.push((<li><span>{ userDetails.followers.length }</span> Followers</li>));
+		stats.push((<li><span>{ userDetails.followed.length }</span> Following</li>));
+
+		let locationString = "";
+		if (userDetails.city && userDetails.country) {
+			locationString = `${userDetails.city}, ${userDetails.country}`;
+		} else if (userDetails.city) {
+			locationString = userDetails.city;
+		} else if (userDetails.country) {
+			locationString = userDetails.country;
+		}
+
+		if (locationString != "") {
+			stats.push(<li>{ locationString }</li>);
+		}
+
+		return (<ul>{ stats }</ul>);
+	}
+
 	render() {
 		const { userDetails, children } = this.props;
 
@@ -150,7 +172,7 @@ class User extends React.Component {
 				</div>
 				<div className="userInfo">
 					<h2>{ this.displayedUserName (details) }</h2>
-					<p>{ details.followed.length } users followed - { details.followers.length } users following</p>
+					{ this.userStats(details) }
 				</div>
 				{ children }
       </section>
