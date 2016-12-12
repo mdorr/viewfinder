@@ -42,3 +42,14 @@
   background-color: #00aaff;
   cursor: pointer;
 }
+
+.imagePreview img {
+  border: none;
+  padding: 20px;
+  width: 200px;
+  height: auto;
+}
+
+.confirmUploadButtons {
+  margin: 0 auto;
+}

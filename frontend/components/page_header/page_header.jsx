@@ -97,7 +97,7 @@ class PageHeader extends React.Component {
         <Modal
           isOpen={ this.state.uploadModalIsOpen }
           onAfterOpen={ this.afterOpenUpload }
-					onRequestClose={ this.closeModal}
+					onRequestClose={ this.closeModal }
           className="uploadModal"
           overlayClassName="OverlayClass"
           contentLabel="Upload photos">
@@ -107,8 +107,10 @@ class PageHeader extends React.Component {
                   Select Photos
                 </label>
                 <input id="file_button" className="hiddenFileInput" type="file" onChange={this.updateFiles}/>
-
-                <div className="modalInputRowRight">
+                <div className="imagePreview">
+                  <img src={this.state.imageUrl}/>
+                </div>
+                <div className="confirmUploadButtons">
                   <button className="modalFormCancelButton" onClick={this.closeModal}>Cancel</button>
                   <button className="modalFormGreenButton" onClick={this.saveImages}>Save</button>
                 </div>
