@@ -45,7 +45,7 @@ class User extends React.Component {
 		if (this.props.currentUser && this.props.currentUser.id == parseInt(this.props.params.userId)) {
 			return (<button onClick={this.openModal}  className="profileButton">Edit your profile</button>);
 		} else {
-			return <FollowContainer userToFollowId={ this.props.params.userId } />;
+			return <FollowContainer followUserId={ this.props.params.userId } />;
 		}
 	}
 

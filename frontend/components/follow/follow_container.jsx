@@ -7,7 +7,7 @@ const mapStateToProps = ({ session }, ownProps) => {
     currentUserId: session.currentUser.id,
     currentUser: session.currentUser,
     followingCurrentUser: session.currentUser.followed,
-    userToFollowId: parseInt(ownProps.userToFollowId)
+    followUserId: parseInt(ownProps.followUserId)
   };
 };
 

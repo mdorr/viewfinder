@@ -14,18 +14,18 @@ class Follow extends React.Component {
   }
 
   componentWillMount () {
-    this.checkIfUserIsFollowed(this.props.followingCurrentUser, this.props.userToFollowId);
+    this.checkIfUserIsFollowed(this.props.followingCurrentUser, this.props.followUserId);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.checkIfUserIsFollowed(nextProps.followingCurrentUser, nextProps.userToFollowId);
+    this.checkIfUserIsFollowed(nextProps.followingCurrentUser, nextProps.followUserId);
   }
 
-  checkIfUserIsFollowed (currentUserIsFollowing, userToFollowId) {
+  checkIfUserIsFollowed (currentUserIsFollowing, otherUserId) {
     let isFollowed = false;
 
     currentUserIsFollowing.forEach((el) => {
-      if (el.id == userToFollowId) {
+      if (el.id == otherUserId) {
         isFollowed = true;
       }
     });
@@ -40,7 +40,7 @@ class Follow extends React.Component {
 		let follow = {
 			follow: {
 				following_user_id: this.props.currentUserId,
-				followed_user_id: this.props.userToFollowId
+				followed_user_id: this.props.followUserId
 			}
 		};
 		this.props.follow(follow);
@@ -50,7 +50,7 @@ class Follow extends React.Component {
 		let unfollow = {
 			follow: {
 				following_user_id: this.props.currentUserId,
-				followed_user_id: this.props.userToFollowId
+				followed_user_id: this.props.followUserId
 			}
 		};
 		this.props.unfollow(unfollow);
