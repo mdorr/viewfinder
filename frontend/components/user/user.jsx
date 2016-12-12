@@ -114,18 +114,18 @@ class User extends React.Component {
 					<div className="modalForm">
 						<label>Name</label>
 						<div className="modalInputRow">
-							<input value={ this.state.firstname } onChange={ this.update('firstname') } />
-							<input value={ this.state.lastname } onChange={ this.update('lastname') } />
+							<input value={ this.state.firstname } onChange={ this.update('firstname') } placeholder="First name" />
+							<input value={ this.state.lastname } onChange={ this.update('lastname') } placeholder="Last name" />
 						</div>
 
 						<label>Location</label>
 						<div className="modalInputRow">
-							<input value={ this.state.city } onChange={ this.update('city') } />
-							<input value={ this.state.country } onChange={ this.update('country') } />
+							<input value={ this.state.city } onChange={ this.update('city') } placeholder="City" />
+							<input value={ this.state.country } onChange={ this.update('country') } placeholder="Country" />
 						</div>
 
 						<label>About (optional)</label>
-						<textarea onChange={ this.update('description') } value= { this.state.description }></textarea>
+						<textarea onChange={ this.update('description') } value= { this.state.description } placeholder="Tell the world your story."></textarea>
 
 						<div className="modalInputRowRight">
 							<button className="modalFormCancelButton" onClick={this.closeModal}>Cancel</button>
