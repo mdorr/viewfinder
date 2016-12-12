@@ -1,4 +1,4 @@
 json.id photo.id
-json.user photo.user
+json.username photo.user.readableUserName
 json.description photo.description
 json.image_url asset_path(photo.picture.url)
