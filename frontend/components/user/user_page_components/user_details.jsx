@@ -1,14 +1,6 @@
 import React from 'react';
 
 const UserDetails = ({details}) => {
-	const displayedUserName = (details) => {
-		let userName = details.username;
-		if (details.firstname || details.lastname) {
-			userName = `${details.firstname} ${details.lastname}`;
-		}
-		return userName.trim();
-	};
-
   const userStats = (userDetails) => {
 		let stats = [];
 
@@ -33,7 +25,7 @@ const UserDetails = ({details}) => {
 
   return (
     <div className="userInfo">
-      <h2>{ displayedUserName(details) }</h2>
+      <h2>{ details.readableUserName }</h2>
       { userStats(details) }
     </div>
   );
