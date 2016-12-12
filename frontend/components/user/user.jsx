@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import merge from 'lodash/merge';
 import FollowContainer from './../follow/follow_container';
+import UserDetails from './user_page_components/user_details';
 
 class User extends React.Component {
 	constructor(props) {
@@ -18,7 +19,6 @@ class User extends React.Component {
 		this.closeModal = this.closeModal.bind(this);
 		this.afterOpenModal = this.afterOpenModal.bind(this);
 		this.saveChanges = this.saveChanges.bind(this);
-		this.displayedUserName = this.displayedUserName.bind(this);
 		this.isUserFollowed = this.isUserFollowed.bind(this);
 	}
 
@@ -49,14 +49,7 @@ class User extends React.Component {
 		}
 	}
 
-	// Users can optionally enter their first
-	displayedUserName (details) {
-		let userName = details.username;
-		if (details.firstname || details.lastname) {
-			userName = `${details.firstname} ${details.lastname}`;
-		}
-		return userName.trim();
-	}
+
 
 
 	openModal () {
@@ -82,28 +75,6 @@ class User extends React.Component {
 
 	closeModal () {
 		this.setState({modalIsOpen: false});
-	}
-
-	userStats (userDetails) {
-		let stats = [];
-
-		stats.push((<li><span>{ userDetails.followers.length }</span> Followers</li>));
-		stats.push((<li><span>{ userDetails.followed.length }</span> Following</li>));
-
-		let locationString = "";
-		if (userDetails.city && userDetails.country) {
-			locationString = `${userDetails.city}, ${userDetails.country}`;
-		} else if (userDetails.city) {
-			locationString = userDetails.city;
-		} else if (userDetails.country) {
-			locationString = userDetails.country;
-		}
-
-		if (locationString != "") {
-			stats.push(<li>{ locationString }</li>);
-		}
-
-		return (<ul>{ stats }</ul>);
 	}
 
 	render() {
@@ -170,10 +141,7 @@ class User extends React.Component {
 				<div className="profileButtons">
 					{ this.editOrFollowButton() }
 				</div>
-				<div className="userInfo">
-					<h2>{ this.displayedUserName (details) }</h2>
-					{ this.userStats(details) }
-				</div>
+				<UserDetails details={details} />
 				{ children }
       </section>
 		);
