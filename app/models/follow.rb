@@ -1,16 +1,15 @@
-class Follows < ActiveRecord::Base
+class Follow < ActiveRecord::Base
   belongs_to(
-    :followers,
+    :follower,
     :class_name => "User",
     :foreign_key => :following_id,
     :primary_key => :id
   )
 
   belongs_to(
-    :followed,
+    :followed_user,
     :class_name => "User",
     :foreign_key => :followed_id,
     :primary_key => :id
   )
-
 end

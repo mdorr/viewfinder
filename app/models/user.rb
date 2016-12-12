@@ -20,22 +20,22 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many(
-    :following_users,
-    :class_name => "Follows",
-    :foreign_key => :following_id,
+    :users_following_me,
+    :class_name => "Follow",
+    :foreign_key => :followed_id,
     :primary_key => :id
   )
 
-  has_many :followers, :through => :following_users, :source => :followers
+  has_many :followers, :through => :users_following_me, :source => :follower
 
   has_many(
-    :followed_users,
-    :class_name => "Follows",
+    :users_i_follow,
+    :class_name => "Follow",
     :foreign_key => :following_id,
     :primary_key => :id
   )
 
-  has_many :followed, :through => :followed_users, :source => :followed
+  has_many :followed, :through => :users_i_follow, :source => :followed_user
 
   after_initialize :ensure_session_token
 
