@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import LoginButtons from './header_components/login_buttons'
 
+
 class PageHeader extends React.Component {
   constructor(props){
     super(props);
@@ -12,6 +13,7 @@ class PageHeader extends React.Component {
     this.updateFiles = this.updateFiles.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.saveImages = this.saveImages.bind(this);
+
     Modal.setAppElement('#root');
 
     this.state = {
@@ -51,22 +53,16 @@ class PageHeader extends React.Component {
   }
 
   saveImages () {
-    debugger
-    var formData = new FormData();
+    let formData = new FormData();
+    formData.append("photo[user_id]", this.props.currentUser.id);
     formData.append("photo[picture]", this.state.imageFile);
-    //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
+    this.props.upload(formData); //then: reveice photos or redirect to user page //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
 
     this.closeModal();
   }
 
   closeModal () {
     this.setState({ uploadModalIsOpen: false });
-  }
-
-  loginSignupNavigation () {
-    return (
-      <LoginButtons />
-    );
   }
 
   loggedInNavigation (currentUser) {
@@ -125,7 +121,7 @@ class PageHeader extends React.Component {
 
   render () {
     return (
-      this.props.currentUser ? this.loggedInNavigation(this.props.currentUser) : this.loginSignupNavigation()
+      this.props.currentUser ? this.loggedInNavigation(this.props.currentUser) : <LoginButtons />
     );
   }
 }
