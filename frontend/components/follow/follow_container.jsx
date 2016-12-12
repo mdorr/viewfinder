@@ -4,9 +4,7 @@ import Follow from './follow';
 
 const mapStateToProps = ({ session }, ownProps) => {
   return {
-    currentUserId: session.currentUser.id,
     currentUser: session.currentUser,
-    followingCurrentUser: session.currentUser.followed,
     followUserId: parseInt(ownProps.followUserId)
   };
 };
