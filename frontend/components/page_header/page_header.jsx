@@ -76,7 +76,8 @@ class PageHeader extends React.Component {
         <Modal
           isOpen={ this.state.uploadModalIsOpen }
           onAfterOpen={ this.afterOpenUpload }
-					onRequestClose={ this.closeModal}  					className="uploadModal"
+					onRequestClose={ this.closeModal}
+          className="uploadModal"
           overlayClassName="OverlayClass"
           contentLabel="Upload photos">
             <div>

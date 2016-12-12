@@ -2,12 +2,11 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import merge from 'lodash/merge';
+import FollowContainer from './../follow/follow_container';
 
 class User extends React.Component {
 	constructor(props) {
 		super(props);
-		this.followUser = this.followUser.bind(this);
-		this.unfollowUser = this.unfollowUser.bind(this);
 
 		Modal.setAppElement('#root');
 
@@ -42,37 +41,11 @@ class User extends React.Component {
 		return false;
 	}
 
-	followUser () {
-		let follow = {
-			follow: {
-				following_user_id: this.props.currentUser.id,
-				followed_user_id: this.props.params.userId
-			}
-		};
-		this.props.follow(follow).then(console.log("Followed"));
-	}
-
-	unfollowUser () {
-		let unfollow = {
-			follow: {
-				following_user_id: this.props.currentUser.id,
-				followed_user_id: this.props.params.userId
-			}
-		};
-		this.props.unfollow(unfollow).then(console.log("Unfollowed"));
-	}
-
 	editOrFollowButton() {
 		if (this.props.currentUser && this.props.currentUser.id == parseInt(this.props.params.userId)) {
 			return (<button onClick={this.openModal}  className="profileButton">Edit your profile</button>);
 		} else {
-			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
-
-			if (this.isUserFollowed (this.props.params.userId)) {
-				return (<button onClick={this.unfollowUser}  className="profileButton">Unfollow</button>);
-			} else {
-				return (<button onClick={this.followUser}  className="profileButton">Follow</button>);
-			}
+			return <FollowContainer otherUserId={ this.props.params.userId } />;
 		}
 	}
 

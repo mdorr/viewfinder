@@ -11,6 +11,7 @@ const UserDetailsReducer = (state = _nullUserDetails, action) => {
     case RECEIVE_USER_DETAILS:
       const details = action.userDetails;
       return merge({}, _nullUserDetails, {details});
+      // RECEIVE FOLLOW // RECEIVE UNFOLLOWS
     default:
       return state;
   }
