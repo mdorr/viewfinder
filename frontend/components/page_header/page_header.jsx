@@ -53,7 +53,7 @@ class PageHeader extends React.Component {
   saveImages () {
     debugger
     var formData = new FormData();
-    formData.append("photo[image]", this.state.imageFile);
+    formData.append("photo[picture]", this.state.imageFile);
     //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
 
     this.closeModal();
