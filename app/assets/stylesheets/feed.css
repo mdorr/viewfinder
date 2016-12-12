@@ -1,0 +1,44 @@
+.feedPage {
+  margin: 20px auto;
+  width: 1004px;
+}
+
+.feedContainer {
+  float: left;
+  width: 702px;
+  height: 100px;
+}
+
+.feedElement {
+  border: 1px solid #eeeff2;
+  background-color: #ffffff;
+  width: 700px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.photo img {
+  width: 700px;
+  height: auto;
+}
+
+.photoDescription,
+.photoInfo {
+  padding: 20px;
+}
+
+.photoDescription {
+  border-top: 1px solid #eeeff2;
+}
+
+.sideBar {
+  float: right;
+  width: 282px;
+}
+
+.userInfoBlock {
+  width: 280px;
+  padding: 20px;
+  border: 1px solid #eeeff2;
+  background-color: #ffffff;
+}

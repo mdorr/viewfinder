@@ -27,7 +27,7 @@ This App will include the following features, fully functional, styled and seede
 * Post pictures
 * Home feed
 * Profile page (own profile, other user's profile)
-* Follow other users
+* ~~Follow other users~~ *(Done and live)*
 
 ### Social (Bonus)
 * Likes
