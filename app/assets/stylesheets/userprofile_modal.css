@@ -10,6 +10,8 @@
 
   background: #f6f7f9;
   border-radius: 3px;
+
+  transition: all 1s ease-in-out;
 }
 
 .OverlayClass {
@@ -19,6 +21,8 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+
+  transition: all 1s ease-in-out;
 }
 
 .modalInputRow {
