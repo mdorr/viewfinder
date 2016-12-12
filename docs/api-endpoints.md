@@ -23,10 +23,8 @@
 * GET /api/users/:user_id/photos -- get photos by a specific user
 
 ### Follows
-* GET /api/users/:user_id/follows
-* POST /api/users/:user_id/follows
-* DELETE /api/users/:user_id/follows
-* GET /api/users/:user_id/following -- get people following this user
+* POST /api/follows
+* DELETE /api/follows
 
 ### Likes
 * GET /api/photos/:photo_id/likes

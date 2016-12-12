@@ -30,8 +30,8 @@ description     | text      |
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-user_id         | integer   | not null, indexed
-following_id    | integer   | not null, indexed
+following_id    | integer   | not null, indexed, unique (scope: followed_id)
+followed_id     | integer   | not null, indexed, unique (scope: following_id)
 
 ## likes
 
