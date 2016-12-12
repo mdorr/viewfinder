@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import merge from 'lodash/merge';
 import FollowContainer from './../follow/follow_container';
 import UserDetails from './user_page_components/user_details';
+import Feed from './../feed/feed.jsx';
 
 class User extends React.Component {
 	constructor(props) {
@@ -48,9 +49,6 @@ class User extends React.Component {
 			return <FollowContainer followUserId={ this.props.params.userId } />;
 		}
 	}
-
-
-
 
 	openModal () {
 		this.setState({modalIsOpen: true});
@@ -143,6 +141,7 @@ class User extends React.Component {
 				</div>
 				<UserDetails details={details} />
 				{ children }
+				<Feed photos={details.photos} currentUser={this.props.currentUser} />
       </section>
 		);
 	}
