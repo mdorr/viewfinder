@@ -37,6 +37,8 @@ class User < ActiveRecord::Base
 
   has_many :followed, :through => :users_i_follow, :source => :followed_user
 
+  has_many :photos
+
   after_initialize :ensure_session_token
 
   def self.find_with_credentials(username, password)
