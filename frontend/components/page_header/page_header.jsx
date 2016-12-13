@@ -69,13 +69,11 @@ class PageHeader extends React.Component {
   loggedInNavigation (currentUser) {
     let userPath = "/user/" + currentUser.id;
 
-    let badgePicture = {
-			backgroundSize: '28px 28px',
-      backgroundImage: `url(${currentUser.profile_picture})`
-		};
-
     return (
       <header className="home-header group">
+        <Link to="/">
+          <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
+        </Link>
         <nav className="login-signup">
           <ul>
             <li><Link to={ userPath } className="home-header-links">
