@@ -147,6 +147,12 @@ class User extends React.Component {
 					{ this.editOrFollowButton() }
 				</div>
 				<UserDetails details={details} />
+				<div className="subNavigation">
+					<ul>
+						<li><Link to={ `/user/${ details.id }/photos/` } activeClassName="active">Photos</Link></li>
+						<li><Link to={ `/user/${ details.id }/about/` } activeClassName="active">About</Link></li>
+					</ul>
+				</div>
 				{ children }
       </section>
 		);

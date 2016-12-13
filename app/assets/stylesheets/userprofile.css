@@ -75,3 +75,66 @@
 .userInfo span {
   font-weight: bold;
 }
+
+.subNavigation {
+  margin: 0 auto;
+  background-color: #ffffff;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #eaebef;
+}
+
+.subNavigation ul {
+  text-align: center;
+}
+
+.subNavigation li {
+  display: inline-block;
+  margin: 0 13px;
+  color: #71767a;
+}
+
+.subNavigation li:hover {
+  color: #0099e5;
+}
+
+.subNavigation li>a {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 15px 0;
+  height: 50px;
+  border-bottom: 2px solid transparent;
+}
+
+.subNavigation li>a.active {
+  color: #0099e5;
+  border-bottom: 2px solid #0099e5;
+}
+
+.userPhotos {
+  margin: 15px 45px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userPhoto img {
+  margin: 5px;
+  width: 330px;
+  height: auto;
+}
+
+.userAbout {
+  margin: 65px auto;
+  width: 600px;
+}
+
+.userAbout h3 {
+  color: #0099e5;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.userAbout p {
+  margin-bottom: 20px;
+}

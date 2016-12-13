@@ -10,31 +10,16 @@ const UserPhotos = ({ userDetails }) => {
   if (photos) {
     feedElements = photos.map(function (photo) {
       return (
-        <div key={photo.id} className="feedElement">
-          <div className="photo">
-            <img src={ photo.image_url } />
-          </div>
-          <div className="photoInfo">
-            { photo.username }
-          </div>
-          <div className="photoDescription">
-            { photo.description }
-          </div>
+        <div key={photo.id} className="userPhoto">
+          <img src={ photo.image_url } />
         </div>
       );
     });
   }
 
   return (
-    <section className="feedPage">
-      <div className="feedContainer">
-        { feedElements }
-      </div>
-      <aside className="sideBar">
-        <div className="userInfoBlock">
-          User Info
-        </div>
-      </aside>
+    <section className="userPhotos">
+      { feedElements }
     </section>
   );
 };
