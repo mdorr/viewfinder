@@ -3,7 +3,6 @@ import React from 'react';
 const UserBadge = ({ user, badgeSize, fontSize, extraPadding }) => {
 
   extraPadding = parseInt(extraPadding);
-
   badgeSize = parseInt(badgeSize);
   fontSize = parseInt(fontSize);
 
@@ -38,7 +37,7 @@ const UserBadge = ({ user, badgeSize, fontSize, extraPadding }) => {
   };
 
   let container = {
-    padding: `${ extraPadding }`
+    padding: `${ extraPadding }px`
   };
 
   return (
