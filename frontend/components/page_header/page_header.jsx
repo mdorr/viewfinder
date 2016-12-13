@@ -14,13 +14,15 @@ class PageHeader extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.saveImages = this.saveImages.bind(this);
     this.modalContent = this.modalContent.bind(this);
+    this.update = this.update.bind(this);
 
     Modal.setAppElement('#root');
 
     this.state = {
       uploadModalIsOpen: false,
       imageUrl: "",
-      imageFile: null
+      imageFile: null,
+      description: ""
     };
   }
 
@@ -35,7 +37,8 @@ class PageHeader extends React.Component {
   afterOpenUpload () {
     this.setState({
       imageUrl: "",
-      imageFile: null
+      imageFile: null,
+      description: ""
     });
   }
 
@@ -49,13 +52,18 @@ class PageHeader extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({ imageUrl: "", imageFile: null});
+      this.setState({ imageUrl: "", imageFile: null, description: "" });
     }
+  }
+
+  update(property) {
+    return e => this.setState({ [property]: e.target.value });
   }
 
   saveImages () {
     let formData = new FormData();
     formData.append("photo[user_id]", this.props.currentUser.id);
+    formData.append("photo[description]", this.state.description);
     formData.append("photo[picture]", this.state.imageFile);
     this.props.upload(formData); //then: reveice photos or redirect to user page //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
 
@@ -63,29 +71,30 @@ class PageHeader extends React.Component {
   }
 
   closeModal () {
-   this.setState({ uploadModalIsOpen: false });
- }
+    this.setState({ uploadModalIsOpen: false });
+  }
 
   modalContent () {
     let modalBody;
     if ( this.state.imageUrl ) {
       modalBody = (
         <div className="uploadDetailsContainer">
-          <div className="photoUploadPreview">
-            <img src={ this.state.imageUrl }></img>
-          </div>
-          <div className="uploadPictureSidebar group">
-            <div className="confirmUploadButtons">
-              <button className="modalFormGreenButton" onClick={ this.saveImages }>Save</button>
-            </div>
-          </div>
+          <img src={ this.state.imageUrl }></img>
+          <ul>
+            <li>
+              <button className="uploadButton" onClick={ this.saveImages }>Publish</button>
+            </li>
+            <li>
+              <textarea onChange={ this.update('description') } value={ this.state.description } placeholder="Enter a description for your photo."></textarea>
+            </li>
+          </ul>
         </div>
       );
     } else {
       modalBody = (
         <div className="uploadButtonContainer">
           <label htmlFor="file_button" className="uploadButton">
-            Select Photos
+            Select Photo
           </label>
           <input id="file_button" className="hiddenFileInput" type="file" onChange={ this.updateFiles }/>
         </div>

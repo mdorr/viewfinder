@@ -24,7 +24,6 @@
   border-radius: 3px;
   padding: 10px 20px;
   height: 39px;
-  line-height: 37px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -43,36 +42,40 @@
   cursor: pointer;
 }
 
-.imagePreview img {
-  border: none;
-  padding: 10px;
-  width: 330px;
-  height: auto;
-}
-
 .confirmUploadButtons {
   margin: 0 auto;
 }
 
 .uploadDetailsContainer {
-  background-color: #f5f7f9;
+  background-color: #f6f7f9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.uploadPictureSidebar {
-  width: 20%;
-  height: 100%;
-  right: 0;
-  top: 0;
-  background-color: #ffffff;
-}
-
-.photoUploadPreview {
+.uploadDetailsContainer img {
   margin: 20px;
-  display: inline-block;
-}
-
-.photoUploadPreview img {
   width: 60%;
   height: auto;
-  display: inline-block;
+}
+
+.uploadDetailsContainer ul {
+  margin: 10px;
+  text-align: center;
+}
+
+.uploadDetailsContainer textarea {
+  width: 418px;
+  height: 113px;
+  padding: 5px 10px;
+  font-size:16px;
+  font-weight: lighter;
+  color: #797076;
+  border: 1px solid #eaebef;
+  border-radius: 3px;
+  margin: 10px 0px;
+  outline-style: none;
+  outline-width: 0px;
+
+  transition: all 0.20s ease-in-out;
 }
