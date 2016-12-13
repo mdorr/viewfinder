@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Photo from './../photo/photo';
+import UserBadge from "./../user_badge/user_badge";
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-    this.fetchFeed = this.props.fetchFeed.bind(this);
+    //this.fetchFeed = this.props.fetchFeed.bind(this);
   }
 
   componentDidMount() {
-    this.fetchFeed(this.props.currentUser.id);
+    this.props.fetchFeed(this.props.currentUser.id);
   }
 
   render() {
@@ -39,11 +40,18 @@ class Feed extends React.Component {
         <aside className="sideBar">
           <div className="userInfoBlock">
             <div className="userNameBlock">
-              { currentUser.readableUserName }
+              <ul>
+                <li>
+                  <UserBadge url={currentUser.profile_picture } size="40" />
+                </li>
+                <li><p>{ currentUser.readableUserName }</p></li>
+              </ul>
             </div>
-            <div className="userStatsBlock">
+            <div className="userStatsBlock group">
               <ul>
                 <li><h4>{ currentUser.followers.length }</h4><br/>followers</li>
+                <li><h4>x</h4><br/>photos</li>
+                <li><h4>x</h4><br/>affection</li>
               </ul>
             </div>
           </div>

@@ -43,11 +43,42 @@
 }
 
 .userNameBlock {
-  height: 75px;
-  line-height: 75px;
+  height: 70px;
+  font-size: 20px;
+  text-transform: capitalize;
   border-bottom: 1px solid #eeeff2;
 }
 
+.userNameBlock li {
+  float: left;
+  padding: 12px 0px 12px 12px;
+}
+
+.userNameBlock li>p {
+  line-height: 45px;
+  color: #71767a;
+}
+
+.userStatsBlock ul {
+  text-align: center;
+}
+
 .userStatsBlock li {
-  padding: 10px;
+  width: 66px;
+  float: left;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 13px;
+  border-right: 1px solid #eeeff2;
+  color: #71767a;
+}
+
+.userStatsBlock li:last-child{
+  border-right: none;
+}
+
+
+.userStatsBlock h4 {
+  font-size: 20px;
 }
