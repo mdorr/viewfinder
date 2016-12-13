@@ -2,13 +2,20 @@ import React from 'react';
 import { Link } from 'react-router';
 import Photo from './../photo/photo';
 
+class Feed extends React.Component {
+  constructor(props) {
+    super(props);
+    this.fetchFeed = this.props.fetchFeed.bind(this);
+  }
 
-const Feed = ({ photos, currentUser }) => {
+  componentDidMount() {
+    this.fetchFeed(this.props.currentUser.id);
+  }
 
-  let feedElements = (<div></div>);
+  render() {
+    let feedPhotos = this.props.feed.photos;
 
-  if (photos) {
-    feedElements = photos.map(function (photo) {
+    let feedElements = feedPhotos.map(function (photo) {
       return (
         <div key={photo.id} className="feedElement">
           <div className="photo">
@@ -23,20 +30,19 @@ const Feed = ({ photos, currentUser }) => {
         </div>
       );
     });
-  }
 
-  return (
-    <section className="feedPage">
-      <div className="feedContainer">
-        { feedElements }
-      </div>
-      <aside className="sideBar">
-        <div className="userInfoBlock">
-          User Info
+    return (
+      <section className="feedPage">
+        <div className="feedContainer">
+          { feedElements }
         </div>
-      </aside>
-    </section>
-  );
-};
-
+        <aside className="sideBar">
+          <div className="userInfoBlock">
+            { this.props.currentUser.readableUserName }
+          </div>
+        </aside>
+      </section>
+    );
+  }
+}
 export default Feed;

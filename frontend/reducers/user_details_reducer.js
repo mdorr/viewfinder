@@ -15,8 +15,7 @@ const UserDetailsReducer = (state = _nullUserDetails, action) => {
       // RECEIVE FOLLOW // RECEIVE UNFOLLOWS
     case RECEIVE_USER_PHOTOS:
       const photos = action.userPhotos;
-      let newState = merge({}, state, {photos})
-      return newState;
+      return merge({}, state, {photos});
     default:
       return state;
   }

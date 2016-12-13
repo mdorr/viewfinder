@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import merge from 'lodash/merge';
 import FollowContainer from './../follow/follow_container';
 import UserDetails from './user_page_components/user_details';
-import Feed from './../feed/feed.jsx';
 
 class User extends React.Component {
 	constructor(props) {
@@ -159,5 +158,4 @@ class User extends React.Component {
 	}
 }
 
-// <Feed photos={ photos } currentUser={this.props.currentUser} />
 export default withRouter(User);
