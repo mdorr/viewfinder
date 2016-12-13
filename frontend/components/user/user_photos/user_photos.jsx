@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Photo from './../photo/photo';
 
-
-const Feed = ({ photos, currentUser }) => {
+const UserPhotos = ({ userDetails }) => {
 
   let feedElements = (<div></div>);
+  let photos = userDetails.photos;
+
 
   if (photos) {
     feedElements = photos.map(function (photo) {
@@ -39,4 +39,4 @@ const Feed = ({ photos, currentUser }) => {
   );
 };
 
-export default Feed;
+export default UserPhotos;

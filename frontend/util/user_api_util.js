@@ -12,3 +12,10 @@ export const updateUser = (user) => {
     data: user
   });
 };
+
+export const fetchUserPhotos = (userId) => {
+  return $.ajax({
+      method: 'GET',
+      url: `api/users/${userId}/photos`
+  });
+};

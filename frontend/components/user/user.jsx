@@ -21,16 +21,22 @@ class User extends React.Component {
 		this.afterOpenModal = this.afterOpenModal.bind(this);
 		this.saveChanges = this.saveChanges.bind(this);
 		this.isUserFollowed = this.isUserFollowed.bind(this);
+		this.fetchUserData = this.fetchUserData.bind(this);
 	}
 
 	componentDidMount() {
-		this.props.fetchUserDetails(this.props.params.userId);
+		this.fetchUserData(this.props.params.userId);
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if (this.props.params.userId !== nextProps.params.userId) {
-			this.props.fetchUserDetails(nextProps.params.userId);
+			this.fetchUserData(nextProps.params.userId);
 		}
+	}
+
+	fetchUserData(id) {
+		this.props.fetchUserDetails(id).then(() => console.log(this.props));
+		this.props.fetchUserPhotos(id).then(() => console.log(this.props));
 	}
 
 	isUserFollowed (otherUserId) {
@@ -83,6 +89,7 @@ class User extends React.Component {
 		}
 
 		const details = userDetails.details;
+		const photos = userDetails.photos;
 
 		let profilePicture = {
 			backgroundImage: `url(${details.profile_picture})`,
@@ -123,7 +130,7 @@ class User extends React.Component {
 						</div>
 
 						<label>About (optional)</label>
-						<textarea onChange={ this.update('description') } value= { this.state.description } placeholder="Tell the world your story."></textarea>
+						<textarea onChange={ this.update('description') } value={ this.state.description } placeholder="Tell the world your story."></textarea>
 
 						<div className="modalInputRowRight">
 							<button className="modalFormCancelButton" onClick={this.closeModal}>Cancel</button>
@@ -141,10 +148,10 @@ class User extends React.Component {
 				</div>
 				<UserDetails details={details} />
 				{ children }
-				<Feed photos={details.photos} currentUser={this.props.currentUser} />
       </section>
 		);
 	}
 }
 
+// <Feed photos={ photos } currentUser={this.props.currentUser} />
 export default withRouter(User);

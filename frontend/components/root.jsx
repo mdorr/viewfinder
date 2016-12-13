@@ -8,6 +8,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import UserContainer from "./user/user_container";
+import UserPhotosContainer from './user/user_photos/user_photos_container';
+import UserAboutContainer from './user/user_about/user_about_container';
 import FeedContainer from "./feed/feed_container";
 import GreetingPageContainer from "./greeting/greeting_page_container";
 
@@ -28,14 +30,18 @@ const Root = ({ store }) => {
   };
 
   return (
-    <Provider store={store}>
-      <Router history={hashHistory}>
-        <Route path="/" component={App}>
-          <IndexRoute component={GreetingPageContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          <Route path="/signup" component={SessionFormContainer}  onEnter={_redirectIfLoggedIn} />
-          <Route path="/user/:userId" component={UserContainer} onEnter={_ensureLoggedIn} />
-          <Route path="/feed" component={FeedContainer} onEnter={_ensureLoggedIn} />
+    <Provider store={ store }>
+      <Router history={ hashHistory }>
+        <Route path="/" component={ App }>
+          <IndexRoute component={ GreetingPageContainer } onEnter={ _redirectIfLoggedIn }/>
+          <Route path="/login" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
+          <Route path="/signup" component={ SessionFormContainer }  onEnter={ _redirectIfLoggedIn } />
+          <Route path="/user/:userId" component={ UserContainer } onEnter={ _ensureLoggedIn }>
+            <IndexRoute component={ UserPhotosContainer } />
+            <Route path="/user/:userId/photos" component={ UserPhotosContainer } />
+            <Route path="/user/:userId/about" component={ UserAboutContainer } />
+          </Route>
+          <Route path="/feed" component={ FeedContainer } onEnter={ _ensureLoggedIn } />
         </Route>
       </Router>
     </Provider>
