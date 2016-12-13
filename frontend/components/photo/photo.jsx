@@ -1,17 +1,24 @@
 import React from 'react';
+import UserBadge from './../user_badge/user_badge';
 
-const Photo = ({ photoData }) => (
-  <div className="feedElement">
+const Photo = ({ data }) => {
+
+  if (!data.description) {
+    data.description = "IMG_" + data.id;
+  }
+
+  return (
+  <div key={ data.id } className="feedElement">
     <div className="photo">
-      <img src="{ photoData.photo.picture.url }"></img>
+      <img src={ data.image_url }></img>
     </div>
     <div className="photoInfo">
-      { photoData.user.username }
+      <UserBadge user={ data.user } badgeSize='30' fontSize='14' extraPadding='0' />
     </div>
     <div className="photoDescription">
-      { photoData.description }
+      { data.description }
     </div>
   </div>
-);
-
+  );
+};
 export default Photo;

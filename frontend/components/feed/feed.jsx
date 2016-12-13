@@ -23,17 +23,7 @@ class Feed extends React.Component {
 
     let feedElements = feedPhotos.map(function (photo) {
       return (
-        <div key={photo.id} className="feedElement">
-          <div className="photo">
-            <img src={ photo.image_url } />
-          </div>
-          <div className="photoInfo">
-            { photo.username }
-          </div>
-          <div className="photoDescription">
-            { photo.description }
-          </div>
-        </div>
+        <Photo key={ photo.id } data={ photo } />
       );
     });
 
