@@ -53,3 +53,26 @@
 .confirmUploadButtons {
   margin: 0 auto;
 }
+
+.uploadDetailsContainer {
+  background-color: #f5f7f9;
+}
+
+.uploadPictureSidebar {
+  width: 20%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #ffffff;
+}
+
+.photoUploadPreview {
+  margin: 20px;
+  display: inline-block;
+}
+
+.photoUploadPreview img {
+  width: 60%;
+  height: auto;
+  display: inline-block;
+}

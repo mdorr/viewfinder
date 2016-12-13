@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import LoginButtons from './header_components/login_buttons'
 import UserBadge from './../user_badge/user_badge';
 
-
 class PageHeader extends React.Component {
   constructor(props){
     super(props);
@@ -14,6 +13,7 @@ class PageHeader extends React.Component {
     this.updateFiles = this.updateFiles.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.saveImages = this.saveImages.bind(this);
+    this.modalContent = this.modalContent.bind(this);
 
     Modal.setAppElement('#root');
 
@@ -63,7 +63,46 @@ class PageHeader extends React.Component {
   }
 
   closeModal () {
-    this.setState({ uploadModalIsOpen: false });
+   this.setState({ uploadModalIsOpen: false });
+ }
+
+  modalContent () {
+    let modalBody;
+    if ( this.state.imageUrl ) {
+      modalBody = (
+        <div className="uploadDetailsContainer">
+          <div className="photoUploadPreview">
+            <img src={ this.state.imageUrl }></img>
+          </div>
+          <div className="uploadPictureSidebar group">
+            <div className="confirmUploadButtons">
+              <button className="modalFormGreenButton" onClick={ this.saveImages }>Save</button>
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      modalBody = (
+        <div className="uploadButtonContainer">
+          <label htmlFor="file_button" className="uploadButton">
+            Select Photos
+          </label>
+          <input id="file_button" className="hiddenFileInput" type="file" onChange={ this.updateFiles }/>
+        </div>
+      );
+    }
+
+    return (
+      <Modal
+        isOpen={ this.state.uploadModalIsOpen }
+        onAfterOpen={ this.afterOpenUpload }
+        onRequestClose={ this.closeModal }
+        className="uploadModal"
+        overlayClassName="OverlayClass"
+        contentLabel="Upload photos">
+        { modalBody }
+      </Modal>
+    );
   }
 
   loggedInNavigation (currentUser) {
@@ -87,29 +126,7 @@ class PageHeader extends React.Component {
             </li>
           </ul>
         </nav>
-        <Modal
-          isOpen={ this.state.uploadModalIsOpen }
-          onAfterOpen={ this.afterOpenUpload }
-					onRequestClose={ this.closeModal }
-          className="uploadModal"
-          overlayClassName="OverlayClass"
-          contentLabel="Upload photos">
-            <div>
-              <div className="uploadButtonContainer">
-                <label htmlFor="file_button" className="uploadButton">
-                  Select Photos
-                </label>
-                <input id="file_button" className="hiddenFileInput" type="file" onChange={this.updateFiles}/>
-                <div className="imagePreview">
-                  <img src={this.state.imageUrl}/>
-                </div>
-                <div className="confirmUploadButtons">
-                  <button className="modalFormCancelButton" onClick={this.closeModal}>Cancel</button>
-                  <button className="modalFormGreenButton" onClick={this.saveImages}>Save</button>
-                </div>
-              </div>
-            </div>
-          </Modal>
+        { this.modalContent() }
       </header>
     );
   }
