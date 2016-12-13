@@ -38,7 +38,16 @@
 
 .userInfoBlock {
   width: 280px;
-  padding: 20px;
   border: 1px solid #eeeff2;
   background-color: #ffffff;
+}
+
+.userNameBlock {
+  height: 75px;
+  line-height: 75px;
+  border-bottom: 1px solid #eeeff2;
+}
+
+.userStatsBlock li {
+  padding: 10px;
 }

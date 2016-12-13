@@ -14,7 +14,7 @@ class Feed extends React.Component {
 
   render() {
     let feedPhotos = this.props.feed.photos;
-
+    let currentUser = this.props.currentUser;
     let feedElements = feedPhotos.map(function (photo) {
       return (
         <div key={photo.id} className="feedElement">
@@ -38,8 +38,16 @@ class Feed extends React.Component {
         </div>
         <aside className="sideBar">
           <div className="userInfoBlock">
-            { this.props.currentUser.readableUserName }
+            <div className="userNameBlock">
+              { currentUser.readableUserName }
+            </div>
+            <div className="userStatsBlock">
+              <ul>
+                <li><h4>{ currentUser.followers.length }</h4><br/>followers</li>
+              </ul>
+            </div>
           </div>
+
         </aside>
       </section>
     );
