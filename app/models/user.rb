@@ -41,7 +41,6 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-
   def readableUserName
     if self.lastname && self.firstname
       return "#{self.firstname} #{self.lastname}"
