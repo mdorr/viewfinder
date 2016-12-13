@@ -34,8 +34,8 @@ class User extends React.Component {
 	}
 
 	fetchUserData(id) {
-		this.props.fetchUserDetails(id).then(() => console.log(this.props));
-		this.props.fetchUserPhotos(id).then(() => console.log(this.props));
+		this.props.fetchUserDetails(id);
+		this.props.fetchUserPhotos(id);
 	}
 
 	isUserFollowed (otherUserId) {
@@ -88,7 +88,7 @@ class User extends React.Component {
 		}
 
 		const details = userDetails.details;
-		
+
 		let profilePicture = {
 			backgroundImage: `url(${details.profile_picture})`,
 			backgroundSize: '100px 100px'
