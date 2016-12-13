@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
     post 'follows', to: 'follows#create'
     delete 'follows', to: 'follows#destroy'
+
+    get 'feed', to: 'photos#feed'
+
   end
   root "static_pages#root"
 end
