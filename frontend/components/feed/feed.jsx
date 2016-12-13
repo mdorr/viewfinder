@@ -16,6 +16,11 @@ class Feed extends React.Component {
   render() {
     let feedPhotos = this.props.feed.photos;
     let currentUser = this.props.currentUser;
+
+    if (!currentUser) {
+      return (<div></div>);
+    }
+
     let feedElements = feedPhotos.map(function (photo) {
       return (
         <div key={photo.id} className="feedElement">
@@ -45,8 +50,8 @@ class Feed extends React.Component {
             <div className="userStatsBlock group">
               <ul>
                 <li><h4>{ currentUser.followers.length }</h4><br/>followers</li>
-                <li><h4>x</h4><br/>photos</li>
-                <li><h4>x</h4><br/>affection</li>
+                <li><h4>{ currentUser.photo_count }</h4><br/>photos</li>
+                <li><h4>0</h4><br/>affection</li>
               </ul>
             </div>
           </div>
