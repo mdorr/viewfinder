@@ -6,9 +6,10 @@
 
 ## JSON API
 ### Users
+* GET /api/users/:user_id
 * POST /api/users
-* PATCH /api/users
-* UPDATE /api/users
+* PATCH /api/users/:user_id
+* UPDATE /api/users/:user_id
 
 ### Session
 * POST /api/session
