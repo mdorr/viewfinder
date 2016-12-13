@@ -119,8 +119,7 @@
 
 .userPhoto img {
   margin: 5px;
-  width: 330px;
-  height: auto;
+  max-height: 250px;
 }
 
 .userAbout {
