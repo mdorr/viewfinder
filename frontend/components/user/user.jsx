@@ -88,8 +88,7 @@ class User extends React.Component {
 		}
 
 		const details = userDetails.details;
-		const photos = userDetails.photos;
-
+		
 		let profilePicture = {
 			backgroundImage: `url(${details.profile_picture})`,
 			backgroundSize: '100px 100px'
