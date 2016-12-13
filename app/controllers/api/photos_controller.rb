@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def index
     @photos = []
-    @photos = Photo.where(user_id: params[:user_id])
+    @photos = Photo.where(user_id: params[:user_id]).sort{ |a, b| b.created_at <=> a.created_at } # newest first
     render :index
   end
 
@@ -14,8 +14,6 @@ class Api::PhotosController < ApplicationController
       return
     end
 
-    # TODO: Get all followers and self
-    # merge all photos from this group
     # Get x photos
 
     @photos = []
