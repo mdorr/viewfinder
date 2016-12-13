@@ -44,18 +44,7 @@
 
 .userNameBlock {
   height: 70px;
-  font-size: 20px;
-  text-transform: capitalize;
   border-bottom: 1px solid #eeeff2;
-}
-
-.userNameBlock li {
-  float: left;
-  padding: 12px 0px 12px 12px;
-}
-
-.userNameBlock li>p {
-  line-height: 45px;
   color: #71767a;
 }
 

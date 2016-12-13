@@ -25,8 +25,11 @@ body {
 }
 
 .home-header ul {
-  float: right;
   padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
 }
 
 .home-header li {
@@ -52,7 +55,7 @@ body {
   padding: 18px 20px;
   letter-spacing: -0.0025em;
   font-weight: normal;
-  display: block;
+
   color: inherit;
   cursor: pointer;
 }

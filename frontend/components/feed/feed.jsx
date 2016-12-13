@@ -40,12 +40,7 @@ class Feed extends React.Component {
         <aside className="sideBar">
           <div className="userInfoBlock">
             <div className="userNameBlock">
-              <ul>
-                <li>
-                  <UserBadge url={currentUser.profile_picture } size="40" />
-                </li>
-                <li><p>{ currentUser.readableUserName }</p></li>
-              </ul>
+              <UserBadge user={currentUser} badgeSize="40" fontSize="20" extraPadding="13" />
             </div>
             <div className="userStatsBlock group">
               <ul>

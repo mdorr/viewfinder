@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import LoginButtons from './header_components/login_buttons'
+import UserBadge from './../user_badge/user_badge';
 
 
 class PageHeader extends React.Component {
@@ -75,16 +76,10 @@ class PageHeader extends React.Component {
 
     return (
       <header className="home-header group">
-        <Link to="/">
-          <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
-        </Link>
         <nav className="login-signup">
           <ul>
             <li><Link to={ userPath } className="home-header-links">
-              <div className="profilePictureSmall"
-                style={badgePicture}>
-              </div>
-              { currentUser.username }
+              <UserBadge user={currentUser} badgeSize='28' fontSize='14' extraPadding='0' />
             </Link></li>
             <li>
               <a onClick={this.openUpload} className="home-header-links">Upload</a>
