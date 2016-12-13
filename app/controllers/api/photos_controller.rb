@@ -17,8 +17,16 @@ class Api::PhotosController < ApplicationController
     # TODO: Get all followers and self
     # merge all photos from this group
     # Get x photos
+
     @photos = []
-    @photos = Photo.where(user_id: feed_params[:user_id])
+    @users_for_feed = [@user] + @user.followed
+
+    @users_for_feed.each do |usr|
+      @photos += usr.photos
+    end
+
+    @photos.sort! { |a, b| b.created_at <=> a.created_at } # newest first
+
     render :index
   end
 
