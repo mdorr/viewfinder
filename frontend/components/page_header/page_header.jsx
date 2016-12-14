@@ -133,7 +133,7 @@ class PageHeader extends React.Component {
               <UserBadge user={ currentUser } badgeSize='28' fontSize='14' extraPadding='0' />
             </Link></li>
             <li>
-              <a onClick={this.openUpload} className="home-header-links"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Upload</a>
+              <a onClick={this.openUpload} className="home-header-links"><i className="fa fa-cloud-upload" aria-hidden="true"></i> Upload</a>
             </li>
             <li>
               <a onClick={this.handleLogout} className="home-header-links">Log Out</a>
