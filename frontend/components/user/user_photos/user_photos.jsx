@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Loading from './../../loading/loading';
 
 const UserPhotos = ({ userDetails, loading }) => {
+
+  if (loading) {
+    return <Loading />;
+  }
+
   // TODO: Loading indicator & Actions
   let photoElements;
   let photos = userDetails.photos;

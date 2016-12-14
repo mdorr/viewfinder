@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { fetchUserDetails, updateUser, fetchUserPhotos } from '../../actions/user_actions';
 import User from './user';
 
-const mapStateToProps = ({ userDetails, session }) => {
+const mapStateToProps = ({ userDetails, session, loading }) => {
   return {
     userDetails,
+    loading: loading.userDetailsLoading,
     currentUser: session.currentUser
   };
 };

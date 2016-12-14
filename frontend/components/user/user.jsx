@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import merge from 'lodash/merge';
 import FollowContainer from './../follow/follow_container';
 import UserDetails from './user_page_components/user_details';
+import Loading from './../loading/loading';
 
 class User extends React.Component {
 	constructor(props) {
@@ -130,7 +131,11 @@ class User extends React.Component {
 
 	// Render
 	render() {
-		const { userDetails, children } = this.props;
+		const { userDetails, children, loading } = this.props;
+
+		if (loading) {
+			return <Loading />;
+		}
 
 		if (!userDetails.details) {
 			return (<div></div>);

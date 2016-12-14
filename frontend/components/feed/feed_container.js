@@ -5,7 +5,7 @@ import Feed from './feed';
 const mapStateToProps = ({ feed, session, loading }) => {
   return {
     feed,
-    loading: loading.indexLoading,
+    loading: loading.feedLoading,
     currentUser: session.currentUser
   };
 };
