@@ -22,11 +22,6 @@ export function login(user) {
 }
 
 export function logout() {
-  // return (dispatch) => {
-  //   return APIUtil.logout().then(user =>
-  //     dispatch(receiveCurrentUser(null)));
-  // };
-
   return (dispatch) => {
     return APIUtil.logout().then(() =>
       dispatch(receiveLogout())
