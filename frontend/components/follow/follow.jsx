@@ -8,60 +8,54 @@ class Follow extends React.Component {
     this.state = {
       followed: false,
     };
+
     this.followUser = this.followUser.bind(this);
     this.unfollowUser = this.unfollowUser.bind(this);
     this.checkIfUserIsFollowed = this.checkIfUserIsFollowed.bind(this);
   }
 
   componentWillMount () {
-    if (this.props.currentUser) {
-      this.checkIfUserIsFollowed(this.props.currentUser.followed, this.props.followUserId);
-    }
+    this.checkIfUserIsFollowed(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser) {
-      this.checkIfUserIsFollowed(nextProps.currentUser.followed, nextProps.followUserId);
-    }
+    this.checkIfUserIsFollowed(nextProps);
   }
 
-  checkIfUserIsFollowed (currentUserIsFollowing, otherUserId) {
+  checkIfUserIsFollowed (propsToCheck) {
     let isFollowed = false;
-
-    currentUserIsFollowing.forEach((el) => {
-      if (el.id == otherUserId) {
-        isFollowed = true;
-      }
+    propsToCheck.curUser.followed.forEach((el) => {
+      if (el.id == propsToCheck.followUserId) { isFollowed = true; }
     });
 
     // only update state if required
-    if (this.followed != isFollowed) {
+    if (this.state.followed != isFollowed) {
       this.setState({ followed: isFollowed });
     }
   }
 
   followUser () {
-		let follow = {
+		let followData = {
 			follow: {
-				following_user_id: this.props.currentUser.id,
+				following_user_id: this.props.curUser.id,
 				followed_user_id: this.props.followUserId
 			}
 		};
-		this.props.follow(follow);
+		this.props.follow(followData);
 	}
 
 	unfollowUser () {
-		let unfollow = {
+		let unfollowData = {
 			follow: {
-				following_user_id: this.props.currentUser.id,
+				following_user_id: this.props.curUser.id,
 				followed_user_id: this.props.followUserId
 			}
 		};
-		this.props.unfollow(unfollow);
+		this.props.unfollow(unfollowData);
 	}
 
   render () {
-    			// TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
+    // TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
     if (this.state.followed) {
 			return (<button onClick={this.unfollowUser}  className="profileButton">Unfollow</button>);
 		} else {

@@ -17,9 +17,10 @@ class Api::FollowsController < ApplicationController
       following_id: follows_params[:following_user_id]
     )
 
-    @user = current_user
-    if @follow && @follow.follower == @user
+    if @follow && @follow.follower == current_user
       @follow.destroy
+
+      @user = current_user # Needs to be fetched separately here, otherwise the results of @follow.destroy might not show yet due to caching
       render "api/users/show"
     else
       render json: ['Invalid follow id.'], status: 404

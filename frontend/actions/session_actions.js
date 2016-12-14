@@ -29,10 +29,12 @@ export function logout() {
   };
 }
 
-export const receiveCurrentUser = currentUser => ({
-  type: RECEIVE_CURRENT_USER,
-  currentUser
-});
+export const receiveCurrentUser = currentUser => {
+  return ({
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+  });
+}
 
 export function receiveErrors(errors) {
   return { type: RECEIVE_ERRORS, errors };

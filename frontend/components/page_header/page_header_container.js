@@ -4,7 +4,7 @@ import { upload } from './../../actions/photo_actions';
 import PageHeader from './page_header';
 
 const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+  currentUser: session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({

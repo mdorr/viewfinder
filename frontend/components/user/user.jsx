@@ -14,8 +14,8 @@ class User extends React.Component {
 
 		this.state = {
 			modalIsOpen: false,
-			cover_image_file: null,
-			profile_picture_file: null
+			profile_picture_url: "",
+			cover_image_url: "",
 		}; // URL already passed through normal state, see user view in backend
 
 		this.openModal = this.openModal.bind(this);
@@ -58,7 +58,7 @@ class User extends React.Component {
 		this.setState({
 			modalIsOpen: true,
 			cover_image_file: null,
-			profile_picture_file: null
+			profile_picture_file: null,
 		}); // files can be set to null, even if we already have pictures here. only the stored urls will affect the display
 	}
 
@@ -79,7 +79,11 @@ class User extends React.Component {
 		const reader = new FileReader();
 		const file = e.currentTarget.files[0];
 		reader.onloadend = function () {
-			this.setState({ profile_picture_url: reader.result, profile_picture_file: file});
+			this.setState({
+				profile_picture_url: reader.result,
+				profile_picture_file: file
+			});
+			this.props.userDetails.details.profile_picture_url = reader.result;
 		}.bind(this);
 		if (file) {
 			reader.readAsDataURL(file);
@@ -143,20 +147,18 @@ class User extends React.Component {
 
 		const details = userDetails.details;
 
-		let profilePicture = "";
-		if (details.profile_picture_url) {
-			profilePicture = {
-				backgroundImage: `url(${details.profile_picture_url})`,
-				backgroundSize: '100px 100px'
-			};
+		let profilePicture = { backgroundSize: '100px 100px' };
+		if (this.state.profile_picture_url) {
+			profilePicture.backgroundImage = `url(${this.state.profile_picture_url})`;
+		} else {
+			profilePicture.backgroundImage = `url(${details.profile_picture_url})`;
 		}
 
-		let coverImage = "";
-		if (details.cover_image_url) {
-			coverImage = {
-				backgroundImage: `url(${details.cover_image_url})`,
-				display: 'cover',
-			};
+		let coverImage = { display: 'cover', backgroundPosition: 'center center' };
+		if (this.state.cover_image_url) {
+			coverImage.backgroundImage = `url(${this.state.cover_image_url})`;
+		} else {
+			coverImage.backgroundImage = `url(${details.cover_image_url})`;
 		}
 
 		return (

@@ -22,6 +22,7 @@
 .profileButtons {
   float: right;
   padding: 10px;
+  margin-top: -50px; /* required to accomodate space for profile picture */
 }
 
 .profileButton {
@@ -49,9 +50,9 @@
 }
 
 .userInfo {
+  margin-top: -50px;  /* required to accomodate space for profile picture */
   padding: 55px;
   text-align: center;
-  background: #fff;
   border-bottom: 1px solid #eaebef;
 }
 
