@@ -36,16 +36,13 @@
 }
 
 .modalCoverImage {
-  position: relative;
-  width: 100%;
-  height: 130px;
-  background: #fff;
-  border-bottom: 1px solid #eaebef;
+  min-height: 130px;
+  max-height: 130px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 .modalForm {
-  margin-top: 25px;
+  margin-top: -25px; /* to accomodate profile picture */
   padding: 20px;
 
 }

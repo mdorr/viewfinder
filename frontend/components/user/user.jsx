@@ -164,13 +164,13 @@ class User extends React.Component {
           overlayClassName="OverlayClass"
 					contentLabel="Edit User">
 
-					<div className="modalCoverImage" style={coverImage}>
+					<div className="coverImage modalCoverImage" style={coverImage}>
 						<label htmlFor="change_cover_image">Change cover image</label>
 						<input id="change_cover_image" className="hiddenFileInput" type="file" onChange={ this.updateCoverImage } />
-						<div className="profilePictureLarge" style={profilePicture}>
-							<label htmlFor="change_profile_picture">Change</label>
-							<input id="change_profile_picture" className="hiddenFileInput" type="file" onChange={ this.updateProfilePicture } />
-						</div>
+					</div>
+					<div className="profilePictureLarge" style={profilePicture}>
+						<label htmlFor="change_profile_picture">Change</label>
+						<input id="change_profile_picture" className="hiddenFileInput" type="file" onChange={ this.updateProfilePicture } />
 					</div>
 
 					<div className="modalForm">
@@ -197,8 +197,8 @@ class User extends React.Component {
         </Modal>
 
 				<div className="coverImage" style={coverImage}>
-					<div className="profilePictureLarge" style={profilePicture}>
-					</div>
+				</div>
+				<div className="profilePictureLarge" style={profilePicture}>
 				</div>
 				<div className="profileButtons">
 					{ this.editOrFollowButton() }
