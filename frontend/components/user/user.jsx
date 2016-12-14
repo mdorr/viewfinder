@@ -170,11 +170,11 @@ class User extends React.Component {
 					contentLabel="Edit User">
 
 					<div className="coverImage modalCoverImage" style={coverImage}>
-						<label htmlFor="change_cover_image">Change cover image</label>
+						<label htmlFor="change_cover_image"><i className="fa fa-camera-retro"></i> Change your cover photo</label>
 						<input id="change_cover_image" className="hiddenFileInput" type="file" onChange={ this.updateCoverImage } />
 					</div>
 					<div className="profilePictureLarge modalProfilePicture" style={profilePicture}>
-						<label htmlFor="change_profile_picture">Change</label>
+						<label htmlFor="change_profile_picture"><i className="fa fa-camera-retro"></i></label>
 						<input id="change_profile_picture" className="hiddenFileInput" type="file" onChange={ this.updateProfilePicture } />
 					</div>
 
