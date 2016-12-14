@@ -168,7 +168,7 @@ class User extends React.Component {
 						<label htmlFor="change_cover_image">Change cover image</label>
 						<input id="change_cover_image" className="hiddenFileInput" type="file" onChange={ this.updateCoverImage } />
 					</div>
-					<div className="profilePictureLarge" style={profilePicture}>
+					<div className="profilePictureLarge modalProfilePicture" style={profilePicture}>
 						<label htmlFor="change_profile_picture">Change</label>
 						<input id="change_profile_picture" className="hiddenFileInput" type="file" onChange={ this.updateProfilePicture } />
 					</div>

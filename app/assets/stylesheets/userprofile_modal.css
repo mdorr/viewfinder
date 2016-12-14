@@ -40,7 +40,41 @@
   max-height: 130px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  z-index: 1;
 }
+
+.modalCoverImage label,
+.modalProfilePicture label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(0,0,0,0.8);
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+.modalCoverImage label:hover,
+.modalProfilePicture label:hover {
+  color: #00aaff;
+}
+
+.modalCoverImage label {
+  height: 130px;
+}
+
+.modalProfilePicture {
+}
+
+.modalProfilePicture label {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+
+
 .modalForm {
   margin-top: -25px; /* to accomodate profile picture */
   padding: 20px;
