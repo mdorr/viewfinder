@@ -67,7 +67,13 @@ class User extends React.Component {
 	}
 
 	closeModal () {
-		this.setState({modalIsOpen: false});
+		this.setState({
+			modalIsOpen: false,
+			profile_picture_url: "",
+			cover_image_url: "",
+			cover_image_file: null,
+			profile_picture_file: null,
+		});
 	}
 
 	// State helpers
@@ -83,7 +89,6 @@ class User extends React.Component {
 				profile_picture_url: reader.result,
 				profile_picture_file: file
 			});
-			this.props.userDetails.details.profile_picture_url = reader.result;
 		}.bind(this);
 		if (file) {
 			reader.readAsDataURL(file);
@@ -147,7 +152,7 @@ class User extends React.Component {
 
 		const details = userDetails.details;
 
-		let profilePicture = { backgroundSize: '100px 100px' };
+		let profilePicture = { backgroundSize: '100px 100px', backgroundPosition: 'center center' };
 		if (this.state.profile_picture_url) {
 			profilePicture.backgroundImage = `url(${this.state.profile_picture_url})`;
 		} else {

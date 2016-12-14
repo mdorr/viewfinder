@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_with_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.find_by(username: username.downcase)
     if user && user.is_password?(password)
       return user
     else
