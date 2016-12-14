@@ -1,4 +1,7 @@
-json.extract! user, :id, :username, :profile_picture, :cover_image, :firstname, :lastname, :city, :country, :description, :readableUserName
+json.extract! user, :id, :username, :firstname, :lastname, :city, :country, :description, :readableUserName
+
+json.cover_image_url asset_path(user.cover_image.url)
+json.profile_picture_url asset_path(user.profile_picture.url)
 
 json.followers user.followers do |follower|
   json.id follower.id
