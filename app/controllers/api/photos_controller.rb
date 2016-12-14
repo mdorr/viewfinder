@@ -6,9 +6,6 @@ class Api::PhotosController < ApplicationController
   end
 
   def feed
-
-    sleep(10)
-
     @user = current_user
 
     # only show feed for currently logged in user
