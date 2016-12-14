@@ -18,8 +18,8 @@ const RootReducer = (state, action) => {
 const CombinedReducers = combineReducers({
   session: SessionReducer,
   userDetails: UserDetailsReducer,
-  loading: LoadingReducer,
-  feed: FeedReducer
+  feed: FeedReducer,
+  loading: LoadingReducer
 });
 
 export default RootReducer;
