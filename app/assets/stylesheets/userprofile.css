@@ -109,12 +109,16 @@
 }
 
 .userPhotos {
-  margin: 15px 45px;
+  margin: 15px auto;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  min-width: 60%;
+  max-width: 90%;
 }
 
-.userPhoto img {
+.userPhoto {
   margin: 5px;
   max-height: 250px;
 }

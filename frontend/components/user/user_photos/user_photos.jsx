@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const UserPhotos = ({ userDetails }) => {
-
-  let photoElements = (<p>No photos have been uploaded yet.</p>);
+const UserPhotos = ({ userDetails, loading }) => {
+  // TODO: Loading indicator & Actions
+  let photoElements;
   let photos = userDetails.photos;
 
   if (photos && photos.length > 0) {
     photoElements = photos.map(function (photo) {
       return (
-        <div key={photo.id} className="userPhoto">
-          <img src={ photo.image_url } />
-        </div>
+        <img key={photo.id} className="userPhoto" src={ photo.image_url } />
       );
     });
   }
