@@ -13,7 +13,6 @@ class Api::PhotosController < ApplicationController
       render json: {}, status: 404
       return
     end
-
     # Get x photos
 
     @photos = []

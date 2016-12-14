@@ -18,9 +18,8 @@ class Feed extends React.Component {
     const { feed, loading, currentUser } = this.props;
 
     if (loading || !currentUser) {
-      return (<div><Loading /></div>);
+      return <Loading />;
     }
-  //  debugger
 
     return (
       <section className="feedPage">
