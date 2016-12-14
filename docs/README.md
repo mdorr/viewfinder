@@ -24,9 +24,9 @@ This App will include the following features, fully functional, styled and seede
 * ~~Guest/Demo login~~ *(Done and live)*
 
 ### Basic features
-* Post pictures
-* Home feed
-* Profile page (own profile, other user's profile)
+* ~~Post pictures~~
+* ~~Home feed~~
+* ~~Profile page (own profile, other user's profile)~~
 * ~~Follow other users~~ *(Done and live)*
 
 ### Social (Bonus)
