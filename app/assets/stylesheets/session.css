@@ -74,3 +74,11 @@
 
   font-size: 12px;
 }
+
+.otherLink a {
+  color: #3185df;
+}
+
+.otherLink a:hover {
+  color: #00aaff;
+}

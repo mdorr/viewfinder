@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleGuestLogin = this.handleGuestLogin.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -34,6 +35,13 @@ class SessionForm extends React.Component {
 		const user = this.state;
 		this.props.processForm({user});
 	}
+
+	handleGuestLogin(e) {
+		e.preventDefault();
+		const user = { username: 'guest', password: 'password'};
+		this.props.login({ user }).then(() => this.props.router.push("/feed")); // Redirect after guest login
+	}
+
 
 	otherLink() {
 		if (this.props.formType === "login") {
@@ -88,6 +96,7 @@ class SessionForm extends React.Component {
               <button type="submit" className="green">{ this.readableFormTypeName() }</button>
             </li>
 						{ this.otherLink() }
+						<li className="otherLink">Alternatively, explore viewfinder as <a href='/' onClick={this.handleGuestLogin}>Guest</a>.</li>
           </ul>
         </form>
       </section>
