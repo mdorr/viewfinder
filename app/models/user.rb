@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
   has_many :followed, :through => :users_i_follow, :source => :followed_user
 
   has_many :photos
+  has_many :likes
 
   after_initialize :ensure_session_token
 

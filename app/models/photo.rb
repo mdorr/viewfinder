@@ -7,4 +7,5 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
+  has_many :likes
 end
