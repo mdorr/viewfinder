@@ -13,7 +13,9 @@ class User extends React.Component {
 
 		this.state = {
 			modalIsOpen: false,
-		};
+			cover_image_file: null,
+			profile_picture_file: null
+		}; // URL already passed through normal state, see user view in backend
 
 		this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
@@ -21,6 +23,8 @@ class User extends React.Component {
 		this.saveChanges = this.saveChanges.bind(this);
 		this.isUserFollowed = this.isUserFollowed.bind(this);
 		this.fetchUserData = this.fetchUserData.bind(this);
+		this.updateProfilePicture = this.updateProfilePicture.bind(this);
+		this.updateCoverImage = this.updateCoverImage.bind(this);
 	}
 
 	componentDidMount() {
@@ -56,7 +60,11 @@ class User extends React.Component {
 	}
 
 	openModal () {
-		this.setState({modalIsOpen: true});
+		this.setState({
+			modalIsOpen: true,
+			cover_image_file: null,
+			profile_picture_file: null
+		}); // files can be set to null, even if we already have pictures here. only the stored urls will affect the display
 	}
 
 	afterOpenModal () {
@@ -67,12 +75,51 @@ class User extends React.Component {
 		return e => this.setState({ [property]: e.target.value });
 	}
 
+
+
+	updateProfilePicture(e) {
+		const reader = new FileReader();
+		const file = e.currentTarget.files[0];
+		reader.onloadend = function () {
+			this.setState({ profile_picture_url: reader.result, profile_picture_file: file});
+		}.bind(this);
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			this.setState({ profile_picture_file: null });
+		}
+	}
+
+	updateCoverImage(e) {
+		const reader = new FileReader();
+		const file = e.currentTarget.files[0];
+		reader.onloadend = function () {
+			this.setState({ cover_image_url: reader.result, cover_image_file: file});
+		}.bind(this);
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			this.setState({ cover_image_file: null });
+		}
+	}
+
+
 	saveChanges () {
-		let updatedUser = {
-			user: this.state,
-			id: this.state.id
-		};
-		this.props.updateUser(updatedUser);
+		let formData = new FormData();
+		formData.append("user[id]", this.state.id);
+		formData.append("user[firstname]", this.state.firstname);
+		formData.append("user[lastname]", this.state.lastname);
+		formData.append("user[city]", this.state.city);
+		formData.append("user[country]", this.state.country);
+		formData.append("user[description]", this.state.description);
+		if (this.state.profile_picture_file) {
+			formData.append("user[profile_picture]", this.state.profile_picture_file);
+		}
+		if (this.state.cover_image_file) {
+			formData.append("user[cover_image]", this.state.cover_image_file);
+		}
+
+		this.props.updateUser(formData);
 		this.closeModal();
 	}
 
@@ -89,14 +136,20 @@ class User extends React.Component {
 
 		const details = userDetails.details;
 
-		let profilePicture = {
-			backgroundImage: `url(${details.profile_picture})`,
-			backgroundSize: '100px 100px'
-		};
+		let profilePicture = "";
+		if (details.profile_picture_url) {
+			profilePicture = {
+				backgroundImage: `url(${details.profile_picture_url})`,
+				backgroundSize: '100px 100px'
+			};
+		}
 
-		let coverImage = {
-			backgroundImage: `url(${details.cover_image})`
-		};
+		let coverImage = "";
+		if (details.cover_image_url) {
+			coverImage = {
+				backgroundImage: `url(${details.cover_image_url})`
+			};
+		}
 
 		return (
 			<section className="userProfile">
@@ -109,8 +162,11 @@ class User extends React.Component {
 					contentLabel="Edit User">
 
 					<div className="modalCoverImage" style={coverImage}>
+						<label htmlFor="change_cover_image">Change cover image</label>
+						<input id="change_cover_image" className="hiddenFileInput" type="file" onChange={ this.updateCoverImage } />
 						<div className="profilePictureLarge" style={profilePicture}>
-
+							<label htmlFor="change_profile_picture">Change</label>
+							<input id="change_profile_picture" className="hiddenFileInput" type="file" onChange={ this.updateProfilePicture } />
 						</div>
 					</div>
 
@@ -137,7 +193,7 @@ class User extends React.Component {
 					</div>
         </Modal>
 
-				<div className="coverImage">
+				<div className="coverImage" style={coverImage}>
 					<div className="profilePictureLarge" style={profilePicture}>
 					</div>
 				</div>

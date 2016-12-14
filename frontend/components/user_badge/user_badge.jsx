@@ -19,7 +19,7 @@ const UserBadge = ({ user, badgeSize, fontSize, extraPadding }) => {
 
   let badgePicture = {
     backgroundSize: `${ badgeSize }px ${ badgeSize }px`,
-    backgroundImage: `url(${ user.profile_picture })`,
+    backgroundImage: `url(${ user.profile_picture_url })`,
     display: 'inline-block',
     width: `${ badgeSize }px`,
     height: `${ badgeSize }px`,
