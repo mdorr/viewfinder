@@ -9,7 +9,7 @@ import { LOG_OUT } from './../actions/session_actions';
 
 const RootReducer = (state, action) => {
   if (action.type === LOG_OUT) {
-    state = undefined; // Reset all state on logout
+    state = {}; // Reset all state on logout
   }
   return CombinedReducers(state, action);
 };
