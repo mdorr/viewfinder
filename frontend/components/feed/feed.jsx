@@ -20,7 +20,7 @@ class Feed extends React.Component {
     if (loading || !currentUser) {
       return (<div><Loading /></div>);
     }
-    debugger
+  //  debugger
 
     return (
       <section className="feedPage">
