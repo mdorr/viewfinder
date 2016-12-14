@@ -1,5 +1,5 @@
 import React from 'react';
-import Photo from './../../photo/photo';
+import PhotoContainer from './../../photo/photo_container';
 
 const FeedElements = ({ photos }) => {
   let feedElements = (
@@ -9,7 +9,7 @@ const FeedElements = ({ photos }) => {
   if (photos && photos.length > 0) {
     feedElements = photos.map(function (photo) {
      return (
-       <Photo key={ photo.id } data={ photo } />
+       <PhotoContainer key={ photo.id } photo={ photo } />
      );
    });
   }

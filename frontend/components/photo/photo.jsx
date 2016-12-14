@@ -1,35 +1,52 @@
 import React from 'react';
 import UserBadge from './../user_badge/user_badge';
 
-const Photo = ({ data }) => {
+class Photo extends React.Component {
+  constructor(props) {
+    super(props);
 
-  let photoElement = (
-    <div className="photo">
-      <img src={ data.image_url }></img>
-    </div>
-  );
+    this.photoElement = this.photoElement.bind(this);
+    this.photoInfo = this.photoInfo.bind(this);
+    this.photoDescription = this.photoDescription.bind(this);
+  }
 
-  let photoInfo = (
-    <div className="photoInfo">
-      <UserBadge user={ data.user } badgeSize='30' fontSize='14' extraPadding='0' />
-    </div>
-  );
-
-  let photoDescription = null;
-  if (data.description) {
-    photoDescription = (
-      <div className="photoDescription">
-        { data.description }
+  photoElement () {
+    return (
+      <div className="photo">
+        <img src={ this.props.image_url }></img>
       </div>
     );
   }
 
-  return (
-    <div key={ data.id } className="feedElement">
-      { photoElement }
-      { photoInfo }
-      { photoDescription }
-    </div>
-  );
-};
+  photoInfo () {
+    return (
+      <div className="photoInfo">
+        <UserBadge user={ this.props.photo_user } badgeSize='30' fontSize='14' extraPadding='0' />
+        <p>Likes: { this.props.likes } </p>
+      </div>
+    );
+  }
+
+  photoDescription () {
+    let domObject = null;
+    if (this.props.description) {
+      domObject = (
+        <div className="photoDescription">
+          { this.props.description }
+        </div>
+      );
+    }
+    return domObject;
+  }
+
+  render () {
+    return (
+      <div key={ this.props.id } className="feedElement">
+        { this.photoElement() }
+        { this.photoInfo() }
+        { this.photoDescription() }
+      </div>
+    );
+  }
+}
 export default Photo;
