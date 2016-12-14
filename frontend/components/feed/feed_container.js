@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { fetchFeed } from '../../actions/feed_actions';
 import Feed from './feed';
 
-const mapStateToProps = ({ feed, session }) => {
+const mapStateToProps = ({ feed, session, loading }) => {
   return {
     feed,
+    loading: loading.indexLoading,
     currentUser: session.currentUser
   };
 };

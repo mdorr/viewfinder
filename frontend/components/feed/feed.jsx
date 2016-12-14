@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Photo from './../photo/photo';
-import UserBadge from "./../user_badge/user_badge";
+import UserBadge from './../user_badge/user_badge';
+import Loading from './../loading/loading';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -14,6 +15,11 @@ class Feed extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return (<div><Loading /></div>);
+    }
+
+
     let feedPhotos = this.props.feed.photos;
     let currentUser = this.props.currentUser;
 

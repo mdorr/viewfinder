@@ -3,6 +3,7 @@ import {combineReducers} from 'redux';
 import SessionReducer from './session_reducer';
 import UserDetailsReducer from './user_details_reducer';
 import FeedReducer from './feed_reducer';
+import LoadingReducer from './loading_reducer';
 
 import { LOG_OUT } from './../actions/session_actions';
 
@@ -17,6 +18,7 @@ const RootReducer = (state, action) => {
 const CombinedReducers = combineReducers({
   session: SessionReducer,
   userDetails: UserDetailsReducer,
+  loading: LoadingReducer,
   feed: FeedReducer
 });
 
