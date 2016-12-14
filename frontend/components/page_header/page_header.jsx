@@ -26,22 +26,12 @@ class PageHeader extends React.Component {
     };
   }
 
+  // Logout helper
   handleLogout() {
     this.props.logout().then(() => this.props.router.push("/")); // Redirect after logout
   }
 
-  openUpload() {
-    this.setState({ uploadModalIsOpen: true });
-  }
-
-  afterOpenUpload () {
-    this.setState({
-      imageUrl: "",
-      imageFile: null,
-      description: ""
-    });
-  }
-
+  // State helpers
   updateFiles (e) {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
@@ -70,10 +60,24 @@ class PageHeader extends React.Component {
     this.closeModal();
   }
 
+  // Modal helpers
+  openUpload() {
+    this.setState({ uploadModalIsOpen: true });
+  }
+
+  afterOpenUpload () {
+    this.setState({
+      imageUrl: "",
+      imageFile: null,
+      description: ""
+    });
+  }
+
   closeModal () {
     this.setState({ uploadModalIsOpen: false });
   }
 
+  // Modal
   modalContent () {
     let modalBody;
     if ( this.state.imageUrl ) {
@@ -114,6 +118,7 @@ class PageHeader extends React.Component {
     );
   }
 
+  // Render helpers
   loggedInNavigation (currentUser) {
     let userPath = "/user/" + currentUser.id;
 
@@ -125,7 +130,7 @@ class PageHeader extends React.Component {
         <nav className="login-signup">
           <ul>
             <li><Link to={ userPath } className="home-header-links">
-              <UserBadge user={currentUser} badgeSize='28' fontSize='14' extraPadding='0' />
+              <UserBadge user={ currentUser } badgeSize='28' fontSize='14' extraPadding='0' />
             </Link></li>
             <li>
               <a onClick={this.openUpload} className="home-header-links">Upload</a>
@@ -140,6 +145,7 @@ class PageHeader extends React.Component {
     );
   }
 
+  // Render
   render () {
     return (
       this.props.currentUser ? this.loggedInNavigation(this.props.currentUser) : <LoginButtons />

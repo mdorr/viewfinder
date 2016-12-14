@@ -27,6 +27,7 @@ class User extends React.Component {
 		this.updateCoverImage = this.updateCoverImage.bind(this);
 	}
 
+	// State updates
 	componentDidMount() {
 		this.fetchUserData(this.props.params.userId);
 	}
@@ -51,14 +52,7 @@ class User extends React.Component {
 		return false;
 	}
 
-	editOrFollowButton() {
-		if (this.props.currentUser && this.props.currentUser.id == parseInt(this.props.params.userId)) {
-			return (<button onClick={this.openModal}  className="profileButton">Edit your profile</button>);
-		} else {
-			return <FollowContainer followUserId={ this.props.params.userId } />;
-		}
-	}
-
+	// Modal helpers
 	openModal () {
 		this.setState({
 			modalIsOpen: true,
@@ -71,11 +65,14 @@ class User extends React.Component {
 		this.setState (merge(this.state, this.props.userDetails.details));
 	}
 
+	closeModal () {
+		this.setState({modalIsOpen: false});
+	}
+
+	// State helpers
 	update(property) {
 		return e => this.setState({ [property]: e.target.value });
 	}
-
-
 
 	updateProfilePicture(e) {
 		const reader = new FileReader();
@@ -103,7 +100,6 @@ class User extends React.Component {
 		}
 	}
 
-
 	saveChanges () {
 		let formData = new FormData();
 		formData.append("user[id]", this.state.id);
@@ -123,10 +119,16 @@ class User extends React.Component {
 		this.closeModal();
 	}
 
-	closeModal () {
-		this.setState({modalIsOpen: false});
+	// Render helpers
+	editOrFollowButton() {
+		if (this.props.currentUser && this.props.currentUser.id == parseInt(this.props.params.userId)) {
+			return (<button onClick={this.openModal}  className="profileButton">Edit your profile</button>);
+		} else {
+			return <FollowContainer followUserId={ this.props.params.userId } />;
+		}
 	}
 
+	// Render
 	render() {
 		const { userDetails, children } = this.props;
 
@@ -147,7 +149,8 @@ class User extends React.Component {
 		let coverImage = "";
 		if (details.cover_image_url) {
 			coverImage = {
-				backgroundImage: `url(${details.cover_image_url})`
+				backgroundImage: `url(${details.cover_image_url})`,
+				display: 'cover',
 			};
 		}
 
