@@ -3,12 +3,11 @@ import { Link } from 'react-router';
 
 const UserPhotos = ({ userDetails }) => {
 
-  let feedElements = (<div></div>);
+  let photoElements = (<p>No photos have been uploaded yet.</p>);
   let photos = userDetails.photos;
 
-
-  if (photos) {
-    feedElements = photos.map(function (photo) {
+  if (photos && photos.length > 0) {
+    photoElements = photos.map(function (photo) {
       return (
         <div key={photo.id} className="userPhoto">
           <img src={ photo.image_url } />
@@ -19,7 +18,7 @@ const UserPhotos = ({ userDetails }) => {
 
   return (
     <section className="userPhotos">
-      { feedElements }
+      { photoElements }
     </section>
   );
 };
