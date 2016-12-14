@@ -17,6 +17,32 @@
   margin-bottom: 20px;
 }
 
+.feedElement.introduction {
+  padding: 20px;
+  width: 660px;
+}
+
+.feedElement.introduction h4,
+.feedElement.introduction p {
+  line-height: 1.4em;
+  text-align: center;
+}
+
+.feedElement.introduction h4 {
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #0099e5;
+
+}
+
+.feedElement.introduction p {
+  color: #71767a;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
 .photo img {
   width: 700px;
   height: auto;
