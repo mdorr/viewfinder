@@ -3,11 +3,11 @@ import { Link } from 'react-router';
 import Photo from './../photo/photo';
 import UserBadge from './../user_badge/user_badge';
 import Loading from './../loading/loading';
+import FeedElements from './feed_components/feed_elements';
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-    //this.fetchFeed = this.props.fetchFeed.bind(this);
   }
 
   componentDidMount() {
@@ -15,29 +15,16 @@ class Feed extends React.Component {
   }
 
   render() {
-    if (this.props.loading) {
+    const { feed, loading, currentUser } = this.props;
+
+    if (loading || !currentUser) {
       return (<div><Loading /></div>);
     }
-
-
-    let feedPhotos = this.props.feed.photos;
-    let currentUser = this.props.currentUser;
-
-    if (!currentUser) {
-      return (<div></div>);
-    }
-
-    let feedElements = feedPhotos.map(function (photo) {
-      return (
-        <Photo key={ photo.id } data={ photo } />
-      );
-    });
+    debugger
 
     return (
       <section className="feedPage">
-        <div className="feedContainer">
-          { feedElements }
-        </div>
+        <FeedElements photos={ feed.photos } />
         <aside className="sideBar">
           <div className="userInfoBlock">
             <div className="userNameBlock">
@@ -51,7 +38,6 @@ class Feed extends React.Component {
               </ul>
             </div>
           </div>
-
         </aside>
       </section>
     );

@@ -14,7 +14,7 @@ export function fetchFeed(userId) {
 }
 
 export const requestFeed = () => ({
-  type: REQUEST_FEED
+  type: REQUEST_FEED,
 })
 
 export const receiveFeed = feed => ({
