@@ -26,36 +26,36 @@
 
 .likeButton {
   display: inline-block;
-  color: #aa3300;
+  color: #ffffff;
   font-weight: bold;
-  background-color: transparent;
-  border: 1px solid #aa3300;
+  background-color: #ff4c4c;
+  border: 1px solid #ff3333;
   border-radius: 3px;
   padding: 0px 10px;
-  height: 34px;
-  line-height: 30px;
+  height: 32px;
+  min-width: 60px;
+  line-height: 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 
   transition: all 0.20s ease-in-out;
-  text-shadow: 0px 1px 0px #aa1609;
+  text-shadow: 0px 1px 0px #ff3333;
 }
 
-.likeButton .liked {
-  color: #fff;
-  background-color: #aa1609;
+.likeButton.liked {
+  background-color: #525558;
+  border-color: #46484b;
+  text-shadow: 0px 1px 0px #46484b;
 }
 
 .likeButton:hover {
-  color: #fff;
-  background-color: #aa1609;
+  background-color: #f64d54;
   cursor: pointer;
 }
 
-.likeButton .liked:hover {
-  color: #aa3300;
-  background-color: transparent;
+.likeButton.liked:hover {
+  background-color: #4c4f52;
   cursor: pointer;
 }

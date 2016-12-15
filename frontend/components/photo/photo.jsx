@@ -10,11 +10,16 @@ class Photo extends React.Component {
     this.photoDescription = this.photoDescription.bind(this);
     this.likeButton = this.likeButton.bind(this);
 
+    this.state = {
+      liked: false,
+    };
+
+
     this.like = this.like.bind(this);
   }
 
   like () {
-    console.log("Like button clicked");
+    this.setState({ liked: !this.state.liked });
   }
 
   photoElement () {
@@ -26,9 +31,19 @@ class Photo extends React.Component {
   }
 
   likeButton () {
-    return (
-      <button onClick={this.like} className="likeButton"> {this.props.likes}</button>
-    );
+    if (this.state.liked) {
+      return (
+        <button onClick={this.like} className="likeButton liked">
+          <i className="fa fa-heart" aria-hidden="true"></i> {this.props.likes}
+        </button>
+      );
+    } else {
+      return (
+        <button onClick={this.like} className="likeButton">
+          <i className="fa fa-heart-o" aria-hidden="true"></i> {this.props.likes}
+        </button>
+      );
+    }
   }
 
   photoInfo () {
