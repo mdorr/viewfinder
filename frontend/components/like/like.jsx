@@ -37,7 +37,6 @@ class Like extends React.Component {
         liked: likeData.liked
       };
 
-
       if (newState != this.state) {
         this.setState(newState);
       }
