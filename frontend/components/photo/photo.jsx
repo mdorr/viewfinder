@@ -1,5 +1,5 @@
 import React from 'react';
-import UserBadge from './../user_badge/user_badge';
+import UserBadgeContainer from './../user_badge/user_badge_container';
 import LikeContainer from './../like/like_container';
 import Loading from './../loading/loading';
 
@@ -13,7 +13,7 @@ class Photo extends React.Component {
 
     this.state = {
       image_url: "",
-      photo_user: undefined,
+      user_id: undefined,
       likes: undefined,
       description: undefined,
       loading: true
@@ -29,7 +29,7 @@ class Photo extends React.Component {
     if (photo) {
       let newState = {
         image_url: photo.image_url,
-        photo_user: photo.user,
+        user_id: photo.user_id,
         likes: photo.likes,
         description: photo.description,
         loading: photo.loading
@@ -51,11 +51,11 @@ class Photo extends React.Component {
 
   photoInfo () {
     let photoInfoDomObject = null;
-    if (this.state.photo_user) {
+    if (this.state.user_id) {
       photoInfoDomObject = (
         <div className="photoInfo group">
           <div className="userBadge">
-            <UserBadge user={ this.state.photo_user } badgeSize='30' fontSize='14' extraPadding='0' />
+            <UserBadgeContainer user_id={ this.state.user_id } badgeSize='30' fontSize='14' extraPadding='0' />
           </div>
           <div className="likeContainer">
             <LikeContainer photo_id={ this.props.id } photo_likes={ this.state.likes } />

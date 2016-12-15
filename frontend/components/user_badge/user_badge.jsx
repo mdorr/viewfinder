@@ -1,57 +1,92 @@
 import React from 'react';
 
-const UserBadge = ({ user, badgeSize, fontSize, extraPadding }) => {
 
-  extraPadding = parseInt(extraPadding);
-  badgeSize = parseInt(badgeSize);
-  fontSize = parseInt(fontSize);
+class UserBadge extends React.Component {
+  constructor(props) {
+    super(props);
 
-  let badgePadding = 0;
-  let fontPadding = 0;
+    this.extraPadding = parseInt(this.props.extraPadding);
+    this.badgeSize = parseInt(this.props.badgeSize);
+    this.fontSize = parseInt(this.props.fontSize);
 
-  let badgeSizeWithBorder = badgeSize + 4;
+    this.badgePadding = 0;
+    this.fontPadding = 0;
 
-  if (badgeSizeWithBorder > fontSize) {
-    fontPadding = (badgeSizeWithBorder - fontSize) / 2;
-  } else if (badgeSizeWithBorder < fontSize) {
-    badgePadding = (fontSize - badgeSizeWithBorder) / 2;
+    let badgeSizeWithBorder = this.badgeSize + 4;
+    if (badgeSizeWithBorder > this.fontSize) {
+      this.fontPadding = (badgeSizeWithBorder - this.fontSize) / 2;
+    } else if (badgeSizeWithBorder < this.fontSize) {
+      this.badgePadding = (this.fontSize - badgeSizeWithBorder) / 2;
+    }
+
+    this.state = {
+      profilePictureUrl: "",
+      readableUserName: ""
+    };
   }
 
-  let badgePicture = {
-    backgroundSize: `${ badgeSize }px ${ badgeSize }px`,
-    backgroundImage: `url(${ user.profile_picture_url })`,
-    display: 'inline-block',
-    width: `${ badgeSize }px`,
-    height: `${ badgeSize }px`,
-    border: '2px solid #fff',
-    borderRadius: '50%',
-    float: 'left',
-    marginRight: '10px',
-    padding: `${ badgePadding }px`,
-  };
+  componentWillMount() {
+    this.props.fetchUserDetails(this.props.user_id);
+  }
 
-  let badgeText = {
-    fontSize: `${ fontSize }px`,
-    textTransform: 'capitalize',
-    padding: `${ fontPadding }px`,
-  };
+  componentWillReceiveProps (newProps) {
+    let details = newProps.userDetails.details;
+    if (details && details.id == this.props.user_id) {
+      let newState = {
+        profilePictureUrl: details.profile_picture_url,
+        readableUserName: details.readableUserName
+      };
 
-  let container = {
-    padding: `${ extraPadding }px`
-  };
+      if (newState != this.state) {
+        this.setState(newState);
+      }
+    }
+  }
 
-  return (
-    <ul style={ container }>
-      <li>
-        <div style={ badgePicture }> </div>
-      </li>
-      <li>
-        <p style={ badgeText }>
-          { user.readableUserName }
-        </p>
-      </li>
-    </ul>
-  );
-};
+  badgePicture () {
+    return ({
+      backgroundSize: `${ this.badgeSize }px ${ this.badgeSize }px`,
+      backgroundImage: `url(${ this.state.profilePictureUrl })`,
+      display: 'inline-block',
+      width: `${ this.badgeSize }px`,
+      height: `${ this.badgeSize }px`,
+      border: '2px solid #fff',
+      borderRadius: '50%',
+      float: 'left',
+      marginRight: '10px',
+      padding: `${ this.badgePadding }px`,
+    });
+  }
+
+  badgeText () {
+    return ({
+      fontSize: `${ this.fontSize }px`,
+      textTransform: 'capitalize',
+      padding: `${ this.fontPadding }px`,
+    });
+  }
+
+  container () {
+    return ({
+      padding: `${ this.extraPadding }px`
+    });
+  }
+
+  render () {
+
+    return (
+      <ul style={ this.container() }>
+        <li>
+          <div style={ this.badgePicture() }> </div>
+        </li>
+        <li>
+          <p style={ this.badgeText() }>
+            { this.state.readableUserName }
+          </p>
+        </li>
+      </ul>
+    );
+  }
+}
 
 export default UserBadge;

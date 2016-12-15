@@ -14,7 +14,7 @@ const PhotoReducer = (state = { }, action) => {
       return Object.assign({}, state, {
         [receivedPhoto.id]: {
           image_url: receivedPhoto.image_url,
-          user: receivedPhoto.user,
+          user_id: receivedPhoto.user_id,
           description: receivedPhoto.description,
           loading: false
         }

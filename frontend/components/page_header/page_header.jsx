@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import LoginButtons from './header_components/login_buttons'
-import UserBadge from './../user_badge/user_badge';
+import UserBadgeContainer from './../user_badge/user_badge_container';
 
 class PageHeader extends React.Component {
   constructor(props){
@@ -130,7 +130,7 @@ class PageHeader extends React.Component {
         <nav className="login-signup">
           <ul>
             <li><Link to={ userPath } className="home-header-links">
-              <UserBadge user={ user } badgeSize='28' fontSize='14' extraPadding='0' />
+              <UserBadgeContainer user_id={ user.id } badgeSize='28' fontSize='14' extraPadding='0' />
             </Link></li>
             <li>
               <a onClick={this.openUpload} className="home-header-links"><i className="fa fa-cloud-upload" aria-hidden="true"></i> Upload</a>

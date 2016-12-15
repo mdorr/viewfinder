@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserBadge from './../user_badge/user_badge';
+import UserBadgeContainer from './../user_badge/user_badge_container';
 import Loading from './../loading/loading';
 import FeedElements from './feed_components/feed_elements';
 
@@ -26,7 +26,7 @@ class Feed extends React.Component {
         <aside className="sideBar">
           <div className="userInfoBlock">
             <div className="userNameBlock">
-              <UserBadge user={currentUser} badgeSize="40" fontSize="20" extraPadding="13" />
+              <UserBadgeContainer user_id={ currentUser.id } badgeSize="40" fontSize="20" extraPadding="13" />
             </div>
             <div className="userStatsBlock group">
               <ul>
