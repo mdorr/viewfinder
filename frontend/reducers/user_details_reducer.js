@@ -10,11 +10,13 @@ const UserDetailsReducer = (state = _nullUserDetails, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER_DETAILS:
-      const details = action.userDetails;
-      return merge({}, state, {details});
+      return Object.assign({}, state, {
+        details: action.userDetails
+      });
     case RECEIVE_USER_PHOTOS:
-      const photos = action.userPhotos;
-      return merge({}, state, {photos});
+      return Object.assign({}, state, {
+        photos: action.userPhotos
+      });
     default:
       return state;
   }
