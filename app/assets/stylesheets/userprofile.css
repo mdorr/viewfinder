@@ -117,11 +117,15 @@
   justify-content: space-between;
   min-width: 60%;
   max-width: 90%;
+
 }
 
 .userPhoto {
   margin: 5px;
   max-height: 250px;
+  object-fit: cover;
+  flex-grow: 2;
+  flex-shrink: 2;
 }
 
 .userAbout {
