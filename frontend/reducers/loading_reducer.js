@@ -1,10 +1,9 @@
 import { REQUEST_FEED, RECEIVE_FEED } from './../actions/feed_actions';
-import { REQUEST_USER_DETAILS, REQUEST_USER_PHOTOS, RECEIVE_USER_DETAILS, RECEIVE_USER_PHOTOS } from './../actions/user_actions';
+import { REQUEST_USER_DETAILS, RECEIVE_USER_DETAILS } from './../actions/user_actions';
 
 const initialState = {
   feedLoading: false,
   userDetailsLoading: false,
-  userPhotosLoading: false
 };
 
 export default (state = initialState, action) => {
@@ -22,11 +21,6 @@ export default (state = initialState, action) => {
     case RECEIVE_FEED:
       return Object.assign({}, state, { feedLoading: false });
 
-    // USER PHOTOS (for profile page)
-    case REQUEST_USER_PHOTOS:
-      return Object.assign({}, state, { userPhotosLoading: true});
-    case RECEIVE_USER_PHOTOS:
-      return Object.assign({}, state, { userPhotosLoading: false });
     default:
       return state;
   }

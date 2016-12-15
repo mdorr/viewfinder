@@ -1,4 +1,4 @@
-import { RECEIVE_USER_DETAILS, RECEIVE_USER_PHOTOS } from '../actions/user_actions';
+import { RECEIVE_USER_DETAILS } from '../actions/user_actions';
 
 const _nullUserDetails = Object.freeze({
   details: null
@@ -10,10 +10,6 @@ const UserDetailsReducer = (state = _nullUserDetails, action) => {
     case RECEIVE_USER_DETAILS:
       return Object.assign({}, state, {
         details: action.userDetails
-      });
-    case RECEIVE_USER_PHOTOS:
-      return Object.assign({}, state, {
-        photos: action.userPhotos
       });
     default:
       return state;
