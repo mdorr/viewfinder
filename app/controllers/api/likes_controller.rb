@@ -11,7 +11,6 @@ class Api::LikesController < ApplicationController
   end
 
   def create
-    sleep(1)
     @like = Like.new(like_params)
 
     if current_user.id == @like.user_id && @like.save
@@ -30,7 +29,6 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    sleep(1)
     @like = Like.find_by(like_params)
 
     if @like && current_user.id == @like.user_id
