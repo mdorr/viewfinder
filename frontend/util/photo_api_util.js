@@ -8,3 +8,11 @@ export const uploadPhoto = (photo) => {
     data: photo
   });
 };
+
+
+export const getPhoto = (photo_id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/photos/${photo_id}`
+  });
+};
