@@ -43,11 +43,11 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   def readableUserName
-    if self.lastname && self.firstname
+    if !self.lastname.empty? && !self.firstname.empty?
       return "#{self.firstname} #{self.lastname}"
-    elsif self.firstname
+    elsif !self.firstname.empty?
       return self.firstname
-    elsif self.lastname
+    elsif !self.lastname.empty?
       return self.lastname
     end
     self.username
