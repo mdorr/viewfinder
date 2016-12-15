@@ -120,8 +120,6 @@ class PageHeader extends React.Component {
 
   // Render helpers
   loggedInNavigation (user) {
-    let userPath = "/user/" + user.id;
-
     return (
       <header className="home-header group">
         <Link to="/">
@@ -129,9 +127,9 @@ class PageHeader extends React.Component {
         </Link>
         <nav className="login-signup">
           <ul>
-            <li><Link to={ userPath } className="home-header-links">
+            <li>
               <UserBadgeContainer user_id={ user.id } badgeSize='28' fontSize='14' extraPadding='0' />
-            </Link></li>
+            </li>
             <li>
               <a onClick={this.openUpload} className="home-header-links"><i className="fa fa-cloud-upload" aria-hidden="true"></i> Upload</a>
             </li>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 
 class UserBadge extends React.Component {
@@ -73,17 +74,19 @@ class UserBadge extends React.Component {
   }
 
   render () {
-
+    let userPath = `/user/${this.props.user_id}`;
     return (
-      <ul style={ this.container() }>
-        <li>
-          <div style={ this.badgePicture() }> </div>
-        </li>
-        <li>
-          <p style={ this.badgeText() }>
-            { this.state.readableUserName }
-          </p>
-        </li>
+      <ul style={ this.container() } className='userBadgeContainer'>
+        <Link to={ userPath }>
+          <li>
+            <div style={ this.badgePicture() }> </div>
+          </li>
+          <li>
+            <p style={ this.badgeText() }>
+              { this.state.readableUserName }
+            </p>
+          </li>
+        </Link>
       </ul>
     );
   }

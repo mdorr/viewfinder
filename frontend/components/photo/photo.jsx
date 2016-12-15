@@ -55,7 +55,7 @@ class Photo extends React.Component {
       photoInfoDomObject = (
         <div className="photoInfo group">
           <div className="userBadge">
-            <UserBadgeContainer user_id={ this.state.user_id } badgeSize='30' fontSize='14' extraPadding='0' />
+            <UserBadgeContainer user_id={ this.state.user_id } badgeSize='30' fontSize='24' extraPadding='0' />
           </div>
           <div className="likeContainer">
             <LikeContainer photo_id={ this.props.id } photo_likes={ this.state.likes } />
