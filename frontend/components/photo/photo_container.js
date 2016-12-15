@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Photo from './photo';
+import { like, unlike } from './../../actions/like_actions';
 
 const mapStateToProps = (_state, ownProps) => {
   return {
@@ -10,7 +11,15 @@ const mapStateToProps = (_state, ownProps) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    likePhoto: likeData => dispatch(like(likeData)),
+    unlikePhoto: likeData => dispatch(unlike(likeData)),
+  };
+};
+
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Photo);
