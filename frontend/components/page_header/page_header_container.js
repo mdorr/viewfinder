@@ -9,7 +9,7 @@ const mapStateToProps = ({ session }) => ({
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  upload: photoData => dispatch(upload(photoData))
+  upload: photoData => dispatch(upload(photoData)),
 });
 
 export default connect(

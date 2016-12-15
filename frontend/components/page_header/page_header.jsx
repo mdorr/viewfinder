@@ -55,7 +55,8 @@ class PageHeader extends React.Component {
     formData.append("photo[user_id]", this.props.currentUser.id);
     formData.append("photo[description]", this.state.description);
     formData.append("photo[picture]", this.state.imageFile);
-    this.props.upload(formData); //then: reveice photos or redirect to user page //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
+    this.props.upload(formData);
+    //then: reveice photos or redirect to user page //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
 
     this.closeModal();
   }
