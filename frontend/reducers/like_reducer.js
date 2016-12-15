@@ -13,14 +13,13 @@ const LikeReducer = (state = { }, action) => {
         }
       });
     case RECEIVE_LIKE_STATE:
-      let newState = Object.assign({}, state, {
+      return Object.assign({}, state, {
         [likeData.id]: {
           pending: false,
           liked: likeData.liked,
           num_likes: likeData.num_likes
         }
       });
-      return newState;
     default:
       return state;
   }
