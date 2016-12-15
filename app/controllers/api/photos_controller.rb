@@ -23,7 +23,7 @@ class Api::PhotosController < ApplicationController
 
     @photos.sort! { |a, b| b.created_at <=> a.created_at } # newest first
 
-    render :index
+    render :feed
   end
 
   def show
