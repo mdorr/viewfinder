@@ -8,7 +8,7 @@ class Like extends React.Component {
 
     this.state = {
       liked: undefined,
-      pending: undefined,
+      pending: undefined
     };
   }
 
@@ -37,13 +37,12 @@ class Like extends React.Component {
         liked: likeData.liked
       };
 
+
       if (newState != this.state) {
         this.setState(newState);
       }
     }
   }
-
-
 
   like () {
     const likeData = {
@@ -64,7 +63,7 @@ class Like extends React.Component {
     if (this.state.pending) {
       return (
         <button className="likeButton pending">
-          <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
+          <i className="fa fa-spinner fa-spin fa-fw"></i>
         </button>
       );
     } else if (this.state.liked) {
