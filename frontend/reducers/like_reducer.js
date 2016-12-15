@@ -1,4 +1,5 @@
-import { REQUEST_LIKE_STATE, RECEIVE_LIKE_STATE, REQUEST_LIKE, RECEIVE_LIKE, REQUEST_UNLIKE, RECEIVE_UNLIKE } from './../actions/like_actions';
+import { REQUEST_LIKE_STATE, RECEIVE_LIKE_STATE, REQUEST_LIKE, REQUEST_UNLIKE } from './../actions/like_actions';
+import merge from 'lodash/merge';
 
 const LikeReducer = (state = { }, action) => {
   const likeData = action.likeData;
@@ -7,42 +8,19 @@ const LikeReducer = (state = { }, action) => {
     case REQUEST_LIKE:
     case REQUEST_UNLIKE:
       return Object.assign({}, state, {
-        [likeData.like.photo_id]: { pending: true }
+        [likeData.like.photo_id]: {
+          pending: true
+        }
       });
-
     case RECEIVE_LIKE_STATE:
-      if (likeData.user_id) {
-        return Object.assign({}, state, {
-          [likeData.photo_id]: {
-            pending: false,
-            liked: true
-          }
-        });
-      } else {
-        return Object.assign({}, state, {
-          [likeData.photo_id]: {
-            pending: false,
-            liked: false
-          }
-        });
-      }
-
-    case RECEIVE_LIKE:
-      return Object.assign({}, state, {
-        [likeData.photo_id]: {
+      let newState = Object.assign({}, state, {
+        [likeData.id]: {
           pending: false,
-          liked: true
+          liked: likeData.liked,
+          num_likes: likeData.num_likes
         }
       });
-
-    case RECEIVE_UNLIKE:
-      return Object.assign({}, state, {
-        [likeData.photo_id]: {
-          pending: false,
-          liked: false
-        }
-      });
-      
+      return newState;
     default:
       return state;
   }

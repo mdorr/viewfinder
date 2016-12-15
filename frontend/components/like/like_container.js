@@ -6,7 +6,6 @@ const mapStateToProps = ( { session, likes }, ownProps ) => {
   return {
     likes,
     photo_id: ownProps.photo_id,
-    photo_likes: ownProps.photo_likes,
     currentUserId: session.currentUser.id
   };
 };

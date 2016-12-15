@@ -4,11 +4,12 @@ class Like extends React.Component {
   constructor(props) {
     super(props);
     this.isLiked = this.isLiked.bind(this);
-    this.like = this.like.bind(this);
+    this.handleButton = this.handleButton.bind(this);
 
     this.state = {
       liked: undefined,
-      pending: undefined
+      pending: undefined,
+      num_likes: 0
     };
   }
 
@@ -34,7 +35,8 @@ class Like extends React.Component {
     if (likeData) {
       let newState = {
         pending: likeData.pending,
-        liked: likeData.liked
+        liked: likeData.liked,
+        num_likes: likeData.num_likes
       };
 
       if (newState != this.state) {
@@ -43,7 +45,7 @@ class Like extends React.Component {
     }
   }
 
-  like () {
+  handleButton () {
     const likeData = {
       like: {
         photo_id: this.props.photo_id,
@@ -67,14 +69,14 @@ class Like extends React.Component {
       );
     } else if (this.state.liked) {
       return (
-        <button onClick={this.like} className="likeButton liked">
-          <i className="fa fa-heart" aria-hidden="true"></i> {this.props.photo_likes}
+        <button onClick={this.handleButton} className="likeButton liked">
+          <i className="fa fa-heart" aria-hidden="true"></i> {this.state.num_likes}
         </button>
       );
     } else {
       return (
-        <button onClick={this.like} className="likeButton">
-          <i className="fa fa-heart-o" aria-hidden="true"></i> {this.props.photo_likes}
+        <button onClick={this.handleButton} className="likeButton">
+          <i className="fa fa-heart-o" aria-hidden="true"></i> {this.state.num_likes}
         </button>
       );
     }
