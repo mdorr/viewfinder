@@ -23,26 +23,19 @@ class User extends React.Component {
 		this.afterOpenModal = this.afterOpenModal.bind(this);
 		this.saveChanges = this.saveChanges.bind(this);
 		this.isUserFollowed = this.isUserFollowed.bind(this);
-		this.fetchUserData = this.fetchUserData.bind(this);
 		this.updateProfilePicture = this.updateProfilePicture.bind(this);
 		this.updateCoverImage = this.updateCoverImage.bind(this);
 	}
 
 	// State updates
 	componentDidMount() {
-		this.fetchUserData(this.props.params.userId);
+		this.props.fetchUserDetails(this.props.params.userId);
 	}
 
 	componentWillReceiveProps(nextProps) {
-	//	debugger
 		if (this.props.params.userId !== nextProps.params.userId) {
-			this.fetchUserData(nextProps.params.userId);
+			this.props.fetchUserDetails(nextProps.params.userId);
 		}
-	}
-
-	fetchUserData(id) {
-		this.props.fetchUserDetails(id);
-	//	this.props.fetchUserPhotos(id);
 	}
 
 	isUserFollowed (otherUserId) {

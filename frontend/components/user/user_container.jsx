@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserDetails, updateUser, fetchUserPhotos } from '../../actions/user_actions';
+import { fetchUserDetails, updateUser } from '../../actions/user_actions';
 import User from './user';
 
 const mapStateToProps = ({ userDetails, session, loading }) => {
@@ -13,8 +13,7 @@ const mapStateToProps = ({ userDetails, session, loading }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUserDetails: userId => dispatch(fetchUserDetails(userId)),
-    updateUser: user => dispatch(updateUser(user)),
-    fetchUserPhotos: userId => dispatch(fetchUserPhotos(userId)),
+    updateUser: user => dispatch(updateUser(user))
   };
 };
 

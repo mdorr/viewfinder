@@ -100,8 +100,6 @@ class Photo extends React.Component {
         );
       }
     }
-
-
   }
 }
 export default Photo;
