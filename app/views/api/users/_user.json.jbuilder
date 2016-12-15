@@ -14,6 +14,7 @@ json.followed user.followed do |following|
 end
 
 json.photo_count user.photos.count
+json.affection user.affection.count
 
 json.photos user.photos do |photo|
   json.id photo.id

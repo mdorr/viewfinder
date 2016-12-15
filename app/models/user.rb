@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
   has_many :photos
   has_many :likes
 
+  has_many :affection, :through => :photos, :source => :likes
+
   after_initialize :ensure_session_token
 
   def readableUserName

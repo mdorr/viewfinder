@@ -30,9 +30,9 @@ class Feed extends React.Component {
             </div>
             <div className="userStatsBlock group">
               <ul>
-                <li><h4>{ currentUser.followers.length }</h4><br/>followers</li>
-                <li><h4>{ currentUser.photo_count }</h4><br/>photos</li>
-                <li><h4>0</h4><br/>affection</li>
+                <li><h4>{ currentUser.followers.length }</h4><br/>Followers</li>
+                <li><h4>{ currentUser.photo_count }</h4><br/>Photos</li>
+                <li><h4>{ currentUser.affection }</h4><br/>Affection</li>
               </ul>
             </div>
           </div>
