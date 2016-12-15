@@ -1,21 +1,17 @@
 import { connect } from 'react-redux';
 import Photo from './photo';
+import { getPhoto } from './../../actions/photo_actions';
 
-const mapStateToProps = ( { session }, ownProps) => {
+const mapStateToProps = ( { photos, session }, ownProps) => {
   return {
-    id: ownProps.photo.id,
-    currentUserId: session.currentUser.id,
-    image_url: ownProps.photo.image_url,
-    photo_user: ownProps.photo.user,
-    description: ownProps.photo.description,
-    photo_likes: ownProps.photo.likes,
+    id: ownProps.id,
+    photos: photos
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    likePhoto: likeData => dispatch(like(likeData)),
-    unlikePhoto: likeData => dispatch(unlike(likeData)),
+    getPhoto: photo_id => dispatch(getPhoto(photo_id)),
   };
 };
 

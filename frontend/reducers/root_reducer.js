@@ -5,6 +5,7 @@ import UserDetailsReducer from './user_details_reducer';
 import FeedReducer from './feed_reducer';
 import LoadingReducer from './loading_reducer';
 import LikeReducer from './like_reducer';
+import PhotoReducer from './photo_reducer';
 
 import { LOG_OUT } from './../actions/session_actions';
 
@@ -21,7 +22,8 @@ const CombinedReducers = combineReducers({
   userDetails: UserDetailsReducer,
   likes: LikeReducer,
   feed: FeedReducer,
-  loading: LoadingReducer
+  loading: LoadingReducer,
+  photos: PhotoReducer,
 });
 
 export default RootReducer;

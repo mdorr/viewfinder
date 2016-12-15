@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Photo from './../photo/photo';
 import UserBadge from './../user_badge/user_badge';
 import Loading from './../loading/loading';
 import FeedElements from './feed_components/feed_elements';

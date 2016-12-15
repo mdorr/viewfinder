@@ -9,7 +9,7 @@ const FeedElements = ({ photos }) => {
   if (photos && photos.length > 0) {
     feedElements = photos.map(function (photo) {
      return (
-       <PhotoContainer key={ photo.id } photo={ photo } />
+       <PhotoContainer key={ photo.id } id={ photo.id } />
      );
    });
   }

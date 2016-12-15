@@ -1,6 +1,7 @@
 import React from 'react';
 import UserBadge from './../user_badge/user_badge';
 import LikeContainer from './../like/like_container';
+import Loading from './../loading/loading';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -10,35 +11,67 @@ class Photo extends React.Component {
     this.photoInfo = this.photoInfo.bind(this);
     this.photoDescription = this.photoDescription.bind(this);
 
+    this.state = {
+      image_url: "",
+      photo_user: undefined,
+      likes: undefined,
+      description: undefined,
+      loading: true
+    };
+  }
+
+  componentWillMount () {
+    this.props.getPhoto(this.props.id);
+  }
+
+  componentWillReceiveProps (newProps) {
+    const photo = newProps.photos[newProps.id];
+    if (photo) {
+      let newState = {
+        image_url: photo.image_url,
+        photo_user: photo.user,
+        likes: photo.likes,
+        description: photo.description,
+        loading: photo.loading
+      };
+
+      if (newState != this.state) {
+        this.setState(newState);
+      }
+    }
   }
 
   photoElement () {
     return (
       <div className="photo">
-        <img src={ this.props.image_url }></img>
+        <img src={ this.state.image_url }></img>
       </div>
     );
   }
 
   photoInfo () {
-    return (
-      <div className="photoInfo group">
-        <div className="userBadge">
-          <UserBadge user={ this.props.photo_user } badgeSize='30' fontSize='14' extraPadding='0' />
+    let photoInfoDomObject = null;
+    if (this.state.photo_user) {
+      photoInfoDomObject = (
+        <div className="photoInfo group">
+          <div className="userBadge">
+            <UserBadge user={ this.state.photo_user } badgeSize='30' fontSize='14' extraPadding='0' />
+          </div>
+          <div className="likeContainer">
+            <LikeContainer photo_id={ this.props.id } photo_likes={ this.state.likes } />
+          </div>
         </div>
-        <div className="likeContainer">
-          <LikeContainer photo_id={ this.props.id } photo_likes={ this.props.photo_likes } />
-        </div>
-      </div>
-    );
+      );
+    }
+    return photoInfoDomObject;
   }
 
   photoDescription () {
     let domObject = null;
-    if (this.props.description) {
+    if (this.state.description) {
       domObject = (
         <div className="photoDescription">
-          { this.props.description }
+          { this.state.description }
         </div>
       );
     }
@@ -46,13 +79,23 @@ class Photo extends React.Component {
   }
 
   render () {
-    return (
-      <div key={ this.props.id } className="feedElement">
-        { this.photoElement() }
-        { this.photoInfo() }
-        { this.photoDescription() }
-      </div>
-    );
+    if (this.state.loading) {
+      return (
+        <div key={ this.props.id } className="feedElement">
+          <Loading />
+        </div>
+      );
+    } else {
+      return (
+        <div key={ this.props.id } className="feedElement">
+          { this.photoElement() }
+          { this.photoInfo() }
+          { this.photoDescription() }
+        </div>
+      );
+    }
+
+
   }
 }
 export default Photo;
