@@ -34,6 +34,7 @@ const LikeReducer = (state = { }, action) => {
           liked: true
         }
       });
+
     case RECEIVE_UNLIKE:
       return Object.assign({}, state, {
         [likeData.photo_id]: {
@@ -41,6 +42,7 @@ const LikeReducer = (state = { }, action) => {
           liked: false
         }
       });
+      
     default:
       return state;
   }
