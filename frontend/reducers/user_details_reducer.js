@@ -1,5 +1,4 @@
 import { RECEIVE_USER_DETAILS, RECEIVE_USER_PHOTOS } from '../actions/user_actions';
-import merge from 'lodash/merge';
 
 const _nullUserDetails = Object.freeze({
   details: null,

@@ -1,5 +1,4 @@
 import { REQUEST_LIKE_STATE, RECEIVE_LIKE_STATE, REQUEST_LIKE, REQUEST_UNLIKE } from './../actions/like_actions';
-import merge from 'lodash/merge';
 
 const LikeReducer = (state = { }, action) => {
   const likeData = action.likeData;
