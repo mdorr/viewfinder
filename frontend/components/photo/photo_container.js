@@ -5,7 +5,8 @@ import { getPhoto } from './../../actions/photo_actions';
 const mapStateToProps = ( { photos, session }, ownProps) => {
   return {
     id: ownProps.id,
-    photos: photos
+    photos: photos,
+    imgOnly: ownProps.imgOnly,
   };
 };
 

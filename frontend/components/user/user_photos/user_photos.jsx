@@ -1,21 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
-import Loading from './../../loading/loading';
+import PhotoContainer from './../../photo/photo_container';
 
-const UserPhotos = ({ userDetails, loading }) => {
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  // TODO: Loading indicator & Actions
-  let photoElements;
-  let photos = userDetails.photos;
-
+const UserPhotos = ({ photos }) => {
+  let photoElements = null;
   if (photos && photos.length > 0) {
     photoElements = photos.map(function (photo) {
       return (
-        <img key={photo.id} className="userPhoto" src={ photo.image_url } />
+        <PhotoContainer key={ photo.id } id={ photo.id } imgOnly='true' />
       );
     });
   }

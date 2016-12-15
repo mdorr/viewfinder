@@ -86,13 +86,19 @@ class Photo extends React.Component {
         </div>
       );
     } else {
-      return (
-        <div key={ this.props.id } className="feedElement">
-          { this.photoElement() }
-          { this.photoInfo() }
-          { this.photoDescription() }
-        </div>
-      );
+      if (this.props.imgOnly) {
+        return (
+          <img key={ this.props.id } className="userPhoto" src={ this.state.image_url } />
+        )
+      } else {
+        return (
+          <div key={ this.props.id } className="feedElement">
+            { this.photoElement() }
+            { this.photoInfo() }
+            { this.photoDescription() }
+          </div>
+        );
+      }
     }
 
 

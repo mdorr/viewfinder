@@ -1,8 +1,7 @@
 import { RECEIVE_USER_DETAILS, RECEIVE_USER_PHOTOS } from '../actions/user_actions';
 
 const _nullUserDetails = Object.freeze({
-  details: null,
-  photos: [],
+  details: null
 });
 
 const UserDetailsReducer = (state = _nullUserDetails, action) => {

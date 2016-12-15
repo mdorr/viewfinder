@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import UserPhotos from './user_photos';
 
-const mapStateToProps = ({ userDetails, loading }) => {
+const mapStateToProps = ({ userDetails }) => {
   return {
-    userDetails,
-    loading: (loading.userPhotosLoading || loading.userDetailsLoading),
+    photos: userDetails.details.photos
   };
 };
 

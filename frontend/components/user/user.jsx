@@ -34,6 +34,7 @@ class User extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+	//	debugger
 		if (this.props.params.userId !== nextProps.params.userId) {
 			this.fetchUserData(nextProps.params.userId);
 		}
@@ -41,7 +42,7 @@ class User extends React.Component {
 
 	fetchUserData(id) {
 		this.props.fetchUserDetails(id);
-		this.props.fetchUserPhotos(id);
+	//	this.props.fetchUserPhotos(id);
 	}
 
 	isUserFollowed (otherUserId) {
