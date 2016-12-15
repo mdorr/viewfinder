@@ -50,6 +50,13 @@
   text-shadow: 0px 1px 0px #46484b;
 }
 
+.likeButton.pending,
+.likeButton.pending:hover {
+  background-color: #9aa2a8;
+  border-color: #9aa2a8;
+  text-shadow: 0px 1px 0px #9aa2a8;
+}
+
 .likeButton:hover {
   background-color: #f64d54;
   cursor: pointer;

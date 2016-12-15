@@ -1,3 +1,11 @@
+export const requestState = (likeData) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/likes',
+    data: likeData
+  });
+};
+
 export const likePhoto = (likeData) => {
   return $.ajax({
     method: 'POST',

@@ -4,6 +4,7 @@ import SessionReducer from './session_reducer';
 import UserDetailsReducer from './user_details_reducer';
 import FeedReducer from './feed_reducer';
 import LoadingReducer from './loading_reducer';
+import LikeReducer from './like_reducer';
 
 import { LOG_OUT } from './../actions/session_actions';
 
@@ -18,6 +19,7 @@ const RootReducer = (state, action) => {
 const CombinedReducers = combineReducers({
   session: SessionReducer,
   userDetails: UserDetailsReducer,
+  likes: LikeReducer,
   feed: FeedReducer,
   loading: LoadingReducer
 });

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post 'follows', to: 'follows#create'
     delete 'follows', to: 'follows#destroy'
 
+    get 'likes', to: 'likes#show'
     post 'likes', to: 'likes#create'
     delete 'likes', to: 'likes#destroy'
 

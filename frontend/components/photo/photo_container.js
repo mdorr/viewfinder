@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import Photo from './photo';
-import { like, unlike } from './../../actions/like_actions';
 
-const mapStateToProps = (_state, ownProps) => {
+const mapStateToProps = ( { session }, ownProps) => {
   return {
+    id: ownProps.photo.id,
+    currentUserId: session.currentUser.id,
     image_url: ownProps.photo.image_url,
     photo_user: ownProps.photo.user,
     description: ownProps.photo.description,
-    likes: ownProps.photo.likes,
+    photo_likes: ownProps.photo.likes,
   };
 };
 
@@ -17,7 +18,6 @@ const mapDispatchToProps = (dispatch) => {
     unlikePhoto: likeData => dispatch(unlike(likeData)),
   };
 };
-
 
 export default connect(
   mapStateToProps,
