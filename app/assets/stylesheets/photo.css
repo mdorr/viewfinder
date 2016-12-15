@@ -1,0 +1,61 @@
+.photo img {
+  width: 700px;
+  height: auto;
+}
+
+.photoDescription,
+.photoInfo {
+  padding: 15px;
+}
+
+.photoInfo .userBadge {
+  float: left;
+  width: 585px;
+}
+
+.photoInfo .likeContainer {
+  float: right;
+  text-align: right;
+  width: 85px;
+  height: 34px;
+}
+
+.photoDescription {
+  border-top: 1px solid #eeeff2;
+}
+
+.likeButton {
+  display: inline-block;
+  color: #aa3300;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid #aa3300;
+  border-radius: 3px;
+  padding: 0px 10px;
+  height: 34px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  transition: all 0.20s ease-in-out;
+  text-shadow: 0px 1px 0px #aa1609;
+}
+
+.likeButton .liked {
+  color: #fff;
+  background-color: #aa1609;
+}
+
+.likeButton:hover {
+  color: #fff;
+  background-color: #aa1609;
+  cursor: pointer;
+}
+
+.likeButton .liked:hover {
+  color: #aa3300;
+  background-color: transparent;
+  cursor: pointer;
+}

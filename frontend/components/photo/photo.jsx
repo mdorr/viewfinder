@@ -8,6 +8,13 @@ class Photo extends React.Component {
     this.photoElement = this.photoElement.bind(this);
     this.photoInfo = this.photoInfo.bind(this);
     this.photoDescription = this.photoDescription.bind(this);
+    this.likeButton = this.likeButton.bind(this);
+
+    this.like = this.like.bind(this);
+  }
+
+  like () {
+    console.log("Like button clicked");
   }
 
   photoElement () {
@@ -18,11 +25,21 @@ class Photo extends React.Component {
     );
   }
 
+  likeButton () {
+    return (
+      <button onClick={this.like} className="likeButton"> {this.props.likes}</button>
+    );
+  }
+
   photoInfo () {
     return (
-      <div className="photoInfo">
-        <UserBadge user={ this.props.photo_user } badgeSize='30' fontSize='14' extraPadding='0' />
-        <p>Likes: { this.props.likes } </p>
+      <div className="photoInfo group">
+        <div className="userBadge">
+          <UserBadge user={ this.props.photo_user } badgeSize='30' fontSize='14' extraPadding='0' />
+        </div>
+        <div className="likeContainer">
+          { this.likeButton() }
+        </div>
       </div>
     );
   }

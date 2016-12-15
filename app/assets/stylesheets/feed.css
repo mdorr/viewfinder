@@ -43,19 +43,6 @@
 }
 
 
-.photo img {
-  width: 700px;
-  height: auto;
-}
-
-.photoDescription,
-.photoInfo {
-  padding: 15px;
-}
-
-.photoDescription {
-  border-top: 1px solid #eeeff2;
-}
 
 .sideBar {
   float: right;
