@@ -30,8 +30,8 @@ This App will include the following features, fully functional, styled and seede
 * ~~Follow other users~~ *(Done and live)*
 
 ### Social (Bonus)
-* Likes
-* Keywords (Tags)
+* ~~Likes~~
+* ~~Keywords (Tags)~~
 * Comments
 * Notifications
 
