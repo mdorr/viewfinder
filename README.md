@@ -1,4 +1,4 @@
-# Viewfinder
+![viewfinder logo](./docs/vf-logo.png)
 
 [www.viewfinder.tech](http://www.viewfinder.tech)
 
