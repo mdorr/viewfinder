@@ -55,7 +55,7 @@ class Photo extends React.Component {
   photoElement () {
     return (
       <div className="photo">
-        <img className="zoomHover" src={ this.state.image_url }></img>
+        <img className="zoomHover" src={ this.state.image_url } onClick={ this.openModal }></img>
       </div>
     );
   }
@@ -153,7 +153,7 @@ class Photo extends React.Component {
         }
       } else {
         return (
-          <div key={ this.props.id } onClick={ this.openModal } className="feedElement">
+          <div key={ this.props.id } className="feedElement">
             { this.photoElement() }
             { this.photoInfo() }
             { this.photoDescription() }
