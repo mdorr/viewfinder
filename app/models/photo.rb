@@ -9,4 +9,6 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   has_many :likes
   has_many :keywordings
+
+  has_many :keywords, through: :keywordings
 end

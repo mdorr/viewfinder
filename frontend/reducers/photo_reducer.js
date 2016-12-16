@@ -16,6 +16,7 @@ const PhotoReducer = (state = { }, action) => {
           image_url: receivedPhoto.image_url,
           user_id: receivedPhoto.user_id,
           description: receivedPhoto.description,
+          keywords: receivedPhoto.keywords,
           loading: false
         }
       });

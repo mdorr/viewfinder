@@ -10,13 +10,15 @@ class Photo extends React.Component {
     this.photoElement = this.photoElement.bind(this);
     this.photoInfo = this.photoInfo.bind(this);
     this.photoDescription = this.photoDescription.bind(this);
+    this.photoKeywords = this.photoKeywords.bind(this);
 
     this.state = {
       image_url: "",
       user_id: undefined,
       likes: undefined,
       description: undefined,
-      loading: true
+      keywords: [],
+      loading: true,
     };
   }
 
@@ -32,7 +34,8 @@ class Photo extends React.Component {
         user_id: photo.user_id,
         likes: photo.likes,
         description: photo.description,
-        loading: photo.loading
+        keywords: photo.keywords,
+        loading: photo.loading,
       };
 
       if (newState != this.state) {
@@ -78,6 +81,18 @@ class Photo extends React.Component {
     return domObject;
   }
 
+  photoKeywords () {
+    let domObject = null;
+    if (this.state.keywords && this.state.keywords.length > 0) {
+      domObject = (
+        <div className="photoDescription">
+          Keywords: { this.state.keywords.join(', ') }
+        </div>
+      );
+    }
+    return domObject;
+  }
+
   render () {
     if (this.state.loading) {
       return (
@@ -89,13 +104,14 @@ class Photo extends React.Component {
       if (this.props.imgOnly) {
         return (
           <img key={ this.props.id } className="userPhoto" src={ this.state.image_url } />
-        )
+        );
       } else {
         return (
           <div key={ this.props.id } className="feedElement">
             { this.photoElement() }
             { this.photoInfo() }
             { this.photoDescription() }
+            { this.photoKeywords () }
           </div>
         );
       }
