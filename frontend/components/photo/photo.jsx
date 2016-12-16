@@ -115,7 +115,7 @@ class Photo extends React.Component {
   modalContent () {
     let modalBody;
     modalBody = (
-      <img key={ this.props.id } className="fullscreenPhoto" src={ this.state.image_url } />
+      <img key={ this.props.id } className="fullscreenPhoto" src={ this.state.image_url } onClick={ this.closeModal } />
     );
 
     return (
@@ -139,9 +139,18 @@ class Photo extends React.Component {
       );
     } else {
       if (this.props.imgOnly) {
-        return (
-          <img key={ this.props.id } className="userPhoto" src={ this.state.image_url } />
-        );
+        if (this.state.modalIsOpen) { // Has to be handled separately due to flexbox limitations
+          return (
+            <div key={ this.props.id }>
+              { this.modalContent() }
+              <img key={ this.props.id } className="userPhoto" src={ this.state.image_url } />
+            </div>
+          );
+        } else {
+          return (
+            <img key={ this.props.id } className="userPhoto zoomHover" onClick={ this.openModal } src={ this.state.image_url } />
+          );
+        }
       } else {
         return (
           <div key={ this.props.id } onClick={ this.openModal } className="feedElement">
