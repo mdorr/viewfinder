@@ -2,15 +2,22 @@ import React from 'react';
 import UserBadgeContainer from './../user_badge/user_badge_container';
 import LikeContainer from './../like/like_container';
 import Loading from './../loading/loading';
+import Modal from 'react-modal';
 
 class Photo extends React.Component {
   constructor(props) {
     super(props);
 
+    Modal.setAppElement('#root');
+
     this.photoElement = this.photoElement.bind(this);
     this.photoInfo = this.photoInfo.bind(this);
     this.photoDescription = this.photoDescription.bind(this);
     this.photoKeywords = this.photoKeywords.bind(this);
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.modalContent = this.modalContent.bind(this);
 
     this.state = {
       image_url: "",
@@ -19,6 +26,7 @@ class Photo extends React.Component {
       description: undefined,
       keywords: [],
       loading: true,
+      modalIsOpen: false,
     };
   }
 
@@ -47,7 +55,7 @@ class Photo extends React.Component {
   photoElement () {
     return (
       <div className="photo">
-        <img src={ this.state.image_url }></img>
+        <img className="zoomHover" src={ this.state.image_url }></img>
       </div>
     );
   }
@@ -93,6 +101,35 @@ class Photo extends React.Component {
     return domObject;
   }
 
+  // Modal helpers
+  openModal () {
+    this.setState({ modalIsOpen: true, });
+  }
+
+  closeModal () {
+    this.setState({ modalIsOpen: false, });
+  }
+
+
+  // Modal
+  modalContent () {
+    let modalBody;
+    modalBody = (
+      <img key={ this.props.id } className="fullscreenPhoto" src={ this.state.image_url } />
+    );
+
+    return (
+      <Modal
+        isOpen={ this.state.modalIsOpen }
+        onRequestClose={ this.closeModal }
+        className="fullscreenPhotoModal"
+        overlayClassName="fullscreenPhotoModalOverlay"
+        contentLabel="Full Screen Image viewer">
+        { modalBody }
+      </Modal>
+    );
+  }
+
   render () {
     if (this.state.loading) {
       return (
@@ -107,11 +144,12 @@ class Photo extends React.Component {
         );
       } else {
         return (
-          <div key={ this.props.id } className="feedElement">
+          <div key={ this.props.id } onClick={ this.openModal } className="feedElement">
             { this.photoElement() }
             { this.photoInfo() }
             { this.photoDescription() }
             { this.photoKeywords () }
+            { this.modalContent() }
           </div>
         );
       }
