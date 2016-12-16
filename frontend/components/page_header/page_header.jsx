@@ -102,7 +102,7 @@ class PageHeader extends React.Component {
           <img src={ this.state.imageUrl }></img>
           <ul>
             <li>
-              <button className="uploadButton" onClick={ this.saveImages }>Publish</button>
+              <button className="publishButton" onClick={ this.saveImages }>Publish</button>
             </li>
             <li>
               <textarea onChange={ this.update('description') } value={ this.state.description } placeholder="Enter a description for your photo."></textarea>

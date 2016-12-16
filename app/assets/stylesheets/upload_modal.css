@@ -48,24 +48,25 @@
 
 .uploadDetailsContainer {
   background-color: #f6f7f9;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+
 }
 
 .uploadDetailsContainer img {
+  float: left;
   margin: 20px;
   width: 60%;
   height: auto;
 }
 
 .uploadDetailsContainer ul {
+  float: right;
   margin: 10px;
-  text-align: center;
+  width: 35%;
+  text-align: right;
 }
 
 .uploadDetailsContainer textarea {
-  width: 418px;
+  width: 90%;
   height: 113px;
   padding: 5px 10px;
   font-size:16px;
@@ -78,4 +79,25 @@
   outline-width: 0px;
 
   transition: all 0.20s ease-in-out;
+}
+
+.publishButton {
+  color: #fff;
+  font-weight: bold;
+  background-color: #2fb738;
+  border: 1px solid #2a9f32;
+  border-radius: 3px;
+  padding: 10px 20px;
+  height: 39px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 90%;
+  transition: all 0.20s ease-in-out;
+  text-shadow: 0px 1px 0px #2fab41;
+}
+
+.publishButton button:hover {
+  background-color: #39c544;
+  cursor: pointer;
 }
