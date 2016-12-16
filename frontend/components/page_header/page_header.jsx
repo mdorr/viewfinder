@@ -15,6 +15,7 @@ class PageHeader extends React.Component {
     this.saveImages = this.saveImages.bind(this);
     this.modalContent = this.modalContent.bind(this);
     this.update = this.update.bind(this);
+    this.getKeywordNames = this.getKeywordNames.bind(this);
 
     Modal.setAppElement('#root');
 
@@ -22,7 +23,8 @@ class PageHeader extends React.Component {
       uploadModalIsOpen: false,
       imageUrl: "",
       imageFile: null,
-      description: ""
+      description: "",
+      keywordString: ""
     };
   }
 
@@ -50,11 +52,23 @@ class PageHeader extends React.Component {
     return e => this.setState({ [property]: e.target.value });
   }
 
+  getKeywordNames (keywordString) {
+    let re = /\s*,\s*/;
+    let keywords = keywordString.split(re);
+    return keywords;
+  }
+
   saveImages () {
     let formData = new FormData();
     formData.append("photo[user_id]", this.props.currentUser.id);
     formData.append("photo[description]", this.state.description);
     formData.append("photo[picture]", this.state.imageFile);
+    let keywordNames = this.getKeywordNames(this.state.keywordString);
+    // When using formData (required for file upload), we cannot directly pass an array. https://developer.mozilla.org/en-US/docs/Web/API/FormData/append
+    for (let i = 0; i < keywordNames.length; i++) {
+      formData.append("photo[keyword_names][]", keywordNames[i] );
+    }
+
     this.props.upload(formData);
     //then: reveice photos or redirect to user page //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
 
@@ -70,7 +84,8 @@ class PageHeader extends React.Component {
     this.setState({
       imageUrl: "",
       imageFile: null,
-      description: ""
+      description: "",
+      keywordString: "",
     });
   }
 
@@ -91,6 +106,9 @@ class PageHeader extends React.Component {
             </li>
             <li>
               <textarea onChange={ this.update('description') } value={ this.state.description } placeholder="Enter a description for your photo."></textarea>
+            </li>
+            <li>
+              <textarea onChange={ this.update('keywordString') } value={ this.state.keyword_string } placeholder="Enter comma-separated keywords for your photo."></textarea>
             </li>
           </ul>
         </div>
