@@ -141,7 +141,6 @@ class PageHeader extends React.Component {
       <header className="home-header group">
         <Link to="/">
           <div className="logoImg"></div>
-          
         </Link>
         <nav className="login-signup">
           <ul>

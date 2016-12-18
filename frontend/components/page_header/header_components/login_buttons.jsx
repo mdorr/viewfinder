@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const LoginButtons = () => (
   <header className="home-header group">
     <Link to="/">
-      <img className="logoImg" alt="viewfinder logo" src={ window.logoImg } />
+      <div className="logoImg"></div>
     </Link>
     <nav className="login-signup">
       <ul>
