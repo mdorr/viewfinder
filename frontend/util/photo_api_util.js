@@ -9,7 +9,6 @@ export const uploadPhoto = (photo) => {
   });
 };
 
-
 export const getPhoto = (photo_id) => {
   return $.ajax({
     method: 'GET',

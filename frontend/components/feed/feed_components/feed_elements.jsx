@@ -30,5 +30,4 @@ const GetStartedElement = () => {
   );
 };
 
-
 export default FeedElements;

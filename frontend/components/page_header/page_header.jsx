@@ -70,8 +70,6 @@ class PageHeader extends React.Component {
     }
 
     this.props.upload(formData);
-    //then: reveice photos or redirect to user page //PhotoApi.createPhoto(formData).then(RECEIVE PHOTOS)
-
     this.closeModal();
   }
 

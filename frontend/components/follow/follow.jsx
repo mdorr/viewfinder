@@ -55,7 +55,6 @@ class Follow extends React.Component {
 	}
 
   render () {
-    // TODO: Colors: Blue when not followed, Green when followed, red hover to unfollow
     if (this.state.followed) {
 			return (<button onClick={this.unfollowUser}  className="profileButton">Unfollow</button>);
 		} else {

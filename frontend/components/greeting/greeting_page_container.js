@@ -6,7 +6,6 @@ const mapStateToProps = ({ session }) => ({
   loggedIn: Boolean(session.currentUser),
 });
 
-
 const mapDispatchToProps = dispatch => ({
   login: user => dispatch(login(user))
 });

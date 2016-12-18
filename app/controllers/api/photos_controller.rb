@@ -8,7 +8,7 @@ class Api::PhotosController < ApplicationController
   def feed
     @user = current_user
     # only show feed for currently logged in user
-    if @user.id != (feed_params[:user_id]).to_i # TODO: Use feed_params
+    if @user.id != (feed_params[:user_id]).to_i
       render json: {}, status: 404
       return
     end
