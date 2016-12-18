@@ -37,6 +37,7 @@ gem 'figaro'
 # AWS integration
 gem 'aws-sdk', '>= 2.0'
 
+# Font awesome integration (http://fontawesome.io)
 gem 'font-awesome-rails'
 
 group :production do
