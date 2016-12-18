@@ -12,14 +12,14 @@ body {
   width: 160px;
   height: 40px;
   padding: 5px 20px 5px 40px;
-  background-image: url('vf-logo.png');
+  background-image: image-url('vf-logo.png');
   background-size: 160px 40px;
   background-repeat: no-repeat;
   background-position: 40px 5px;
 }
 
 .logoImg:hover {
-  background-image: url('vf-logo-hover.png');
+  background-image: image-url('vf-logo-hover.png');
 }
 
 .home-header {
