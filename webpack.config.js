@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/viewfinder.jsx",
@@ -5,6 +7,15 @@ module.exports = {
     path: "./app/assets/javascripts/",
     filename: "bundle.js"
   },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NOTE_ENV': JSON.stringify('production')
+      }
+    })
+  ],
+
   module: {
     loaders: [
       {
