@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
   context: __dirname,
@@ -8,11 +9,13 @@ module.exports = {
     filename: "bundle.js"
   },
 
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NOTE_ENV': JSON.stringify('production')
-      }
+  plugins: debug ? [] : [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: {except: ['$', 'exports', 'require', 'app']},
+      compress: {warnings: false},
+      sourceMap: false
     })
   ],
 
