@@ -45,8 +45,8 @@ class GreetingPage extends React.Component {
             <h4>Links</h4>
             <ul>
               <li><a href="https://github.com/mdorr/viewfinder">GitHub</a></li>
+              <li><a href="http://www.spiewack.com">Portfolio</a></li>
               <li><a href="https://www.linkedin.com/in/mspiew">LinkedIn</a></li>
-              <li><a href="http://dorr.in">dorr.in</a></li>
               <li><a href="https://www.appacademy.io/">App Academy</a></li>
             </ul>
           </div>
