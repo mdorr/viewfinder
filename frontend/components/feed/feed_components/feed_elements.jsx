@@ -6,7 +6,7 @@ const FeedElements = ({ photos, loader }) => {
   let feedElements = (
     <GetStartedElement />
   );
-  
+
   if (photos && photos.length > 0) {
     feedElements = photos.map(function (photo) {
      return (
@@ -14,10 +14,13 @@ const FeedElements = ({ photos, loader }) => {
      );
    });
   }
+
+  let loaderStyle = { display: 'none' };
+
   return (
     <div className="feedContainer">
       {feedElements}
-      <InfiniteLoader onVisited={ () => loader() } />
+      <InfiniteLoader loaderStyle={ loaderStyle } onVisited={ () => loader() } />
     </div>
   );
 };

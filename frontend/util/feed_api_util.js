@@ -1,11 +1,11 @@
-export const fetchFeed = (userId, startTime, amount) => {
+export const fetchFeed = (userId, maxId, amount) => {
   return $.ajax({
     method: 'GET',
     url: 'api/feed',
     data: {
       feed: {
         user_id: userId,
-        start_time: startTime,
+        max_id: maxId,
         amount: amount
       }
     }

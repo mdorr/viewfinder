@@ -18,8 +18,9 @@ class Api::PhotosController < ApplicationController
     @users_for_feed = [@user] + @user.followed
 
     @users_for_feed.each do |usr|
-      @photos += usr.photos.select { |p| p.created_at < feed_params[:start_time] }
-
+      @photos += usr.photos.select do |p|
+        feed_params[:max_id].to_i == 0 || p.id < feed_params[:max_id].to_i
+      end
     end
     @photos.sort! { |a, b| b.created_at <=> a.created_at } # newest first
     @photos = @photos.take(feed_params[:amount].to_i)
@@ -46,6 +47,6 @@ class Api::PhotosController < ApplicationController
   end
 
   def feed_params
-    params.require(:feed).permit(:user_id, :start_time, :amount)
+    params.require(:feed).permit(:user_id, :max_id, :amount)
   end
 end
