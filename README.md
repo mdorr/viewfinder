@@ -48,7 +48,7 @@ On any user's profile page, Photos are displayed in a "Brick wall" layout:
 
 ![Image of profile photo wall](./docs/wireframes/examples/profile_photo_wall.png)
 
-This is done by utilizing a CSS [flexbox](https://www.w3.org/TR/css-flexbox-1/) which automatically allocates available space according to the images sizes. To prevent images from being stretched, object-fit is used, which crops the picture as needed. The CSS used
+This is done by utilizing a CSS [flexbox](https://www.w3.org/TR/css-flexbox-1/) which automatically allocates available space according to the images sizes. To prevent images from being stretched, object-fit is used, which crops the picture as needed. This is accomplished with the following CSS definitions:
 
 ```css
 .container {
