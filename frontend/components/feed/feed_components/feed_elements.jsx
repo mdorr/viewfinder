@@ -1,11 +1,12 @@
 import React from 'react';
 import PhotoContainer from './../../photo/photo_container';
+import InfiniteLoader from 'react-infinite-loader';
 
-const FeedElements = ({ photos }) => {
+const FeedElements = ({ photos, loader }) => {
   let feedElements = (
     <GetStartedElement />
   );
-
+  
   if (photos && photos.length > 0) {
     feedElements = photos.map(function (photo) {
      return (
@@ -13,7 +14,12 @@ const FeedElements = ({ photos }) => {
      );
    });
   }
-  return (<div className="feedContainer">{feedElements}</div>);
+  return (
+    <div className="feedContainer">
+      {feedElements}
+      <InfiniteLoader onVisited={ () => loader() } />
+    </div>
+  );
 };
 
 const GetStartedElement = () => {
