@@ -12,7 +12,7 @@ const mapStateToProps = ({ feed, session, loading }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchFeed: userId => dispatch(fetchFeed(userId))
+    fetchFeed: (userId, startTime, amount) => dispatch(fetchFeed(userId, startTime, amount))
   };
 };
 

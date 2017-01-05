@@ -3,10 +3,10 @@ import * as APIUtil from '../util/feed_api_util';
 export const REQUEST_FEED = "REQUEST_FEED";
 export const RECEIVE_FEED = "RECEIVE_FEED";
 
-export function fetchFeed(userId) {
+export function fetchFeed(userId, startTime, amount) {
   return (dispatch) => {
     dispatch(requestFeed());
-    return APIUtil.fetchFeed(userId).then(feed => {
+    return APIUtil.fetchFeed(userId, startTime, amount).then(feed => {
       dispatch(receiveFeed(feed));
       return feed;
     });
