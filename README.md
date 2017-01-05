@@ -32,6 +32,8 @@ More photos can be accessed by scrolling down. The user can interact with the pi
 
 ![Image of photo details](./docs/wireframes/examples/photo_details.png)
 
+The photo feed implements infinite scroll. Initially, only three images are loaded; once the bottom of the page is hit, more pictures are loaded on demand.
+
 ### User Profile
 
 Every user has a profile page, which can be viewed by any other user. It shows the user's pictures, a biography and other user data:
@@ -70,10 +72,6 @@ This is done by utilizing a CSS [flexbox](https://www.w3.org/TR/css-flexbox-1/) 
 ## Future Directions for the Project
 
 To further enhance the project, the following features are planned:
-
-### Infinite scroll and pagination
-
-Currently, the user is served a static feed after logging in. This should only fetch a smaller initial set of photos, and then fetch more pictures them as the user scrolls up or down.
 
 ### Search
 
