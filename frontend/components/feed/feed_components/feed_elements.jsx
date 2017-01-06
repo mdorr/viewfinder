@@ -21,6 +21,7 @@ const FeedElements = ({ photos, loader }) => {
     <div className="feedContainer">
       {feedElements}
       <InfiniteLoader loaderStyle={ loaderStyle } onVisited={ () => loader() } />
+      <div className="feedScrollFix"></div>
     </div>
   );
 };

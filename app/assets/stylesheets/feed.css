@@ -1,5 +1,5 @@
 .feedPage {
-  margin: 20px auto 0px auto;
+  margin: 20px auto;
   width: 1004px;
 }
 
@@ -42,6 +42,13 @@
   margin-bottom: 10px;
 }
 
+/* This fixes an issue with Safari, where the bottom margin would not be reached otherwise. However, we need to scroll past that to trigger the infinite feed loader. */
+.feedScrollFix {
+  display: block;
+  height: 1px;
+  min-height: 1px;
+  border: 1px solid transparent;
+}
 
 
 .sideBar {
