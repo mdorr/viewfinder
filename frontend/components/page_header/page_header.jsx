@@ -24,7 +24,8 @@ class PageHeader extends React.Component {
       imageUrl: "",
       imageFile: null,
       description: "",
-      keywordString: ""
+      keywordString: "",
+      searchString: ""
     };
   }
 
@@ -142,8 +143,15 @@ class PageHeader extends React.Component {
         <Link to="/">
           <div className="logoImg"></div>
         </Link>
+
         <nav className="login-signup">
           <ul>
+            <li>
+              <form>
+                <input className="searchFieldHome" value={ this.state.searchString } onChange={ this.update('searchString') } placeholder="Search for photos, keywords, or people" />
+                <input className="hiddenSubmit" type="submit"></input>
+              </form>
+            </li>
             <li>
               <UserBadgeContainer user_id={ user.id } badgeSize='28' fontSize='14' extraPadding='0' />
             </li>

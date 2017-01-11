@@ -1,0 +1,24 @@
+.searchFieldHome  {
+  display: inline-block;
+  font-size: 14px;
+  width: 410px;
+  margin-top 11px;
+  margin-right: 200px;
+  border: 1px solid #eaebef;
+  background-color: #f5f7f9;
+  border-radius: 20px;
+  padding: 5px 15px;
+
+  transition: all 0.20s ease-in-out;
+}
+
+
+.searchFieldHome:focus {
+  border: 1px solid #0099e5;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.hiddenSubmit {
+  display: none;
+}
