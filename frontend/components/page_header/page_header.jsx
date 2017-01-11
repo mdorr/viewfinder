@@ -16,6 +16,7 @@ class PageHeader extends React.Component {
     this.modalContent = this.modalContent.bind(this);
     this.update = this.update.bind(this);
     this.getKeywordNames = this.getKeywordNames.bind(this);
+    this.beginSearch = this.beginSearch.bind(this);
 
     Modal.setAppElement('#root');
 
@@ -72,6 +73,13 @@ class PageHeader extends React.Component {
 
     this.props.upload(formData);
     this.closeModal();
+  }
+
+  beginSearch () {
+    this.props.router.push({
+      pathname: "/search",
+      query: { search: this.state.searchString }
+    });
   }
 
   // Modal helpers
@@ -136,6 +144,19 @@ class PageHeader extends React.Component {
     );
   }
 
+  headerSearchBar () {
+    if (this.props.router.location.pathname != "/search") { // Search page has bespoke search bar
+      return (
+        <li>
+          <form onSubmit={ this.beginSearch }>
+            <input className="searchFieldHome" value={ this.state.searchString } onChange={ this.update('searchString') } placeholder="Search for photos, keywords, or people" />
+            <input className="hiddenSubmit" type="submit"></input>
+          </form>
+        </li>
+      );
+    }
+  }
+
   // Render helpers
   loggedInNavigation (user) {
     return (
@@ -146,12 +167,7 @@ class PageHeader extends React.Component {
 
         <nav className="login-signup">
           <ul>
-            <li>
-              <form>
-                <input className="searchFieldHome" value={ this.state.searchString } onChange={ this.update('searchString') } placeholder="Search for photos, keywords, or people" />
-                <input className="hiddenSubmit" type="submit"></input>
-              </form>
-            </li>
+            { this.headerSearchBar() }
             <li>
               <UserBadgeContainer user_id={ user.id } badgeSize='28' fontSize='14' extraPadding='0' />
             </li>

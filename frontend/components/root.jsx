@@ -12,6 +12,7 @@ import UserPhotosContainer from './user/user_photos/user_photos_container';
 import UserAboutContainer from './user/user_about/user_about_container';
 import FeedContainer from "./feed/feed_container";
 import GreetingPageContainer from "./greeting/greeting_page_container";
+import SearchContainer from "./search/search_container";
 
 const Root = ({ store }) => {
 
@@ -42,6 +43,7 @@ const Root = ({ store }) => {
             <Route path="/user/:userId/about" component={ UserAboutContainer } />
           </Route>
           <Route path="/feed" component={ FeedContainer } onEnter={ _ensureLoggedIn } />
+          <Route path="/search" component={ SearchContainer } onEnter={ _ensureLoggedIn } />
         </Route>
       </Router>
     </Provider>

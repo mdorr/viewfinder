@@ -22,3 +22,19 @@
 .hiddenSubmit {
   display: none;
 }
+
+
+.searchBar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaebef;
+  color: #404346;
+  display: flex;
+}
+
+.searchInput {
+  padding: 21px 50px;
+  border: none;
+  font-size: 24px;
+  outline: none;
+  flex-grow: 1;
+}
