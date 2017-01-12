@@ -21,4 +21,7 @@ class Photo < ActiveRecord::Base
     end
   end
 
+  def keyword_names
+    self.keywords.map{ |kw| kw.name }
+  end
 end
