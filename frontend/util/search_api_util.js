@@ -1,8 +1,15 @@
-export const fetchSearchResults = (term, category) => {
+export const searchPhotos = (term) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/search',
-    term: term,
-    category: category
+    url: 'api/photos/search',
+    term: term
+  });
+};
+
+export const searchUsers = (term) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/users/search',
+    term: term
   });
 };

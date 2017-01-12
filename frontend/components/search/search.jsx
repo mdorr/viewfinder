@@ -5,6 +5,7 @@ class Search extends React.Component {
     super(props);
 
     this.handleSearch = this.handleSearch.bind(this);
+    this.switchCategories = this.switchCategories.bind(this);
 
     this.state = {
       search: this.props.location.query.search,
@@ -20,6 +21,13 @@ class Search extends React.Component {
     this.props.newSearch( this.state.search, this.state.category );
   }
 
+  switchCategories () {
+    if (this.state.category === "Photos")
+      this.setState({ category: "Users" });
+    else {
+      this.setState({ category: "Photos" });
+    }
+  }
 
   render() {
     return (
@@ -27,7 +35,7 @@ class Search extends React.Component {
         <div className="searchBar">
           <input className="searchInput" value={ this.state.search } onChange={ this.update('search') } />
           <button onClick={ this.handleSearch } className="searchButton">go</button>
-          <div className="searchCategories">
+          <div onClick={ this.switchCategories } className="searchCategories">
             { this.state.category }
           </div>
         </div>
