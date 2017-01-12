@@ -41,8 +41,9 @@
 .searchButton {
   color: #fff;
   background: #1d80d7;
-  width: 55px;
+  width: 70px;
   border: none;
+  font-size: 24px;
 }
 
 .searchButton:hover {
@@ -61,4 +62,77 @@
 
 .searchCategories:hover > ul {
   display: block;
+}
+
+
+.searchResults {
+  margin: 15px auto;
+  padding-bottom: 50px;
+  background-color: #f5f7f9
+}
+
+.searchResultsPhotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 60%;
+  max-width: 90%;
+}
+
+.searchResultsUsers {
+  width: 80%;
+}
+
+.userMiniContainer {
+  width: 280px;
+  height: 280px;
+  border: 1px solid #eaebef;
+  border-radius: 3px;
+  margin: 10px;
+  display: inline-block;
+  background-color: #ffffff;
+}
+
+.userMiniCover {
+  height: 129px;
+  border-bottom: 1px solid #eaebef;
+  background-color: #9ea5ad;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.userMiniProfilePicture {
+  margin: -30px auto 0px auto;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.userMiniDetails {
+  height: 120px;
+  text-align: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.userMiniDetails h1 {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.userMiniDetails h2 {
+  font-size: 14px;
+  color: #acb4bc;
+}
+
+.noSearchResults {
+  margin: 0 auto;
+  width: 400px;
+  background-color: #ffffff;
+  border: 1px solid #eaebef;
+  font-size: 16px;
+  text-align: center;
+  padding: 30px;
 }

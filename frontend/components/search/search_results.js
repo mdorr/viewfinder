@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoContainer from './../photo/photo_container';
+import UserMini from './../user/user_mini';
 
 const SearchResults = ({ results }) => {
   let resultElements;
@@ -10,19 +11,29 @@ const SearchResults = ({ results }) => {
         <PhotoContainer key={ photo.id } id={ photo.id } imgOnly='true' />
       );
     });
+    return (
+      <section className="searchResults searchResultsPhotos">
+        { resultElements }
+      </section>
+    );
   } else if (results && results.users && results.users.length > 0) {
     resultElements = results.users.map(function (user) {
       return (
-        <div key={ user.id }>{ user.name }</div>
+        <UserMini key={ user.id } user={ user } />
       );
     });
+    return (
+      <section className="searchResults searchResultsUsers">
+        { resultElements }
+      </section>
+    );
   }
 
-  debugger
-
   return (
-    <section className="userPhotos">
-      { resultElements }
+    <section className="searchResults">
+      <div className="noSearchResults">
+        Sorry, we could not find any matches.
+      </div>
     </section>
   );
 };

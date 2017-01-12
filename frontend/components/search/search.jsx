@@ -21,13 +21,6 @@ class Search extends React.Component {
   handleSearch () {
     this.props.newSearch( this.state.search, this.state.category );
   }
-  //
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props === nextProps) { return; }
-  //
-  //
-  //
-  // }
 
   switchCategories () {
     if (this.state.category === "Photos")
@@ -42,9 +35,11 @@ class Search extends React.Component {
       <div className="searchPage">
         <div className="searchBar">
           <input className="searchInput" value={ this.state.search } onChange={ this.update('search') } />
-          <button onClick={ this.handleSearch } className="searchButton">go</button>
+          <button onClick={ this.handleSearch } className="searchButton"><i className="fa fa-search" aria-hidden="true"></i></button>
           <div onClick={ this.switchCategories } className="searchCategories">
             { this.state.category }
+            &nbsp;
+            <i className="fa fa-caret-down" aria-hidden="true"></i>
           </div>
         </div>
         <SearchResults results={ this.props.results } />
