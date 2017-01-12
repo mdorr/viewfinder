@@ -35,6 +35,7 @@ class Follow extends React.Component {
   }
 
   followUser () {
+    event.stopPropagation();
 		let followData = {
 			follow: {
 				following_user_id: this.props.curUser.id,
@@ -45,6 +46,7 @@ class Follow extends React.Component {
 	}
 
 	unfollowUser () {
+    event.stopPropagation();
 		let unfollowData = {
 			follow: {
 				following_user_id: this.props.curUser.id,
@@ -56,9 +58,9 @@ class Follow extends React.Component {
 
   render () {
     if (this.state.followed) {
-			return (<button onClick={this.unfollowUser}  className="profileButton">Unfollow</button>);
+			return (<button onClick={this.unfollowUser}  className="profileButton followed"></button>);
 		} else {
-			return (<button onClick={this.followUser}  className="profileButton">Follow</button>);
+			return (<button onClick={this.followUser}  className="profileButton notfollowed"></button>);
 		}
   }
 }

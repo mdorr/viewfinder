@@ -49,6 +49,33 @@
   cursor: pointer;
 }
 
+.profileButton.followed {
+  background-color: #3bb821;
+  border: 1px solid #34a11d;
+  text-shadow: 0px 1px 0px #34a11d;
+  content: "Followed";
+}
+
+.profileButton.followed::after {
+  content: "Followed";
+}
+
+.profileButton.followed:hover {
+  background-color: #f64f50;
+  border: 1px solid #f61d21;
+  text-shadow: 0px 1px 0px #f61d21;
+  content: "Unfollow";
+}
+
+.profileButton.followed:hover::after {
+  content: "Unfollow";
+}
+
+.profileButton.notfollowed::after {
+  content: "Follow";
+}
+
+
 .userInfo {
   margin-top: -50px;  /* required to accomodate space for profile picture */
   padding: 55px;

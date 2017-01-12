@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchResults from './search_results';
 
+
 class Search extends React.Component {
   constructor(props) {
     super(props);

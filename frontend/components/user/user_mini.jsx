@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import FollowContainer from './../follow/follow_container';
 
 const UserMini = ({ user }) => {
   let coverImage = {
@@ -15,18 +16,19 @@ const UserMini = ({ user }) => {
   };
 
   return (
-    <Link to={ `/user/${ user.id }`}>
-      <div className="userMiniContainer">
-        <div className="userMiniCover" style={ coverImage }>
-        </div>
-        <div className="userMiniProfilePicture" style={ profilePicture }>
-        </div>
-        <div className="userMiniDetails">
+    <div className="userMiniContainer">
+      <div className="userMiniCover" style={ coverImage }>
+      </div>
+      <div className="userMiniProfilePicture" style={ profilePicture }>
+      </div>
+      <div className="userMiniDetails">
+        <Link to={ `/user/${ user.id }`}>
           <h1>{ user.name }</h1>
           <h2>{ user.followers } Followers</h2>
-        </div>
+        </Link>
+        <FollowContainer followUserId={ user.id } />
       </div>
-    </Link>
+    </div>
   );
 };
 
