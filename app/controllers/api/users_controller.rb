@@ -28,6 +28,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    render json: nil
+  end
+
   private
   def user_create_params
     params.require(:user).permit(:username, :password)
@@ -35,5 +39,9 @@ class Api::UsersController < ApplicationController
 
   def user_update_params
     params.require(:user).permit(:id, :firstname, :lastname, :city, :country, :description, :cover_image, :profile_picture)
+  end
+
+  def search_params
+    params.require(:search).permit(:term)
   end
 end

@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
     get 'feed', to: 'photos#feed'
 
+    post 'photos/search', to: 'photos#search'
+    post 'users/search', to: 'users#search'
+
   end
   root "static_pages#root"
 end

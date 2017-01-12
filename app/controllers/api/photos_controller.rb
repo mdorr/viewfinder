@@ -41,6 +41,10 @@ class Api::PhotosController < ApplicationController
     end
   end
 
+  def search
+    render json: nil
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:picture, :user_id, :description, keyword_names: [])
@@ -48,5 +52,9 @@ class Api::PhotosController < ApplicationController
 
   def feed_params
     params.require(:feed).permit(:user_id, :max_id, :amount)
+  end
+
+  def search_params
+    params.require(:search).permit(:term)
   end
 end
