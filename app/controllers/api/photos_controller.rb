@@ -42,6 +42,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def search
+    
     render json: nil
   end
 
