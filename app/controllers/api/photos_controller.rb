@@ -53,6 +53,8 @@ class Api::PhotosController < ApplicationController
       p.description.downcase.include? search_params[:term].downcase
     end
 
+    @photos.uniq!
+
     render :feed
   end
 

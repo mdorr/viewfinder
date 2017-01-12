@@ -28,6 +28,7 @@ class Api::UsersController < ApplicationController
     @users += @all_users.select { |u| u.city.downcase.include? term }
     @users += @all_users.select { |u| u.country.downcase.include? term }
 
+    @users.uniq!
     render :search
   end
 
