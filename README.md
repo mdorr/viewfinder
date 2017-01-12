@@ -34,6 +34,16 @@ More photos can be accessed by scrolling down. The user can interact with the pi
 
 The photo feed implements infinite scroll. Initially, only three images are loaded; once the bottom of the page is hit, more pictures are loaded on demand.
 
+### Search
+
+Users and Photos are searchable. Search can be initialized through the main navigation bar:
+
+![Image of search bar in top header](./docs/wireframes/examples/top_header_search.png)
+
+The main search page allows to search for either photos or users. The search will automatically update as the search term is updated.
+
+![Image of search bar in top header](./docs/wireframes/examples/search.png)
+
 ### User Profile
 
 Every user has a profile page, which can be viewed by any other user. It shows the user's pictures, a biography and other user data:
@@ -75,7 +85,7 @@ To further enhance the project, the following features are planned:
 
 ### Search
 
-Search photos by Keywords and description. Search Users by name, biography, and location. Allow for search filters, p.e. "Most popular".
+Improve backend search through index database table. Allow for search filters, p.e. "Most popular".
 
 ### Comments
 
