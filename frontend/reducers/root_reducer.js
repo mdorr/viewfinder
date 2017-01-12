@@ -6,7 +6,7 @@ import FeedReducer from './feed_reducer';
 import LoadingReducer from './loading_reducer';
 import LikeReducer from './like_reducer';
 import PhotoReducer from './photo_reducer';
-import SearchReducer from './search_reducer'
+import SearchReducer from './search_reducer';
 
 import { LOG_OUT } from './../actions/session_actions';
 
