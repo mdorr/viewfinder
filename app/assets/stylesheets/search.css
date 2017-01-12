@@ -38,3 +38,28 @@
   outline: none;
   flex-grow: 1;
 }
+
+.searchButton {
+  color: #fff;
+  background: #1d80d7;
+  width: 55px;
+  border: none;
+}
+
+.searchButton:hover {
+  background: #0099e5;
+}
+
+.searchCategories {
+  width: 90px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.searchCategories ul {
+  display: none;
+}
+
+.searchCategories:hover > ul {
+  display: block;
+}
