@@ -42,8 +42,9 @@ class Api::PhotosController < ApplicationController
   end
 
   def search
-    
-    render json: nil
+    @photos = []
+    @photos = Photo.all
+    render :feed
   end
 
   private
