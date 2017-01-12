@@ -42,11 +42,17 @@ class Api::PhotosController < ApplicationController
   end
 
   def search
-    @photos = Photo.all.to_a
-    @photos.select! do |p|
-      (p.description.downcase.include? search_params[:term].downcase ||
-      p.keyword_names.downcase.any? { |kw| kw.include? search_params[:term].downcase })
+    @all_photos = Photo.all.to_a
+    @photos = []
+
+    @photos += @all_photos.select do |p|
+      p.keyword_names.any? { |kw| kw.downcase.include? search_params[:term].downcase }
     end
+
+    @photos += @all_photos.select do |p|
+      p.description.downcase.include? search_params[:term].downcase
+    end
+
     render :feed
   end
 

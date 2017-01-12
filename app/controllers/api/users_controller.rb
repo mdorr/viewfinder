@@ -20,8 +20,14 @@ class Api::UsersController < ApplicationController
   end
 
   def search
+    @all_users = User.all
     @users = []
-    @users = User.all
+    term = search_params[:term].downcase
+    @users += @all_users.select { |u| u.readableUserName.downcase.include? term }
+    @users += @all_users.select { |u| u.description.downcase.include? term }
+    @users += @all_users.select { |u| u.city.downcase.include? term }
+    @users += @all_users.select { |u| u.country.downcase.include? term }
+
     render :search
   end
 
