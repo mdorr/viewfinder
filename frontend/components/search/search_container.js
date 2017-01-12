@@ -3,9 +3,9 @@ import { newSearch, clearSearchResults } from '../../actions/search_actions';
 import Search from './search';
 
 
-const mapStateToProps = () => {
+const mapStateToProps = ({ search }) => {
   return {
-
+    results: search
   };
 };
 

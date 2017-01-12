@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResults from './search_results';
 
 class Search extends React.Component {
   constructor(props) {
@@ -20,6 +21,13 @@ class Search extends React.Component {
   handleSearch () {
     this.props.newSearch( this.state.search, this.state.category );
   }
+  //
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props === nextProps) { return; }
+  //
+  //
+  //
+  // }
 
   switchCategories () {
     if (this.state.category === "Photos")
@@ -39,7 +47,7 @@ class Search extends React.Component {
             { this.state.category }
           </div>
         </div>
-        { this.state.search }
+        <SearchResults results={ this.props.results } />
       </div>
     );
   }
