@@ -19,6 +19,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = []
+    @users = User.all
+    render :search
+  end
+
   def update
     @user = User.find(user_update_params[:id])
     if @user == current_user && @user.update(user_update_params)
@@ -26,10 +32,6 @@ class Api::UsersController < ApplicationController
     else
       render @user.errors.full_messages, status: 422
     end
-  end
-
-  def search
-    render json: nil
   end
 
   private
