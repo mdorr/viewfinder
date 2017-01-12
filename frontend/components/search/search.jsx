@@ -25,6 +25,9 @@ class Search extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     if (nextState.category != this.state.category) {
       this.props.clearSearchResults();
+      if (nextState.search.length > 2) {
+        this.props.newSearch( nextState.search, nextState.category );
+      }
     }
 
     if (nextState.search != this.state.search) {
