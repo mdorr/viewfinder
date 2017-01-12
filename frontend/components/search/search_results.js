@@ -13,7 +13,7 @@ const SearchResults = ({ results }) => {
   } else if (results && results.users && results.users.length > 0) {
     resultElements = results.users.map(function (user) {
       return (
-        <div key={ user.id }>user.name</div>
+        <div key={ user.id }>{ user.name }</div>
       );
     });
   }
